@@ -2,9 +2,13 @@
 trigger: always_on
 ---
 
+---
+trigger: always_on
+---
+
 # Ideabox (Blog)
 
-**Project Path**: `/Users/prashantbhudwal/Code/ideabox`
+**Project Path**: `/Users/prashantbhudwal/Code/ashant`
 
 ## Overview
 
