@@ -17,6 +17,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"],
+      "~/lib/*": ["src/client/lib/*"],
+      "~/hooks/*": ["src/client/hooks/*"],
+      "~/components/*": ["src/client/components/*"],
       "content-collections": ["./.content-collections/generated"]
     },
     "noEmit": true
