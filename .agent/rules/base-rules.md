@@ -172,3 +172,5 @@ Ideabox is a personal blog and digital garden application. While it contains leg
 | Links            | Minimal copy, show counts, include context when helpful (e.g., tag previews) |
 
 ---
+
+---
