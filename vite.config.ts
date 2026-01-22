@@ -7,8 +7,45 @@ import contentCollections from "@content-collections/vite"; // ⬅️ was @conte
 import { visualizer } from "rollup-plugin-visualizer";
 import viteReact from "@vitejs/plugin-react";
 import { nitroV2Plugin } from "@tanstack/nitro-v2-vite-plugin";
+import { nitro } from "nitro/vite";
 
 const analyze = process.env.ANALYZE === "true";
+
+// Function to get all blog slugs for prerendering
+// Reads the file system directly to avoid build artifacts issues
+import fs from "node:fs";
+import path from "node:path";
+
+function getBlogRoutes() {
+  const postsDir = path.resolve(__dirname, "src/content/posts");
+  const routes = ["/"]; // Always prerender home
+
+  if (!fs.existsSync(postsDir)) return routes;
+
+  try {
+    const files = fs
+      .readdirSync(postsDir)
+      .filter((file) => file.endsWith(".md") || file.endsWith(".mdx"));
+
+    files.forEach((file) => {
+      const content = fs.readFileSync(path.join(postsDir, file), "utf-8");
+      const match = content.match(/slug:\s*([^\s]+)/);
+      if (match && match[1]) {
+        // Remove quotes if present
+        const slug = match[1].replace(/['"]/g, "");
+        routes.push(`/blog/${slug}`);
+      }
+    });
+
+    console.log(`[vite] Found ${routes.length} routes to prerender`);
+  } catch (e) {
+    console.warn("[vite] Failed to read posts for prerendering:", e);
+  }
+
+  return routes;
+}
+
+const prerenderRoutes = getBlogRoutes();
 
 export default defineConfig({
   server: {
@@ -28,39 +65,16 @@ export default defineConfig({
     contentCollections(),
     tsConfigPaths({ projects: ["./tsconfig.json"] }),
     tanstackStart({
-      // RC uses a Vite-native src layout. Keep your routes in src/app:
-      srcDirectory: "src", // default in RC
-      router: { routesDirectory: "app" }, // means your routes live at src/app/*
+      srcDirectory: "src",
+      router: { routesDirectory: "app" },
       prerender: {
-        enabled: false,
+        enabled: true,
         crawlLinks: true,
-        filter: ({ path }) => path.startsWith("/blog/"),
-
-        // filter: ({ path }) => path.startsWith("/blog/"),
-        onSuccess: ({ page }) => {
-          console.log(`Rendered ${page.path}!`);
-        },
+        filter: ({ path }) => !path.startsWith("/api"),
       },
-      // pages: [{ path: "/", prerender: { enabled: true } }],
+      pages: [{ path: "/", prerender: { enabled: true } }],
     }),
-    // For Vercel (Nitro app) — Vercel can auto-detect Nitro, but you can be explicit:
-    nitroV2Plugin({
-      preset: "vercel",
-      nodeModulesDirs: ["./node_modules/@libsql"],
-      routeRules: {
-        "/_server/**": { headers: { "cache-control": "no-cache" } },
-      },
-      storage: {
-        cache: {
-          driver: "fs",
-          base: "/tmp/nitro/cache",
-        },
-        "nitro:cache": {
-          driver: "fs",
-          base: "/tmp/nitro/cache",
-        },
-      },
-    }),
+    nitro(),
     viteReact(),
     ...(analyze
       ? [
@@ -75,3 +89,21 @@ export default defineConfig({
       : []),
   ] as PluginOption[],
 });
+// // For Vercel (Nitro app) — Vercel can auto-detect Nitro, but you can be explicit:
+// nitroV2Plugin({
+//   preset: "vercel",
+//   nodeModulesDirs: ["./node_modules/@libsql"],
+//   routeRules: {
+//     "/_server/**": { headers: { "cache-control": "no-cache" } },
+//   },
+//   storage: {
+//     cache: {
+//       driver: "fs",
+//       base: "/tmp/nitro/cache",
+//     },
+//     "nitro:cache": {
+//       driver: "fs",
+//       base: "/tmp/nitro/cache",
+//     },
+//   },
+// }),

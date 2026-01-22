@@ -101,7 +101,8 @@
     "zod": "^4.3.5",
     "@ai-sdk/google": "^2.0.52",
     "@ai-sdk/groq": "^2.0.34",
-    "@microlink/react-json-view": "^1.27.0"
+    "@microlink/react-json-view": "^1.27.0",
+    "nitro": "npm:nitro-nightly@latest"
   },
   "devDependencies": {
     "@content-collections/cli": "^0.1.8",
