@@ -8,6 +8,7 @@ import { visualizer } from "rollup-plugin-visualizer";
 import viteReact from "@vitejs/plugin-react";
 import { nitroV2Plugin } from "@tanstack/nitro-v2-vite-plugin";
 import { nitro } from "nitro/vite";
+import netlify from "@netlify/vite-plugin-tanstack-start";
 
 const analyze = process.env.ANALYZE === "true";
 
@@ -70,17 +71,11 @@ export default defineConfig({
       prerender: {
         enabled: true,
         crawlLinks: true,
-        filter: ({ path }) => {
-          // Ignore API routes
-          if (path.startsWith("/api")) return false;
-          // Ignore paths with trailing slashes (except root) to avoid 307 redirects
-          if (path !== "/" && path.endsWith("/")) return false;
-          return true;
-        },
+        filter: ({ path }) => !path.startsWith("/api"),
       },
       pages: [{ path: "/", prerender: { enabled: true } }],
     }),
-    nitro(),
+    netlify(),
     viteReact(),
     ...(analyze
       ? [
