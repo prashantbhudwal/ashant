@@ -70,7 +70,13 @@ export default defineConfig({
       prerender: {
         enabled: true,
         crawlLinks: true,
-        filter: ({ path }) => !path.startsWith("/api"),
+        filter: ({ path }) => {
+          // Ignore API routes
+          if (path.startsWith("/api")) return false;
+          // Ignore paths with trailing slashes (except root) to avoid 307 redirects
+          if (path !== "/" && path.endsWith("/")) return false;
+          return true;
+        },
       },
       pages: [{ path: "/", prerender: { enabled: true } }],
     }),
