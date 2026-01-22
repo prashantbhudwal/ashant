@@ -315,6 +315,9 @@ importers:
       rollup-plugin-visualizer:
         specifier: ^6.0.5
         version: 6.0.5(rollup@4.56.0)
+      srvx:
+        specifier: ^0.10.1
+        version: 0.10.1
       tailwind-capitalize-first-letter:
         specifier: ^1.0.4
         version: 1.0.4
