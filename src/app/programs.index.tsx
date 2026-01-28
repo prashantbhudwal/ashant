@@ -49,9 +49,6 @@ export const Route = createFileRoute('/programs/')({
 function RouteComponent() {
   return (
     <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
-      <h1 className="text-muted-foreground mb-8 text-sm font-medium tracking-widest uppercase">
-        Programs
-      </h1>
       <p className="text-muted-foreground mb-12 text-lg leading-relaxed">
         Programs are focused tools designed to solve specific problems I
         encounter regularly.

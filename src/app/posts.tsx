@@ -74,41 +74,7 @@ function PostsPage() {
 
   return (
     <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
-      <div className="mb-12">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight">Posts</h1>
-        <p className="text-muted-foreground text-lg">
-          Notes on the world, software and life.
-        </p>
-      </div>
-
-      <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex flex-wrap gap-2">
-          {allTags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => toggleTag(tag)}
-              className={cn(
-                'rounded-full px-3 py-1 text-xs font-medium transition-colors',
-                selectedTags.includes(tag)
-                  ? 'bg-foreground text-background'
-                  : 'bg-muted/50 text-muted-foreground hover:bg-muted',
-              )}
-            >
-              {tag}
-            </button>
-          ))}
-          {selectedTags.length > 0 && (
-            <button
-              onClick={() => setSelectedTags([])}
-              className="text-muted-foreground hover:text-foreground text-xs underline"
-            >
-              Clear
-            </button>
-          )}
-        </div>
-      </div>
-
-      <ul className="mb-6 divide-y divide-border/40 sm:mb-8">
+      <ul className="divide-border/40 mb-6 divide-y sm:mb-8">
         {filteredPosts.map((post) => (
           <li key={post.id}>
             <PostCard post={post} showTags />

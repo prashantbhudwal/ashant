@@ -46,18 +46,6 @@ export function PostCard({
             {post.description}
           </p>
         )}
-        {showTags && post.tags.length > 0 && (
-          <div className="mt-2 flex flex-wrap gap-2">
-            {post.tags.map((tag) => (
-              <span
-                key={tag}
-                className="text-muted-foreground/60 bg-muted/30 rounded px-1.5 py-0.5 text-[10px] font-medium"
-              >
-                #{tag}
-              </span>
-            ))}
-          </div>
-        )}
       </div>
     </Link>
   )
