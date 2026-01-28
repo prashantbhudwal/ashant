@@ -48,7 +48,7 @@ export const Route = createFileRoute('/programs/')({
 
 function RouteComponent() {
   return (
-    <div className="md:w-content-narrow lg:w-content-default mx-auto w-full px-4 py-12">
+    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <h1 className="text-muted-foreground mb-8 text-sm font-medium tracking-widest uppercase">
         Programs
       </h1>

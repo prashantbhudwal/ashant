@@ -20,7 +20,7 @@ interface ProgramLayoutProps {
 
 function MobileFallback({ title }: { title: string }) {
   return (
-    <div className="flex min-h-[50vh] flex-col items-center justify-center px-4 text-center">
+    <div className="flex min-h-[50vh] flex-col items-center justify-center text-center">
       <div className="text-muted-foreground mb-4 text-6xl">🖥️</div>
       <h2 className="text-foreground mb-2 text-xl font-semibold">
         Desktop Only
@@ -42,7 +42,12 @@ export function ProgramLayout({
   children,
 }: ProgramLayoutProps) {
   return (
-    <div className={cn('mx-auto w-full px-4 py-12', widthClasses[layoutWidth])}>
+    <div
+      className={cn(
+        'mx-auto w-full pt-4 pb-12 sm:pt-6 sm:pb-16',
+        widthClasses[layoutWidth],
+      )}
+    >
       <div className="mb-12">
         <h1 className="mb-4 text-3xl font-bold tracking-tight">{title}</h1>
         <p className="text-muted-foreground text-lg">{description}</p>

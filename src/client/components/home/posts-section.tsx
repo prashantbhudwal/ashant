@@ -37,8 +37,8 @@ export function PostsSection({ posts, className }: PostsSectionProps) {
         Posts
       </h2>
 
-      <div className="mb-6 space-y-8 sm:mb-8">
-        <ul className="space-y-8">
+      <div className="mb-6 sm:mb-8">
+        <ul className="divide-y divide-border/40">
           {displayPosts.map((post, index) => (
             <li key={post.id}>
               <PostCard post={post} isLatest={index === 0} />

@@ -40,7 +40,7 @@ function PromptsPage() {
   )
 
   return (
-    <div className="md:w-content-narrow lg:w-content-default mx-auto w-full px-4 py-12">
+    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <div className="mb-12">
         <h1 className="mb-4 text-3xl font-bold tracking-tight">Prompts</h1>
         <p className="text-muted-foreground text-lg">
@@ -48,11 +48,13 @@ function PromptsPage() {
         </p>
       </div>
 
-      <div className="space-y-4">
+      <ul className="divide-y divide-border/40">
         {prompts.map((prompt) => (
-          <PromptCard key={prompt.id} prompt={prompt} />
+          <li key={prompt.id}>
+            <PromptCard prompt={prompt} />
+          </li>
         ))}
-      </div>
+      </ul>
     </div>
   )
 }

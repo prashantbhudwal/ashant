@@ -5,9 +5,5 @@ export const Route = createFileRoute('/programs')({
 })
 
 function RouteComponent() {
-  return (
-    <div className="md:w-content-wide lg:w-content-full mx-auto w-full px-4">
-      <Outlet />
-    </div>
-  )
+  return <Outlet />
 }

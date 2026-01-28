@@ -73,7 +73,7 @@ function PostsPage() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl px-4 py-12">
+    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <div className="mb-12">
         <h1 className="mb-4 text-3xl font-bold tracking-tight">Posts</h1>
         <p className="text-muted-foreground text-lg">
@@ -108,7 +108,7 @@ function PostsPage() {
         </div>
       </div>
 
-      <ul className="mb-6 sm:mb-8">
+      <ul className="mb-6 divide-y divide-border/40 sm:mb-8">
         {filteredPosts.map((post) => (
           <li key={post.id}>
             <PostCard post={post} showTags />

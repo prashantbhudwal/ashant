@@ -44,7 +44,7 @@ function RouteComponent() {
   }
 
   return (
-    <div className="md:w-content-narrow lg:w-content-default mx-auto w-full px-4 py-12">
+    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <PromptDetail prompt={prompt} />
     </div>
   )

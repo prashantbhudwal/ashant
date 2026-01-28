@@ -18,7 +18,7 @@ export function PostCard({
     <Link
       to="/blog/$slug"
       params={{ slug: post.slug }}
-      className="group block py-5 sm:py-6"
+      className="group block py-3 sm:py-4"
     >
       <div className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
