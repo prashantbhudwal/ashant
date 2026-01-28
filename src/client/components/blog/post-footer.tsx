@@ -16,7 +16,6 @@ export const PostFooter = ({
   const whatsAppText = `\n\nRead "${title}" by ${C.firstName}\n${postUrl}`
   return (
     <>
-      <SupportMe />
       <div className="font-sm mt-8 flex flex-col space-y-2 space-x-4 text-center text-neutral-600 md:flex-row dark:text-neutral-300">
         <Link
           to={
