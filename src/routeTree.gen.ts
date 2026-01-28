@@ -10,12 +10,12 @@
 
 import { Route as rootRouteImport } from './app/__root'
 import { Route as StoryRouteImport } from './app/story'
-import { Route as SpacesRouteImport } from './app/spaces'
 import { Route as PromptsRouteImport } from './app/prompts'
+import { Route as ProgramsRouteImport } from './app/programs'
 import { Route as PostsRouteImport } from './app/posts'
 import { Route as IndexRouteImport } from './app/index'
-import { Route as SpacesIndexRouteImport } from './app/spaces.index'
-import { Route as SpacesSlugRouteImport } from './app/spaces.$slug'
+import { Route as ProgramsIndexRouteImport } from './app/programs.index'
+import { Route as ProgramsSlugRouteImport } from './app/programs.$slug'
 import { Route as BlogSlugRouteImport } from './app/blog.$slug'
 import { Route as ApiSitemapDotxmlRouteImport } from './app/api.sitemap[.]xml'
 import { Route as ApiFeedDotxmlRouteImport } from './app/api.feed[.]xml'
@@ -26,14 +26,14 @@ const StoryRoute = StoryRouteImport.update({
   path: '/story',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SpacesRoute = SpacesRouteImport.update({
-  id: '/spaces',
-  path: '/spaces',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PromptsRoute = PromptsRouteImport.update({
   id: '/prompts',
   path: '/prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PostsRoute = PostsRouteImport.update({
@@ -46,15 +46,15 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SpacesIndexRoute = SpacesIndexRouteImport.update({
+const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => SpacesRoute,
+  getParentRoute: () => ProgramsRoute,
 } as any)
-const SpacesSlugRoute = SpacesSlugRouteImport.update({
+const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => SpacesRoute,
+  getParentRoute: () => ProgramsRoute,
 } as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
   id: '/blog/$slug',
@@ -80,14 +80,14 @@ const ApiTrpcSplatRoute = ApiTrpcSplatRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/posts': typeof PostsRoute
+  '/programs': typeof ProgramsRouteWithChildren
   '/prompts': typeof PromptsRoute
-  '/spaces': typeof SpacesRouteWithChildren
   '/story': typeof StoryRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/spaces/$slug': typeof SpacesSlugRoute
-  '/spaces/': typeof SpacesIndexRoute
+  '/programs/$slug': typeof ProgramsSlugRoute
+  '/programs/': typeof ProgramsIndexRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRoutesByTo {
@@ -98,22 +98,22 @@ export interface FileRoutesByTo {
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/spaces/$slug': typeof SpacesSlugRoute
-  '/spaces': typeof SpacesIndexRoute
+  '/programs/$slug': typeof ProgramsSlugRoute
+  '/programs': typeof ProgramsIndexRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/posts': typeof PostsRoute
+  '/programs': typeof ProgramsRouteWithChildren
   '/prompts': typeof PromptsRoute
-  '/spaces': typeof SpacesRouteWithChildren
   '/story': typeof StoryRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
-  '/spaces/$slug': typeof SpacesSlugRoute
-  '/spaces/': typeof SpacesIndexRoute
+  '/programs/$slug': typeof ProgramsSlugRoute
+  '/programs/': typeof ProgramsIndexRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRouteTypes {
@@ -121,14 +121,14 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/posts'
+    | '/programs'
     | '/prompts'
-    | '/spaces'
     | '/story'
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
-    | '/spaces/$slug'
-    | '/spaces/'
+    | '/programs/$slug'
+    | '/programs/'
     | '/api/trpc/$'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -139,29 +139,29 @@ export interface FileRouteTypes {
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
-    | '/spaces/$slug'
-    | '/spaces'
+    | '/programs/$slug'
+    | '/programs'
     | '/api/trpc/$'
   id:
     | '__root__'
     | '/'
     | '/posts'
+    | '/programs'
     | '/prompts'
-    | '/spaces'
     | '/story'
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
-    | '/spaces/$slug'
-    | '/spaces/'
+    | '/programs/$slug'
+    | '/programs/'
     | '/api/trpc/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PostsRoute: typeof PostsRoute
+  ProgramsRoute: typeof ProgramsRouteWithChildren
   PromptsRoute: typeof PromptsRoute
-  SpacesRoute: typeof SpacesRouteWithChildren
   StoryRoute: typeof StoryRoute
   ApiFeedDotxmlRoute: typeof ApiFeedDotxmlRoute
   ApiSitemapDotxmlRoute: typeof ApiSitemapDotxmlRoute
@@ -178,18 +178,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StoryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/spaces': {
-      id: '/spaces'
-      path: '/spaces'
-      fullPath: '/spaces'
-      preLoaderRoute: typeof SpacesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/prompts': {
       id: '/prompts'
       path: '/prompts'
       fullPath: '/prompts'
       preLoaderRoute: typeof PromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/posts': {
@@ -206,19 +206,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/spaces/': {
-      id: '/spaces/'
+    '/programs/': {
+      id: '/programs/'
       path: '/'
-      fullPath: '/spaces/'
-      preLoaderRoute: typeof SpacesIndexRouteImport
-      parentRoute: typeof SpacesRoute
+      fullPath: '/programs/'
+      preLoaderRoute: typeof ProgramsIndexRouteImport
+      parentRoute: typeof ProgramsRoute
     }
-    '/spaces/$slug': {
-      id: '/spaces/$slug'
+    '/programs/$slug': {
+      id: '/programs/$slug'
       path: '/$slug'
-      fullPath: '/spaces/$slug'
-      preLoaderRoute: typeof SpacesSlugRouteImport
-      parentRoute: typeof SpacesRoute
+      fullPath: '/programs/$slug'
+      preLoaderRoute: typeof ProgramsSlugRouteImport
+      parentRoute: typeof ProgramsRoute
     }
     '/blog/$slug': {
       id: '/blog/$slug'
@@ -251,24 +251,25 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface SpacesRouteChildren {
-  SpacesSlugRoute: typeof SpacesSlugRoute
-  SpacesIndexRoute: typeof SpacesIndexRoute
+interface ProgramsRouteChildren {
+  ProgramsSlugRoute: typeof ProgramsSlugRoute
+  ProgramsIndexRoute: typeof ProgramsIndexRoute
 }
 
-const SpacesRouteChildren: SpacesRouteChildren = {
-  SpacesSlugRoute: SpacesSlugRoute,
-  SpacesIndexRoute: SpacesIndexRoute,
+const ProgramsRouteChildren: ProgramsRouteChildren = {
+  ProgramsSlugRoute: ProgramsSlugRoute,
+  ProgramsIndexRoute: ProgramsIndexRoute,
 }
 
-const SpacesRouteWithChildren =
-  SpacesRoute._addFileChildren(SpacesRouteChildren)
+const ProgramsRouteWithChildren = ProgramsRoute._addFileChildren(
+  ProgramsRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PostsRoute: PostsRoute,
+  ProgramsRoute: ProgramsRouteWithChildren,
   PromptsRoute: PromptsRoute,
-  SpacesRoute: SpacesRouteWithChildren,
   StoryRoute: StoryRoute,
   ApiFeedDotxmlRoute: ApiFeedDotxmlRoute,
   ApiSitemapDotxmlRoute: ApiSitemapDotxmlRoute,

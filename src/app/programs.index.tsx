@@ -1,36 +1,37 @@
 import { createFileRoute, Link } from '@tanstack/react-router'
-import { spaces } from '~/client/components/spaces/spaces'
-import { SpaceCard } from '~/client/components/spaces/space-card'
+import { programs } from '~/client/components/programs/programs'
+import { ProgramCard } from '~/client/components/programs/program-card'
 import { seo } from '~/client/lib/utils/seo'
 import { C } from '~/common/constants'
 
-export const Route = createFileRoute('/spaces/')({
+export const Route = createFileRoute('/programs/')({
   head: () => {
-    const canonicalUrl = `${C.url}/spaces`
+    const canonicalUrl = `${C.url}/programs`
     const jsonLd = {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      name: 'Tools',
+      name: 'Programs',
       description:
-        'Interactive tools for text processing, health, and AI tasks.',
+        'Interactive programs for text processing, health, and AI tasks.',
       url: canonicalUrl,
       mainEntity: {
         '@type': 'ItemList',
-        itemListElement: spaces.map((space, index) => ({
+        itemListElement: programs.map((program, index) => ({
           '@type': 'ListItem',
           position: index + 1,
-          name: space.title,
-          url: `${C.url}/spaces/${space.slug}`,
+          name: program.title,
+          url: `${C.url}/programs/${program.slug}`,
         })),
       },
     }
     return {
       meta: seo({
-        title: 'Tools | prashant',
+        title: 'Programs | prashant',
         description:
-          'Interactive tools for text processing, health, and AI tasks.',
+          'Interactive programs for text processing, health, and AI tasks.',
         image: `${C.url}/og-ashant.png`,
-        keywords: 'tools, text chunker, text similarity, sweetener comparison',
+        keywords:
+          'programs, text chunker, text similarity, sweetener comparison',
         url: canonicalUrl,
       }),
       links: [{ rel: 'canonical', href: canonicalUrl }],
@@ -49,15 +50,15 @@ function RouteComponent() {
   return (
     <div className="md:w-content-narrow lg:w-content-default mx-auto w-full px-4 py-12">
       <h1 className="text-muted-foreground mb-8 text-sm font-medium tracking-widest uppercase">
-        Tools
+        Programs
       </h1>
       <p className="text-muted-foreground mb-12 text-lg leading-relaxed">
-        Spaces are focused tools designed to solve specific problems I encounter
-        regularly.
+        Programs are focused tools designed to solve specific problems I
+        encounter regularly.
       </p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {spaces.map((space) => (
-          <SpaceCard key={space.id} space={space} />
+        {programs.map((program) => (
+          <ProgramCard key={program.id} program={program} />
         ))}
       </div>
     </div>

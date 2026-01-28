@@ -2,23 +2,23 @@ import { cache } from 'react'
 import type { TContent, ContentType } from '~/common/types/content.types'
 import { getAllPosts } from '~/server/modules/post/get-all-posts'
 import { getAllPrompts } from '~/server/modules/prompt/get-all-prompts'
-import { spaces } from '~/client/components/spaces/spaces'
+import { programs } from '~/client/components/programs/programs'
 
 /**
- * Fetches all content (posts, spaces, prompts) and returns a unified array.
+ * Fetches all content (posts, programs, prompts) and returns a unified array.
  * Sorted by createdAt descending.
  */
 export const getAllContent = cache(async (): Promise<TContent[]> => {
   const [posts, prompts] = await Promise.all([getAllPosts(), getAllPrompts()])
 
-  // Spaces are defined statically, not async
-  const allSpaces = spaces.map((space) => ({
-    ...space,
+  // Programs are defined statically, not async
+  const allPrograms = programs.map((program) => ({
+    ...program,
     // Omit Component for serialization
     Component: undefined,
   })) as unknown as TContent[]
 
-  const allContent: TContent[] = [...posts, ...allSpaces, ...prompts]
+  const allContent: TContent[] = [...posts, ...allPrograms, ...prompts]
 
   // Sort by createdAt descending
   allContent.sort(

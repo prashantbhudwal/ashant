@@ -19,7 +19,7 @@ const menuItems: MenuItem[] = [
     isActive: false,
   },
   {
-    label: 'tools',
+    label: 'programs',
     route: '',
     isActive: false,
   },

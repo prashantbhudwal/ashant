@@ -1,5 +1,5 @@
 import { SweetenerTable } from './sweetener-table'
-import { SpaceLayout } from '../space-layout'
+import { ProgramLayout } from '../program-layout'
 import type { TSpace } from '~/common/types/content.types'
 
 interface SweetenerSpaceProps {
@@ -8,13 +8,13 @@ interface SweetenerSpaceProps {
 
 export function SweetenerSpace({ config }: SweetenerSpaceProps) {
   return (
-    <SpaceLayout
+    <ProgramLayout
       title="Sweeteners"
       description="Compare sweeteners by glycemic index, sweetness, and more."
       layoutWidth={config?.layoutWidth}
       supportsMobile={config?.supportsMobile}
     >
       <SweetenerTable />
-    </SpaceLayout>
+    </ProgramLayout>
   )
 }

@@ -4,9 +4,9 @@ import { useLocation, useNavigate } from '@tanstack/react-router'
 import { cn } from '~/client/lib/utils'
 
 const items = [
-  { name: 'Posts', path: '/posts', hash: 'posts' },
-  { name: 'Prompts', path: '/prompts', hash: 'prompts' },
-  { name: 'Tools', path: '/spaces', hash: 'tools' }, // Pointing to /spaces as requested
+  { name: 'posts', path: '/posts', hash: 'posts' },
+  { name: 'prompts', path: '/prompts', hash: 'prompts' },
+  { name: 'programs', path: '/programs', hash: 'programs' },
 ]
 
 export function NavLinks({ className }: { className?: string }) {
@@ -59,7 +59,7 @@ export function NavLinks({ className }: { className?: string }) {
         onClick={() => handleNavigation('/story', 'story')}
         className="text-muted-foreground hover:text-foreground transition-colors"
       >
-        Story
+        story
       </button>
     </div>
   )

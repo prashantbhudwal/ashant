@@ -3,7 +3,7 @@ import { SimilaritySpace } from './similarity'
 import { SweetenerSpace } from './sweetener'
 import { ChunkerSpace } from './chunker'
 
-export const spaces: TSpace[] = [
+export const programs: TSpace[] = [
   {
     id: 'c335bd7f-cf8e-4e4e-9b04-6a6d1b36e7bb',
     slug: 'sweetener-comparison',
@@ -53,5 +53,5 @@ export const spaces: TSpace[] = [
   },
 ]
 
-export const getSpaceBySlug = ({ slug }: { slug: string }) =>
-  spaces.find((space) => space.slug === slug)
+export const getProgramBySlug = ({ slug }: { slug: string }) =>
+  programs.find((program) => program.slug === slug)

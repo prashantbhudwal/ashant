@@ -16,7 +16,7 @@ import {
 } from '~/client/components/ui/form'
 import { useServerFn } from '@tanstack/react-start'
 import { embedAndCompareProd, InputSchema } from './compare.server'
-import { SpaceLayout } from '../space-layout'
+import { ProgramLayout } from '../program-layout'
 import { cn } from '~/client/lib/utils'
 import type { TSpace } from '~/common/types/content.types'
 
@@ -26,14 +26,14 @@ interface SimilaritySpaceProps {
 
 export function SimilaritySpace({ config }: SimilaritySpaceProps) {
   return (
-    <SpaceLayout
+    <ProgramLayout
       title="Similarity"
       description="Find similarity between two texts using OpenAI embeddings."
       layoutWidth={config?.layoutWidth}
       supportsMobile={config?.supportsMobile}
     >
       <SimilarityForm />
-    </SpaceLayout>
+    </ProgramLayout>
   )
 }
 

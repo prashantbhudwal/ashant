@@ -10,7 +10,7 @@ const widthClasses: Record<LayoutWidth, string> = {
   full: 'w-full lg:w-content-full',
 }
 
-interface SpaceLayoutProps {
+interface ProgramLayoutProps {
   title: string
   description: string
   layoutWidth?: LayoutWidth
@@ -34,13 +34,13 @@ function MobileFallback({ title }: { title: string }) {
   )
 }
 
-export function SpaceLayout({
+export function ProgramLayout({
   title,
   description,
   layoutWidth = 'default',
   supportsMobile = true,
   children,
-}: SpaceLayoutProps) {
+}: ProgramLayoutProps) {
   return (
     <div className={cn('mx-auto w-full px-4 py-12', widthClasses[layoutWidth])}>
       <div className="mb-12">

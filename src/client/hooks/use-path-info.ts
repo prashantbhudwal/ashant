@@ -1,26 +1,26 @@
 import { useLocation } from '@tanstack/react-router'
 import { useMemo } from 'react'
-import { useSpaceInfo } from '~/client/components/spaces/use-space-info'
+import { useProgramInfo } from '~/client/components/programs/use-program-info'
 
 type TPathInfo = {
   segments: string[]
   segment: string | null
   isRoot: boolean
   isBlog: boolean
-  isSpace: boolean
+  isProgram: boolean
   backLink: string
   showSiteName: boolean
-  spaceInfo: ReturnType<typeof useSpaceInfo> | null
+  programInfo: ReturnType<typeof useProgramInfo> | null
 }
 
-const getBackLink = (pathname: string, isSpace: boolean): string => {
-  if (isSpace) return '/spaces'
+const getBackLink = (pathname: string, isProgram: boolean): string => {
+  if (isProgram) return '/programs'
 
   const backLinkMap: Record<string, string> = {
     '/': '/',
     '/blog': '/',
-    '/spaces': '/',
-    '/spaces/$slug': '/spaces',
+    '/programs': '/',
+    '/programs/$slug': '/programs',
   }
 
   return backLinkMap[pathname] ?? '/'
@@ -32,27 +32,27 @@ export function usePathInfo(): TPathInfo {
     structuralSharing: true,
   })
 
-  const spaceInfoData = useSpaceInfo()
+  const programInfoData = useProgramInfo()
 
   return useMemo(() => {
     const segments = pathname.split('/').filter(Boolean)
     const lastSegment = segments[segments.length - 1] ?? null
     const isRoot = lastSegment === null
     const isBlog = segments.includes('blog')
-    const isSpace = segments.includes('spaces') && segments.length > 1
-    const backLink = getBackLink(pathname, isSpace)
+    const isProgram = segments.includes('programs') && segments.length > 1
+    const backLink = getBackLink(pathname, isProgram)
     const showSiteName = isRoot || isBlog
-    const spaceInfo = isSpace ? spaceInfoData : null
+    const programInfo = isProgram ? programInfoData : null
 
     return {
       segments,
       segment: lastSegment,
       isRoot,
       isBlog,
-      isSpace,
+      isProgram,
       backLink,
       showSiteName,
-      spaceInfo,
+      programInfo,
     }
-  }, [pathname, spaceInfoData])
+  }, [pathname, programInfoData])
 }

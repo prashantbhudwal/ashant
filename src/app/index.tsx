@@ -11,7 +11,7 @@ import {
 } from '~/common/types/content.types'
 import { getAllContentServerFn } from '../server/content.server'
 import { PostsSection } from '~/client/components/home/posts-section'
-import { ToolsSection } from '~/client/components/home/tools-section'
+import { ProgramsSection } from '~/client/components/home/programs-section'
 import { PromptsSection } from '~/client/components/home/prompts-section'
 import { StorySection } from '~/client/components/home/story-section'
 
@@ -65,7 +65,7 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
   const posts = content.filter(
     (item): item is TPost => item.type === ContentType.POST,
   )
-  const spaces = content.filter(
+  const programs = content.filter(
     (item): item is TSerializableSpace => item.type === ContentType.SPACE,
   )
   const prompts = content.filter(
@@ -77,7 +77,7 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
       <div className="mt-8 space-y-16 sm:mt-12 sm:space-y-24">
         <PostsSection posts={posts} />
         {prompts.length > 0 && <PromptsSection prompts={prompts} />}
-        {spaces.length > 0 && <ToolsSection spaces={spaces} />}
+        {programs.length > 0 && <ProgramsSection programs={programs} />}
         <StorySection />
       </div>
     </div>

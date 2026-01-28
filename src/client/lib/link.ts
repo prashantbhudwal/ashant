@@ -10,16 +10,16 @@ const authorProfile = {
 export const link = {
   path: {
     post: ({ slug }: { slug: string }) => `/blog/${slug}`,
-    space: ({ slug }: { slug: string }) => `/spaces/${slug}`,
+    program: ({ slug }: { slug: string }) => `/programs/${slug}`,
     images: {
-      spaces: ({ imgName }: { imgName: string }) => `/spaces/${imgName}`,
+      programs: ({ imgName }: { imgName: string }) => `/programs/${imgName}`,
       blog: ({ imgName }: { imgName: string }) => `/blog/${imgName}.webp`,
     },
   },
   url: {
     internal: {
       post: ({ slug }: { slug: string }) => C.base + '/blog/' + slug,
-      space: ({ slug }: { slug: string }) => C.base + '/spaces/' + slug,
+      program: ({ slug }: { slug: string }) => C.base + '/programs/' + slug,
     },
     external: {
       authorProfile,

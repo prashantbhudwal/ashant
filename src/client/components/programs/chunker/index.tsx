@@ -19,7 +19,7 @@ import { MDocument } from '@mastra/rag'
 import { createServerFn } from '@tanstack/react-start'
 import { cn } from '~/client/lib/utils'
 import { ScrollArea } from '../../ui/scroll-area'
-import { SpaceLayout } from '../space-layout'
+import { ProgramLayout } from '../program-layout'
 import type { TSpace } from '~/common/types/content.types'
 
 interface ChunkerSpaceProps {
@@ -28,14 +28,14 @@ interface ChunkerSpaceProps {
 
 export const ChunkerSpace = ({ config }: ChunkerSpaceProps) => {
   return (
-    <SpaceLayout
+    <ProgramLayout
       title="Chunker"
       description="Split text into easily digestible chunks for LLMs."
       layoutWidth={config?.layoutWidth}
       supportsMobile={config?.supportsMobile}
     >
       <Chunker />
-    </SpaceLayout>
+    </ProgramLayout>
   )
 }
 

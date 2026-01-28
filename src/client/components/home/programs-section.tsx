@@ -1,34 +1,34 @@
 import { Link } from '@tanstack/react-router'
 import { type TSerializableSpace } from '~/common/types/content.types'
 import { ArrowRight } from 'lucide-react'
-import { SpaceCard } from '~/client/components/spaces/space-card'
+import { ProgramCard } from '~/client/components/programs/program-card'
 import { Skeleton } from '~/client/components/ui/skeleton'
 
 const PREVIEW_LIMIT = 5
 
-type ToolsSectionProps = {
-  spaces: TSerializableSpace[]
+type ProgramsSectionProps = {
+  programs: TSerializableSpace[]
   className?: string
 }
 
-export function ToolsSection({ spaces, className }: ToolsSectionProps) {
-  const displaySpaces = spaces.slice(0, PREVIEW_LIMIT)
-  const remainingCount = spaces.length - PREVIEW_LIMIT
+export function ProgramsSection({ programs, className }: ProgramsSectionProps) {
+  const displayPrograms = programs.slice(0, PREVIEW_LIMIT)
+  const remainingCount = programs.length - PREVIEW_LIMIT
 
   return (
-    <section id="tools" className={className}>
+    <section id="programs" className={className}>
       <h2 className="text-muted-foreground mb-6 text-sm font-medium tracking-widest uppercase sm:mb-8">
-        Tools
+        Programs
       </h2>
       <div className="mb-6 grid grid-cols-1 gap-3 sm:mb-8 sm:grid-cols-2 sm:gap-4">
-        {displaySpaces.map((space) => (
-          <SpaceCard key={space.id} space={space} />
+        {displayPrograms.map((program) => (
+          <ProgramCard key={program.id} program={program} />
         ))}
       </div>
 
       {remainingCount > 0 && (
         <Link
-          to="/spaces"
+          to="/programs"
           className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm font-medium transition-colors"
         >
           {remainingCount} more <ArrowRight className="h-3 w-3" />
@@ -38,7 +38,7 @@ export function ToolsSection({ spaces, className }: ToolsSectionProps) {
   )
 }
 
-function ToolsLoadingSkeleton() {
+function ProgramsLoadingSkeleton() {
   return (
     <>
       {Array.from({ length: 4 }).map((_, i) => (
