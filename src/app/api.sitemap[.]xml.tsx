@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { allPosts } from 'content-collections'
+import { allPosts, allPrompts } from 'content-collections'
 import { programs } from '~/client/components/programs/programs'
 import { C } from '~/common/constants'
 
@@ -36,6 +36,14 @@ export const Route = createFileRoute('/api/sitemap.xml')({
           changefreq: 'monthly',
         }))
 
+        // Prompts
+        const promptPages = allPrompts.map((prompt) => ({
+          loc: `${baseUrl}/prompts/${prompt.slug}`,
+          lastmod: prompt.updatedAt ?? prompt.createdAt,
+          priority: '0.6',
+          changefreq: 'monthly',
+        }))
+
         type SitemapPage = {
           loc: string
           lastmod?: string | Date // Allow Date or string
@@ -47,6 +55,7 @@ export const Route = createFileRoute('/api/sitemap.xml')({
           ...staticPages,
           ...blogPages,
           ...programPages,
+          ...promptPages,
         ]
 
         const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

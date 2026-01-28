@@ -14,7 +14,9 @@ import { Route as PromptsRouteImport } from './app/prompts'
 import { Route as ProgramsRouteImport } from './app/programs'
 import { Route as PostsRouteImport } from './app/posts'
 import { Route as IndexRouteImport } from './app/index'
+import { Route as PromptsIndexRouteImport } from './app/prompts.index'
 import { Route as ProgramsIndexRouteImport } from './app/programs.index'
+import { Route as PromptsSlugRouteImport } from './app/prompts.$slug'
 import { Route as ProgramsSlugRouteImport } from './app/programs.$slug'
 import { Route as BlogSlugRouteImport } from './app/blog.$slug'
 import { Route as ApiSitemapDotxmlRouteImport } from './app/api.sitemap[.]xml'
@@ -46,10 +48,20 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PromptsIndexRoute = PromptsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => PromptsRoute,
+} as any)
 const ProgramsIndexRoute = ProgramsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => ProgramsRoute,
+} as any)
+const PromptsSlugRoute = PromptsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => PromptsRoute,
 } as any)
 const ProgramsSlugRoute = ProgramsSlugRouteImport.update({
   id: '/$slug',
@@ -81,25 +93,28 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/posts': typeof PostsRoute
   '/programs': typeof ProgramsRouteWithChildren
-  '/prompts': typeof PromptsRoute
+  '/prompts': typeof PromptsRouteWithChildren
   '/story': typeof StoryRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
+  '/prompts/$slug': typeof PromptsSlugRoute
   '/programs/': typeof ProgramsIndexRoute
+  '/prompts/': typeof PromptsIndexRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/posts': typeof PostsRoute
-  '/prompts': typeof PromptsRoute
   '/story': typeof StoryRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
+  '/prompts/$slug': typeof PromptsSlugRoute
   '/programs': typeof ProgramsIndexRoute
+  '/prompts': typeof PromptsIndexRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRoutesById {
@@ -107,13 +122,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/posts': typeof PostsRoute
   '/programs': typeof ProgramsRouteWithChildren
-  '/prompts': typeof PromptsRoute
+  '/prompts': typeof PromptsRouteWithChildren
   '/story': typeof StoryRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/programs/$slug': typeof ProgramsSlugRoute
+  '/prompts/$slug': typeof PromptsSlugRoute
   '/programs/': typeof ProgramsIndexRoute
+  '/prompts/': typeof PromptsIndexRoute
   '/api/trpc/$': typeof ApiTrpcSplatRoute
 }
 export interface FileRouteTypes {
@@ -128,19 +145,22 @@ export interface FileRouteTypes {
     | '/api/sitemap.xml'
     | '/blog/$slug'
     | '/programs/$slug'
+    | '/prompts/$slug'
     | '/programs/'
+    | '/prompts/'
     | '/api/trpc/$'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/posts'
-    | '/prompts'
     | '/story'
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
     | '/programs/$slug'
+    | '/prompts/$slug'
     | '/programs'
+    | '/prompts'
     | '/api/trpc/$'
   id:
     | '__root__'
@@ -153,7 +173,9 @@ export interface FileRouteTypes {
     | '/api/sitemap.xml'
     | '/blog/$slug'
     | '/programs/$slug'
+    | '/prompts/$slug'
     | '/programs/'
+    | '/prompts/'
     | '/api/trpc/$'
   fileRoutesById: FileRoutesById
 }
@@ -161,7 +183,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PostsRoute: typeof PostsRoute
   ProgramsRoute: typeof ProgramsRouteWithChildren
-  PromptsRoute: typeof PromptsRoute
+  PromptsRoute: typeof PromptsRouteWithChildren
   StoryRoute: typeof StoryRoute
   ApiFeedDotxmlRoute: typeof ApiFeedDotxmlRoute
   ApiSitemapDotxmlRoute: typeof ApiSitemapDotxmlRoute
@@ -206,12 +228,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/prompts/': {
+      id: '/prompts/'
+      path: '/'
+      fullPath: '/prompts/'
+      preLoaderRoute: typeof PromptsIndexRouteImport
+      parentRoute: typeof PromptsRoute
+    }
     '/programs/': {
       id: '/programs/'
       path: '/'
       fullPath: '/programs/'
       preLoaderRoute: typeof ProgramsIndexRouteImport
       parentRoute: typeof ProgramsRoute
+    }
+    '/prompts/$slug': {
+      id: '/prompts/$slug'
+      path: '/$slug'
+      fullPath: '/prompts/$slug'
+      preLoaderRoute: typeof PromptsSlugRouteImport
+      parentRoute: typeof PromptsRoute
     }
     '/programs/$slug': {
       id: '/programs/$slug'
@@ -265,11 +301,24 @@ const ProgramsRouteWithChildren = ProgramsRoute._addFileChildren(
   ProgramsRouteChildren,
 )
 
+interface PromptsRouteChildren {
+  PromptsSlugRoute: typeof PromptsSlugRoute
+  PromptsIndexRoute: typeof PromptsIndexRoute
+}
+
+const PromptsRouteChildren: PromptsRouteChildren = {
+  PromptsSlugRoute: PromptsSlugRoute,
+  PromptsIndexRoute: PromptsIndexRoute,
+}
+
+const PromptsRouteWithChildren =
+  PromptsRoute._addFileChildren(PromptsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PostsRoute: PostsRoute,
   ProgramsRoute: ProgramsRouteWithChildren,
-  PromptsRoute: PromptsRoute,
+  PromptsRoute: PromptsRouteWithChildren,
   StoryRoute: StoryRoute,
   ApiFeedDotxmlRoute: ApiFeedDotxmlRoute,
   ApiSitemapDotxmlRoute: ApiSitemapDotxmlRoute,
