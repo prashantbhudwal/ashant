@@ -1,13 +1,13 @@
 ---
 title: ChatGPT - How does it work!
 published: true
-createdAt: "2024-04-20"
-updatedAt: "2024-04-20"
+createdAt: '2024-04-20'
+updatedAt: '2024-04-20'
 id: a6987069-dc46-4442-b67c-8e20e95dd0d4
 shortTitle: ChatGPT - How does it work!
-heroImage: ""
+heroImage: ''
 description: 'A demystification of Large Language Models—explaining why AIs are essentially "autocomplete on steroids" and what that means for their reliability.'
-tags: ["ai", "software"]
+tags: ['ai', 'software']
 slug: chat-gpt
 ---
 

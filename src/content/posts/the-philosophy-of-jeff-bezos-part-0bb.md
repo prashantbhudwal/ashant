@@ -1,13 +1,13 @@
 ---
 title: The Philosophy of Jeff Bezos | Part 2
 published: true
-createdAt: "2021-05-07"
-updatedAt: "2021-05-07"
+createdAt: '2021-05-07'
+updatedAt: '2021-05-07'
 id: c6b97f5a-6668-4774-9408-73aa9d19bd13
 shortTitle: The Philosophy of Jeff Bezos | Part 2
-heroImage: ""
-description: "Part 2 of the Amazon series: Mapping the 2001-2005 letters on the economics of scale, the price-cost loop, and data-driven decision making."
-tags: ["business", "startups", "economics"]
+heroImage: ''
+description: 'Part 2 of the Amazon series: Mapping the 2001-2005 letters on the economics of scale, the price-cost loop, and data-driven decision making.'
+tags: ['business', 'startups', 'economics']
 slug: the-philosophy-of-jeff-bezos-part-0bb
 ---
 

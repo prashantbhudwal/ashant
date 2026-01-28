@@ -1,4 +1,4 @@
-import { Skeleton } from "~/client/components/ui/skeleton";
+import { Skeleton } from '~/client/components/ui/skeleton'
 
 export function HomePending() {
   return (
@@ -59,5 +59,5 @@ export function HomePending() {
         </section>
       </div>
     </div>
-  );
+  )
 }

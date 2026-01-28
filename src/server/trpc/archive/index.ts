@@ -1,6 +1,6 @@
-import "server-only";
+import 'server-only'
 
-import { createTRPCContext } from "./init";
-import { appRouter } from "./_app.router";
+import { createTRPCContext } from './init'
+import { appRouter } from './_app.router'
 
-export const trpc = appRouter.createCaller(createTRPCContext);
+export const trpc = appRouter.createCaller(createTRPCContext)

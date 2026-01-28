@@ -1,20 +1,20 @@
-import { Button } from "~/client/components/ui/button";
+import { Button } from '~/client/components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
-} from "~/client/components/ui/card";
-import dedent from "dedent";
-import { Link } from "@tanstack/react-router";
-import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import { link } from "~/client/lib/link";
-import { useAtomValue } from "jotai";
-import { resolutionAtom } from "./resolution-atom";
-import { Markdown } from "../blog/mdx/md.client";
+} from '~/client/components/ui/card'
+import dedent from 'dedent'
+import { Link } from '@tanstack/react-router'
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { link } from '~/client/lib/link'
+import { useAtomValue } from 'jotai'
+import { resolutionAtom } from './resolution-atom'
+import { Markdown } from '../blog/mdx/md.client'
 export function SummaryCard() {
-  const resolution = useAtomValue<number>(resolutionAtom);
+  const resolution = useAtomValue<number>(resolutionAtom)
   return (
     <Card className="">
       <CardHeader>
@@ -43,7 +43,7 @@ export function SummaryCard() {
         />
         <div className="flex flex-row space-x-2 py-6">
           <Link to={link.url.external.authorProfile.linkedIn} target="_blank">
-            <Button variant={"secondary"}>
+            <Button variant={'secondary'}>
               <span>
                 <FaLinkedin />
               </span>
@@ -51,7 +51,7 @@ export function SummaryCard() {
             </Button>
           </Link>
           <Link to={link.url.external.authorProfile.x} target="_blank">
-            <Button variant={"secondary"}>
+            <Button variant={'secondary'}>
               <span>
                 <FaXTwitter />
               </span>
@@ -59,7 +59,7 @@ export function SummaryCard() {
             </Button>
           </Link>
           <Link to={link.url.external.authorProfile.github} target="_blank">
-            <Button variant={"secondary"}>
+            <Button variant={'secondary'}>
               <span>
                 <FaGithub />
               </span>
@@ -76,5 +76,5 @@ export function SummaryCard() {
         />
       </CardContent>
     </Card>
-  );
+  )
 }

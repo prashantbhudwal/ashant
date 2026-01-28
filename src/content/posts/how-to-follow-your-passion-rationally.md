@@ -1,13 +1,13 @@
 ---
-title: "How to follow your passion, rationally?"
+title: 'How to follow your passion, rationally?'
 published: true
-createdAt: "2022-07-20"
-updatedAt: "2022-07-20"
+createdAt: '2022-07-20'
+updatedAt: '2022-07-20'
 id: 32db1d1c-5700-4869-99f0-eb8ed427661f
-shortTitle: "How to follow your passion, rationally?"
-heroImage: ""
+shortTitle: 'How to follow your passion, rationally?'
+heroImage: ''
 description: 'A rational deconstruction of the "follow your passion" myth, exploring the hard work, habits, and risks that passion alone cannot solve.'
-tags: ["philosophy", "personal", "learning"]
+tags: ['philosophy', 'personal', 'learning']
 slug: how-to-follow-your-passion-rationally
 ---
 

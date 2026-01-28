@@ -1,13 +1,13 @@
 ---
 title: We collect links like stamps. But why?
 published: true
-createdAt: "2022-10-21"
-updatedAt: "2022-10-21"
+createdAt: '2022-10-21'
+updatedAt: '2022-10-21'
 id: 1a8d69ee-d1e7-40c1-910c-7fe7f9a5878b
 shortTitle: We collect links like stamps. But why?
-heroImage: ""
-description: "A critique of digital hoarding and a framework for judging the value of links based on findability, usefulness, and time-sensitivity."
-tags: ["reading", "learning", "philosophy"]
+heroImage: ''
+description: 'A critique of digital hoarding and a framework for judging the value of links based on findability, usefulness, and time-sensitivity.'
+tags: ['reading', 'learning', 'philosophy']
 slug: we-collect-links-like-stamps-but
 ---
 

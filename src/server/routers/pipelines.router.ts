@@ -1,14 +1,14 @@
-import { baseProcedure, createTRPCRouter } from "../trpc/archive/init";
+import { baseProcedure, createTRPCRouter } from '../trpc/archive/init'
 import {
   runPostChunkEmbeddingPipeline,
   runPostEmbeddingPipeline,
-} from "../modules/vector/pipelines";
+} from '../modules/vector/pipelines'
 
 export const pipelinesRouter = createTRPCRouter({
   postEmbeddingPipeline: baseProcedure.mutation(async () => {
-    await runPostEmbeddingPipeline();
+    await runPostEmbeddingPipeline()
   }),
   postChunksEmbeddingPipeline: baseProcedure.mutation(async () => {
-    await runPostChunkEmbeddingPipeline();
+    await runPostChunkEmbeddingPipeline()
   }),
-});
+})

@@ -1,13 +1,13 @@
 ---
 title: Avoiding Fake Experts
 published: true
-createdAt: "2022-07-20"
-updatedAt: "2022-07-20"
+createdAt: '2022-07-20'
+updatedAt: '2022-07-20'
 id: edcee021-3ef7-41e8-b297-767fb3e1c36a
 shortTitle: Avoiding Fake Experts
-heroImage: ""
-description: "Using the evolution of MMA as a lens to build better models for spotting real expertise and avoiding the trap of social proof."
-tags: ["philosophy", "learning"]
+heroImage: ''
+description: 'Using the evolution of MMA as a lens to build better models for spotting real expertise and avoiding the trap of social proof.'
+tags: ['philosophy', 'learning']
 slug: avoiding-fake-experts-32d
 ---
 

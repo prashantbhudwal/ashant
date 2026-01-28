@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react'
 
 export function useElementPosition() {
-  const [position, setPosition] = useState({ top: 0 });
-  const [ref, setRef] = useState<HTMLElement | null>(null);
+  const [position, setPosition] = useState({ top: 0 })
+  const [ref, setRef] = useState<HTMLElement | null>(null)
 
   useEffect(() => {
     if (ref) {
-      const rect = ref.getBoundingClientRect();
-      setPosition({ top: rect.top });
+      const rect = ref.getBoundingClientRect()
+      setPosition({ top: rect.top })
     }
-  }, [ref]);
+  }, [ref])
 
-  return [setRef, position] as const;
+  return [setRef, position] as const
 }

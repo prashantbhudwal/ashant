@@ -9,7 +9,7 @@ createdAt: 2025-05-09T00:00:00.000Z
 updatedAt: 2025-05-09T00:00:00.000Z
 id: 0c52687f-99d3-4a6b-ba2f-478efa688a7d
 shortTitle: Poonch Shelling - Day Two
-tags: ["personal", "philosophy"]
+tags: ['personal', 'philosophy']
 slug: poonch-two
 ---
 

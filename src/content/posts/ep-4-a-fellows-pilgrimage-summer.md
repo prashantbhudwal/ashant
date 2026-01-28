@@ -1,13 +1,13 @@
 ---
 title: "Ep 4: A Fellow's Pilgrimage - Summer, Slums, & Startups"
 published: true
-createdAt: "2021-07-19"
-updatedAt: "2021-07-19"
+createdAt: '2021-07-19'
+updatedAt: '2021-07-19'
 id: 5f98b359-dc9e-4835-8093-b774b42ad236
 shortTitle: "Ep 4: A Fellow's Pilgrimage - Summer, Slums, & Startups"
-heroImage: ""
-description: "Part 4: The grueling journey of Teach For India fellows—from summer training in Pune to the frontlines of slum schools and eventually, ed-tech startups."
-tags: ["education", "startups", "personal"]
+heroImage: ''
+description: 'Part 4: The grueling journey of Teach For India fellows—from summer training in Pune to the frontlines of slum schools and eventually, ed-tech startups.'
+tags: ['education', 'startups', 'personal']
 slug: ep-4-a-fellows-pilgrimage-summer
 ---
 

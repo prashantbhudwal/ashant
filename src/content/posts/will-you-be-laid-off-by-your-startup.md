@@ -1,13 +1,13 @@
 ---
 title: Will you be laid off by your startup?
 published: true
-createdAt: "2022-06-30"
-updatedAt: "2022-06-30"
+createdAt: '2022-06-30'
+updatedAt: '2022-06-30'
 id: d46f7309-9708-42b8-ae21-1423d478eadd
 shortTitle: Will you be laid off by your startup?
-heroImage: ""
+heroImage: ''
 description: 'Understanding the mechanics of startup layoffs through the lens of Product-Market Fit and the "comfort heuristic" of growth.'
-tags: ["startups", "business", "economics"]
+tags: ['startups', 'business', 'economics']
 slug: will-you-be-laid-off-by-your-startup
 ---
 

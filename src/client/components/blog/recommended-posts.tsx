@@ -1,32 +1,32 @@
-import { type TPost } from "~/common/types/content.types";
-import { PostCard } from "./post-card";
+import { type TPost } from '~/common/types/content.types'
+import { PostCard } from './post-card'
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "~/client/components/ui/card";
-import { useTRPC } from "~/client/trpc/react";
-import { useQuery } from "@tanstack/react-query";
-import { formatDate } from "~/client/helpers/format-date";
+} from '~/client/components/ui/card'
+import { useTRPC } from '~/client/trpc/react'
+import { useQuery } from '@tanstack/react-query'
+import { formatDate } from '~/client/helpers/format-date'
 
 // TODO refactor the logic, looks like a mess
 export function RecommendedPosts({ currentPostId }: { currentPostId: string }) {
-  const trpc = useTRPC();
+  const trpc = useTRPC()
   const { data: similarPostIds, isLoading } = useQuery(
     trpc.post.getSimilarPosts.queryOptions({ id: currentPostId }),
-  );
+  )
 
   const { data: allPosts, isLoading: allPostsLoading } = useQuery(
     trpc.post.getAll.queryOptions(),
-  );
+  )
 
   if (isLoading || allPostsLoading) {
-    return <RecommendedPostsLoading />;
+    return <RecommendedPostsLoading />
   }
 
   if (!similarPostIds || !allPosts) {
-    return null;
+    return null
   }
 
   return (
@@ -34,21 +34,21 @@ export function RecommendedPosts({ currentPostId }: { currentPostId: string }) {
       similarPostIds={similarPostIds}
       allPosts={allPosts}
     />
-  );
+  )
 }
 
 function RecommendedPostsContent({
   similarPostIds,
   allPosts,
 }: {
-  similarPostIds: string[];
-  allPosts: TPost[];
+  similarPostIds: string[]
+  allPosts: TPost[]
 }) {
   const similarPosts = allPosts.filter((post) =>
     similarPostIds.includes(post.id),
-  );
+  )
 
-  const threeRandomPosts = allPosts.sort(() => Math.random() - 0.5).slice(0, 3);
+  const threeRandomPosts = allPosts.sort(() => Math.random() - 0.5).slice(0, 3)
 
   const postToShow =
     similarPosts.length === 0
@@ -58,14 +58,14 @@ function RecommendedPostsContent({
             ...similarPosts,
             ...threeRandomPosts.slice(0, 3 - similarPosts.length),
           ]
-        : similarPosts;
+        : similarPosts
 
   const postsWithFormattedDate = postToShow.map((post) => {
     return {
       ...post,
       createdAt: formatDate(post.createdAt),
-    };
-  });
+    }
+  })
 
   return (
     <Card className="mb-6 w-full max-w-prose">
@@ -79,13 +79,13 @@ function RecommendedPostsContent({
           {postsWithFormattedDate.map((post) => {
             const isSimilar = similarPosts.some(
               (similarPost) => similarPost.id === post.id,
-            );
-            return <PostCard post={post} key={post.slug} />;
+            )
+            return <PostCard post={post} key={post.slug} />
           })}
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }
 
 function RecommendedPostsLoading() {
@@ -104,5 +104,5 @@ function RecommendedPostsLoading() {
         </div>
       </CardContent>
     </Card>
-  );
+  )
 }

@@ -1,13 +1,13 @@
 ---
-title: "Hungry, Depressed, Broke People for Sale"
+title: 'Hungry, Depressed, Broke People for Sale'
 published: true
-createdAt: "2022-07-07"
-updatedAt: "2022-07-07"
+createdAt: '2022-07-07'
+updatedAt: '2022-07-07'
 id: ec356876-71c6-4ac7-934d-542227c104ad
-shortTitle: "Hungry, Depressed, Broke People for Sale"
-heroImage: ""
+shortTitle: 'Hungry, Depressed, Broke People for Sale'
+heroImage: ''
 description: 'A visceral look at the human cost of the Great Depression—bank failures, "scrips" for wood, and the brutal reality of people for sale.'
-tags: ["economics", "philosophy"]
+tags: ['economics', 'philosophy']
 slug: hungry-depressed-broke-people-for
 ---
 

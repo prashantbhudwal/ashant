@@ -1,21 +1,21 @@
-import { cn } from "~/client/lib/utils";
-import type { TSpace } from "~/common/types/content.types";
+import { cn } from '~/client/lib/utils'
+import type { TSpace } from '~/common/types/content.types'
 
-type LayoutWidth = NonNullable<TSpace["layoutWidth"]>;
+type LayoutWidth = NonNullable<TSpace['layoutWidth']>
 
 const widthClasses: Record<LayoutWidth, string> = {
-  narrow: "w-full md:w-content-narrow lg:w-content-default",
-  default: "w-full md:w-content-default lg:w-content-wide",
-  wide: "w-full md:w-content-wide lg:w-content-full",
-  full: "w-full lg:w-content-full",
-};
+  narrow: 'w-full md:w-content-narrow lg:w-content-default',
+  default: 'w-full md:w-content-default lg:w-content-wide',
+  wide: 'w-full md:w-content-wide lg:w-content-full',
+  full: 'w-full lg:w-content-full',
+}
 
 interface SpaceLayoutProps {
-  title: string;
-  description: string;
-  layoutWidth?: LayoutWidth;
-  supportsMobile?: boolean;
-  children: React.ReactNode;
+  title: string
+  description: string
+  layoutWidth?: LayoutWidth
+  supportsMobile?: boolean
+  children: React.ReactNode
 }
 
 function MobileFallback({ title }: { title: string }) {
@@ -31,18 +31,18 @@ function MobileFallback({ title }: { title: string }) {
         the best experience.
       </p>
     </div>
-  );
+  )
 }
 
 export function SpaceLayout({
   title,
   description,
-  layoutWidth = "default",
+  layoutWidth = 'default',
   supportsMobile = true,
   children,
 }: SpaceLayoutProps) {
   return (
-    <div className={cn("mx-auto w-full px-4 py-12", widthClasses[layoutWidth])}>
+    <div className={cn('mx-auto w-full px-4 py-12', widthClasses[layoutWidth])}>
       <div className="mb-12">
         <h1 className="mb-4 text-3xl font-bold tracking-tight">{title}</h1>
         <p className="text-muted-foreground text-lg">{description}</p>
@@ -62,5 +62,5 @@ export function SpaceLayout({
         </>
       )}
     </div>
-  );
+  )
 }

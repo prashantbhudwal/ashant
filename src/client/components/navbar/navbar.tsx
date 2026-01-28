@@ -1,14 +1,14 @@
-import { cn } from "~/client/lib/utils";
-import { ActionIsland } from "./action-island";
-import { TitleIsland } from "./title-island";
-import { NavLinks } from "./nav-links";
+import { cn } from '~/client/lib/utils'
+import { ActionIsland } from './action-island'
+import { TitleIsland } from './title-island'
+import { NavLinks } from './nav-links'
 
 export function Navbar({ className }: { className?: string }) {
   return (
     <nav
       className={cn(
-        "sticky top-0 z-50 w-full",
-        "bg-background/80 border-border/10 border-b backdrop-blur-md",
+        'sticky top-0 z-50 w-full',
+        'bg-background/80 border-border/10 border-b backdrop-blur-md',
         className,
       )}
     >
@@ -26,5 +26,5 @@ export function Navbar({ className }: { className?: string }) {
         <NavLinks />
       </div>
     </nav>
-  );
+  )
 }

@@ -6,9 +6,9 @@ createdAt: 2025-03-01T00:00:00.000Z
 updatedAt: 2025-03-01T00:00:00.000Z
 id: 8140dbc1-aff1-438e-98c8-af7b68386d62
 shortTitle: GPT 4.5bro
-heroImage: ""
+heroImage: ''
 description: 'A critical look at OpenAI''s pivot from the "4whoa" days to the underwhelming "bro-ness" of GPT-4.5, and the challenges of the long game.'
-tags: ["ai"]
+tags: ['ai']
 slug: gpt-45-bro
 ---
 

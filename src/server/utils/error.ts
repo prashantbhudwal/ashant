@@ -1,33 +1,33 @@
-import { TRPCError } from "@trpc/server";
+import { TRPCError } from '@trpc/server'
 
 type ErrorWithMessage = {
-  message: string;
-};
+  message: string
+}
 
 const isErrorWithMessage = (error: unknown): error is ErrorWithMessage => {
   return (
-    typeof error === "object" &&
+    typeof error === 'object' &&
     error !== null &&
-    "message" in error &&
-    typeof (error as Record<string, unknown>).message === "string"
-  );
-};
+    'message' in error &&
+    typeof (error as Record<string, unknown>).message === 'string'
+  )
+}
 
 const toErrorWithMessage = (maybeError: unknown): ErrorWithMessage => {
-  if (isErrorWithMessage(maybeError)) return maybeError;
+  if (isErrorWithMessage(maybeError)) return maybeError
 
   try {
     return new Error(
-      typeof maybeError === "string" ? maybeError : JSON.stringify(maybeError),
-    );
+      typeof maybeError === 'string' ? maybeError : JSON.stringify(maybeError),
+    )
   } catch {
-    return new Error(String(maybeError));
+    return new Error(String(maybeError))
   }
-};
+}
 
 export const getErrorMessage = (error: unknown): string => {
-  return toErrorWithMessage(error).message;
-};
+  return toErrorWithMessage(error).message
+}
 
 /**
  * Creates a standardized TRPCError from any error type
@@ -35,18 +35,18 @@ export const getErrorMessage = (error: unknown): string => {
  */
 export const createTRPCErrorFromUnknown = (
   error: unknown,
-  defaultMessage = "An unexpected error occurred"
+  defaultMessage = 'An unexpected error occurred',
 ): TRPCError => {
   // If it's already a TRPCError, return it as is
   if (error instanceof TRPCError) {
-    return error;
+    return error
   }
 
   // Otherwise, create a new TRPCError with the error message
-  const errorMessage = getErrorMessage(error);
+  const errorMessage = getErrorMessage(error)
   return new TRPCError({
-    code: "INTERNAL_SERVER_ERROR",
+    code: 'INTERNAL_SERVER_ERROR',
     message: errorMessage || defaultMessage,
     cause: error,
-  });
-};
+  })
+}

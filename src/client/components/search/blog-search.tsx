@@ -1,8 +1,8 @@
-import * as React from "react";
-import { useNavigate } from "@tanstack/react-router";
-import { useHotkeys } from "react-hotkeys-hook";
-import { link } from "~/client/lib/link";
-import { useSearch } from "~/client/components/search/use-search";
+import * as React from 'react'
+import { useNavigate } from '@tanstack/react-router'
+import { useHotkeys } from 'react-hotkeys-hook'
+import { link } from '~/client/lib/link'
+import { useSearch } from '~/client/components/search/use-search'
 import {
   Command,
   CommandDialog,
@@ -10,51 +10,51 @@ import {
   CommandInput,
   CommandItem,
   CommandList,
-} from "~/client/components/ui/command";
-import { type SearchResult } from "~/server/modules/search/config";
-import { SearchModalAtom } from "./search-modal-atom";
-import { useAtom } from "jotai";
-import { useDeferredValue } from "react";
+} from '~/client/components/ui/command'
+import { type SearchResult } from '~/server/modules/search/config'
+import { SearchModalAtom } from './search-modal-atom'
+import { useAtom } from 'jotai'
+import { useDeferredValue } from 'react'
 
 export function BlogSearch(): React.ReactElement {
-  const [query, setQuery] = React.useState("");
-  const [searchModalOpen, setSearchModalOpen] = useAtom(SearchModalAtom);
-  const navigate = useNavigate();
-  const { search, isLoading, isReady } = useSearch();
-  const [results, setResults] = React.useState<SearchResult[]>([]);
+  const [query, setQuery] = React.useState('')
+  const [searchModalOpen, setSearchModalOpen] = useAtom(SearchModalAtom)
+  const navigate = useNavigate()
+  const { search, isLoading, isReady } = useSearch()
+  const [results, setResults] = React.useState<SearchResult[]>([])
 
-  const deferredQuery = useDeferredValue(query);
+  const deferredQuery = useDeferredValue(query)
 
   // Update results when query changes
   React.useEffect(() => {
-    const results = search(deferredQuery);
-    setResults(results);
-  }, [search, deferredQuery]);
+    const results = search(deferredQuery)
+    setResults(results)
+  }, [search, deferredQuery])
 
   // Toggle search dialog with Cmd+K
   useHotkeys(
-    "meta+k, ctrl+k",
+    'meta+k, ctrl+k',
     (event) => {
-      event.preventDefault();
-      setSearchModalOpen((prev) => !prev);
+      event.preventDefault()
+      setSearchModalOpen((prev) => !prev)
     },
     {
       enableOnFormTags: true,
       preventDefault: true,
-      scopes: ["search"],
+      scopes: ['search'],
     },
-  );
+  )
 
   // Handle selection of search result
   const handleSelect = React.useCallback(
     (slug: string) => {
-      setSearchModalOpen(false);
+      setSearchModalOpen(false)
       navigate({
         to: link.path.post({ slug }),
-      });
+      })
     },
     [navigate],
-  );
+  )
 
   return (
     <CommandDialog open={searchModalOpen} onOpenChange={setSearchModalOpen}>
@@ -83,5 +83,5 @@ export function BlogSearch(): React.ReactElement {
         </CommandList>
       </Command>
     </CommandDialog>
-  );
+  )
 }

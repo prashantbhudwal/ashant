@@ -1,13 +1,13 @@
 ---
 title: The Startup Stack
 published: true
-createdAt: "2023-02-06"
-updatedAt: "2023-02-06"
+createdAt: '2023-02-06'
+updatedAt: '2023-02-06'
 id: b02e0e23-8c86-4022-b9a8-523d6f552276
 shortTitle: The Startup Stack
-heroImage: ""
-description: "A curated roadmap of the most influential books for founders, covering everything from lean methodology to the psychology of sales."
-tags: ["startups", "business", "learning"]
+heroImage: ''
+description: 'A curated roadmap of the most influential books for founders, covering everything from lean methodology to the psychology of sales.'
+tags: ['startups', 'business', 'learning']
 slug: the-startup-stack
 ---
 

@@ -1,13 +1,13 @@
 ---
 title: Elevating Your Online Reading Experience
 published: true
-createdAt: "2023-01-04"
-updatedAt: "2023-01-04"
+createdAt: '2023-01-04'
+updatedAt: '2023-01-04'
 id: e216d12e-aa68-4727-8254-4fe4a257c424
 shortTitle: Elevating Your Online Reading Experience
-heroImage: ""
-description: "Practical tips for transforming the internet into a readable space by mastering typography, narrow columns, and the art of digital annotation."
-tags: ["reading", "learning", "software"]
+heroImage: ''
+description: 'Practical tips for transforming the internet into a readable space by mastering typography, narrow columns, and the art of digital annotation.'
+tags: ['reading', 'learning', 'software']
 slug: elevating-your-online-reading-experience
 ---
 

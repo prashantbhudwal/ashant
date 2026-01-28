@@ -1,13 +1,13 @@
 ---
-title: "Ep 3: The Second Ed-Tech Revolution"
+title: 'Ep 3: The Second Ed-Tech Revolution'
 published: true
-createdAt: "2021-07-07"
-updatedAt: "2021-07-07"
+createdAt: '2021-07-07'
+updatedAt: '2021-07-07'
 id: f07f4ed8-dedf-40f6-aa8d-3894a4212190
-shortTitle: "Ep 3: The Second Ed-Tech Revolution"
-heroImage: ""
+shortTitle: 'Ep 3: The Second Ed-Tech Revolution'
+heroImage: ''
 description: 'Part 3: Drawing parallels between Gutenberg''s printing press and the internet—how "scalable content" is the defining rhyme of the second ed-tech revolution.'
-tags: ["education", "startups", "philosophy"]
+tags: ['education', 'startups', 'philosophy']
 slug: ep-3-the-second-ed-tech-revolution
 ---
 

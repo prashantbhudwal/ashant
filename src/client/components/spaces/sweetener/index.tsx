@@ -1,9 +1,9 @@
-import { SweetenerTable } from "./sweetener-table";
-import { SpaceLayout } from "../space-layout";
-import type { TSpace } from "~/common/types/content.types";
+import { SweetenerTable } from './sweetener-table'
+import { SpaceLayout } from '../space-layout'
+import type { TSpace } from '~/common/types/content.types'
 
 interface SweetenerSpaceProps {
-  config?: Pick<TSpace, "layoutWidth" | "supportsMobile">;
+  config?: Pick<TSpace, 'layoutWidth' | 'supportsMobile'>
 }
 
 export function SweetenerSpace({ config }: SweetenerSpaceProps) {
@@ -16,5 +16,5 @@ export function SweetenerSpace({ config }: SweetenerSpaceProps) {
     >
       <SweetenerTable />
     </SpaceLayout>
-  );
+  )
 }

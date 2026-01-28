@@ -1,13 +1,13 @@
 ---
 title: The Philosophy of Jeff Bezos | Part 1
 published: true
-createdAt: "2021-05-07"
-updatedAt: "2021-05-07"
+createdAt: '2021-05-07'
+updatedAt: '2021-05-07'
 id: 24145907-ccb4-42ab-8d4c-19e281218f7e
 shortTitle: The Philosophy of Jeff Bezos | Part 1
-heroImage: ""
-description: "Part 1 of the Amazon series: Deconstructing the 1997-2000 shareholder letters on long-term thinking, customer obsession, and high-bar hiring."
-tags: ["business", "startups", "philosophy"]
+heroImage: ''
+description: 'Part 1 of the Amazon series: Deconstructing the 1997-2000 shareholder letters on long-term thinking, customer obsession, and high-bar hiring.'
+tags: ['business', 'startups', 'philosophy']
 slug: the-philosophy-of-jeff-bezos-part
 ---
 

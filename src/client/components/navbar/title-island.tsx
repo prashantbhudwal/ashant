@@ -1,16 +1,16 @@
-import { Link } from "@tanstack/react-router";
-import { cn } from "~/client/lib/utils";
+import { Link } from '@tanstack/react-router'
+import { cn } from '~/client/lib/utils'
 
 type TTitleIslandProps = {
-  className?: string;
-};
+  className?: string
+}
 
 export function TitleIsland({ className }: TTitleIslandProps) {
   return (
     <Link to="/">
       <span
         className={cn(
-          "font-mono text-2xl font-bold md:text-3xl 2xl:text-4xl",
+          'font-mono text-2xl font-bold md:text-3xl 2xl:text-4xl',
           className,
         )}
       >
@@ -20,5 +20,5 @@ export function TitleIsland({ className }: TTitleIslandProps) {
         </span>
       </span>
     </Link>
-  );
+  )
 }

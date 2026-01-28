@@ -1,13 +1,13 @@
 ---
 title: Books v. Zomato. Books or Zomato?
 published: true
-createdAt: "2021-03-15"
-updatedAt: "2021-03-15"
+createdAt: '2021-03-15'
+updatedAt: '2021-03-15'
 id: 6b92ed30-398f-4fb0-8a67-44df7ef88541
 shortTitle: Books v. Zomato. Books or Zomato?
-heroImage: ""
-description: "How a simple comparison between food delivery costs and book prices can shift your spending habits towards building a personal library."
-tags: ["reading", "economics", "learning"]
+heroImage: ''
+description: 'How a simple comparison between food delivery costs and book prices can shift your spending habits towards building a personal library.'
+tags: ['reading', 'economics', 'learning']
 slug: books-v-zomato-books-or-zomato
 ---
 

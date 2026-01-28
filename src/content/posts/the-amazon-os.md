@@ -1,13 +1,13 @@
 ---
 title: The Amazon OS
 published: true
-createdAt: "2021-05-21"
-updatedAt: "2021-05-21"
+createdAt: '2021-05-21'
+updatedAt: '2021-05-21'
 id: a3a6bfff-14b0-4506-8910-fb820d3aa59a
 shortTitle: The Amazon OS
-heroImage: ""
-description: "Understanding the Peak-End rule and duration neglect to decode how Jeff Bezos designs his shareholder letters for maximum memorability."
-tags: ["business", "learning", "startups"]
+heroImage: ''
+description: 'Understanding the Peak-End rule and duration neglect to decode how Jeff Bezos designs his shareholder letters for maximum memorability.'
+tags: ['business', 'learning', 'startups']
 slug: the-amazon-os
 ---
 

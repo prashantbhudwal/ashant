@@ -1,9 +1,9 @@
 @import 'tailwindcss';
 @import 'tailwind-scrollbar-hide/v4';
 
-@plugin "@tailwindcss/typography";
-@plugin "tailwind-scrollbar";
-@plugin "tailwind-capitalize-first-letter";
+@plugin '@tailwindcss/typography';
+@plugin 'tailwind-scrollbar';
+@plugin 'tailwind-capitalize-first-letter';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -59,10 +59,10 @@
   --animate-accordion-up: accordion-up 0.2s ease-out;
 
   /* Custom fixed-width utilities for content containers */
-  --width-content-narrow: 42rem;   /* 672px - reading/article width */
-  --width-content-default: 48rem;  /* 768px - standard content */
-  --width-content-wide: 64rem;     /* 1024px - cards/galleries */
-  --width-content-full: 80rem;     /* 1280px - max container */
+  --width-content-narrow: 42rem; /* 672px - reading/article width */
+  --width-content-default: 48rem; /* 768px - standard content */
+  --width-content-wide: 64rem; /* 1024px - cards/galleries */
+  --width-content-full: 80rem; /* 1280px - max container */
 
   /*
   ---break---
@@ -100,7 +100,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -191,7 +190,8 @@
   --sidebar-ring: hsl(217.2 91.2% 59.8%);
 }
 
-@layer base {}
+@layer base {
+}
 
 @layer base {
   * {

@@ -1,33 +1,33 @@
-import { link } from "~/client/lib/link";
-import { C } from "~/common/constants";
-import { Separator } from "~/client/components/ui/separator";
-import { Button } from "~/client/components/ui/button";
-import { Link } from "@tanstack/react-router";
+import { link } from '~/client/lib/link'
+import { C } from '~/common/constants'
+import { Separator } from '~/client/components/ui/separator'
+import { Button } from '~/client/components/ui/button'
+import { Link } from '@tanstack/react-router'
 
 export const PostFooter = ({
   slug,
   title,
 }: {
-  slug: string;
-  title: string;
+  slug: string
+  title: string
 }) => {
-  const postUrl = link.url.internal.post({ slug });
-  const tweetText = `\n\nRead "${title}" by ${C.xHandle}\n${postUrl}`;
-  const whatsAppText = `\n\nRead "${title}" by ${C.firstName}\n${postUrl}`;
+  const postUrl = link.url.internal.post({ slug })
+  const tweetText = `\n\nRead "${title}" by ${C.xHandle}\n${postUrl}`
+  const whatsAppText = `\n\nRead "${title}" by ${C.firstName}\n${postUrl}`
   return (
     <>
       <Separator className="mb-4" />
       <SupportMe />
-      <div className="font-sm mt-8 flex space-x-4 space-y-2 text-neutral-600 md:flex-row dark:text-neutral-300 flex-col text-center">
+      <div className="font-sm mt-8 flex flex-col space-y-2 space-x-4 text-center text-neutral-600 md:flex-row dark:text-neutral-300">
         <Link
           to={
             `https://github.com/prashantbhudwal/ideabox/edit/main/content/posts/` +
             slug +
             `/` +
             slug +
-            ".mdx"
+            '.mdx'
           }
-          className="pb-6 underline underline-offset-2 text-muted-foreground/50 font-semibold"
+          className="text-muted-foreground/50 pb-6 font-semibold underline underline-offset-2"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -35,17 +35,17 @@ export const PostFooter = ({
         </Link>
         <Link
           to={
-            "https://x.com/intent/tweet?text=" + encodeURIComponent(tweetText)
+            'https://x.com/intent/tweet?text=' + encodeURIComponent(tweetText)
           }
-          className="pb-6 underline underline-offset-2 text-muted-foreground/50 font-semibold"
+          className="text-muted-foreground/50 pb-6 font-semibold underline underline-offset-2"
           target="_blank"
           rel="noopener noreferrer"
         >
           Discuss on X
         </Link>
         <Link
-          to={"https://wa.me/?text=" + encodeURIComponent(whatsAppText)}
-          className="pb-6 underline underline-offset-2 text-muted-foreground/50 font-semibold"
+          to={'https://wa.me/?text=' + encodeURIComponent(whatsAppText)}
+          className="text-muted-foreground/50 pb-6 font-semibold underline underline-offset-2"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -53,18 +53,18 @@ export const PostFooter = ({
         </Link>
       </div>
     </>
-  );
-};
+  )
+}
 
 const SupportMe = () => {
   return (
-    <div className="flex flex-col space-y-4 items-center">
-      <Button size={"lg"}>
+    <div className="flex flex-col items-center space-y-4">
+      <Button size={'lg'}>
         <Link to={link.url.external.authorProfile.buyMeACoffee}>Pay ₹100</Link>
       </Button>
-      <div className="text-muted-foreground text-sm font-semibold max-w-xs md:max-w-prose text-center">
+      <div className="text-muted-foreground max-w-xs text-center text-sm font-semibold md:max-w-prose">
         Support my writing by paying for this post
       </div>
     </div>
-  );
-};
+  )
+}

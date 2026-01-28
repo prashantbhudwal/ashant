@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import React, { useState, useMemo } from "react";
-import { Badge } from "~/client/components/ui/badge";
-import { Input } from "~/client/components/ui/input";
+import React, { useState, useMemo } from 'react'
+import { Badge } from '~/client/components/ui/badge'
+import { Input } from '~/client/components/ui/input'
 import {
   Table,
   TableBody,
@@ -10,16 +10,16 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "~/client/components/ui/table";
+} from '~/client/components/ui/table'
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
-} from "~/client/components/ui/tooltip";
-import { Check, X } from "lucide-react";
-import { sweetenerData } from "./sweetener-data";
-import type { SweetenerData } from "./sweetener-data";
+} from '~/client/components/ui/tooltip'
+import { Check, X } from 'lucide-react'
+import { sweetenerData } from './sweetener-data'
+import type { SweetenerData } from './sweetener-data'
 import {
   flexRender,
   getCoreRowModel,
@@ -29,65 +29,65 @@ import {
   type ColumnDef,
   type ColumnFiltersState,
   type SortingState,
-} from "@tanstack/react-table";
-import { type ChangeEvent } from "react";
+} from '@tanstack/react-table'
+import { type ChangeEvent } from 'react'
 
-const GI_TABLE_SUGAR = 65;
+const GI_TABLE_SUGAR = 65
 
 export default function SweetenerList() {
-  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set([""])); // First row expanded by default
-  const [sorting, setSorting] = useState<SortingState>([]);
-  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
-  const [globalFilter, setGlobalFilter] = useState("");
+  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set([''])) // First row expanded by default
+  const [sorting, setSorting] = useState<SortingState>([])
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
+  const [globalFilter, setGlobalFilter] = useState('')
 
   const toggleRow = (rowId: string) => {
-    const newExpandedRows = new Set(expandedRows);
+    const newExpandedRows = new Set(expandedRows)
     if (newExpandedRows.has(rowId)) {
-      newExpandedRows.delete(rowId);
+      newExpandedRows.delete(rowId)
     } else {
-      newExpandedRows.add(rowId);
+      newExpandedRows.add(rowId)
     }
-    setExpandedRows(newExpandedRows);
-  };
+    setExpandedRows(newExpandedRows)
+  }
 
   // Color coding for glycemic index
   const getGIColorClass = (gi: number): string => {
     if (gi <= 10)
-      return "bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100";
+      return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100'
     if (gi <= 30)
-      return "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100";
+      return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100'
     if (gi <= 50)
-      return "bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-100";
-    return "bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100";
-  };
+      return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-100'
+    return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100'
+  }
 
   // Define columns for the table
   const columns = useMemo<ColumnDef<SweetenerData[0]>[]>(
     () => [
       {
-        accessorKey: "name",
+        accessorKey: 'name',
         header: ({ column }) => (
           <button
-            className="flex items-center space-x-1 hover:text-primary transition-colors"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            className="hover:text-primary flex items-center space-x-1 transition-colors"
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
           >
             <span>Name</span>
             <SortIcon isSorted={column.getIsSorted()} />
           </button>
         ),
         cell: ({ row }) => (
-          <div className="font-medium">{row.getValue("name")}</div>
+          <div className="font-medium">{row.getValue('name')}</div>
         ),
-        filterFn: "includesString",
+        filterFn: 'includesString',
       },
       {
-        accessorKey: "gi",
+        accessorKey: 'gi',
         header: ({ column }) => (
           <div className="text-center">
             <button
-              className="flex items-center justify-center space-x-1 hover:text-primary transition-colors"
+              className="hover:text-primary flex items-center justify-center space-x-1 transition-colors"
               onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
+                column.toggleSorting(column.getIsSorted() === 'asc')
               }
             >
               <span>GI</span>
@@ -96,7 +96,7 @@ export default function SweetenerList() {
           </div>
         ),
         cell: ({ row }) => {
-          const gi = row.getValue<number>("gi");
+          const gi = row.getValue<number>('gi')
           return (
             <div className="text-center">
               <TooltipProvider>
@@ -109,25 +109,25 @@ export default function SweetenerList() {
                   <TooltipContent>
                     <p className="text-xs">
                       {gi === 0
-                        ? "No impact on blood sugar"
+                        ? 'No impact on blood sugar'
                         : `${Math.round((gi / GI_TABLE_SUGAR) * 100)}% of table sugar`}
                     </p>
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
-          );
+          )
         },
-        sortingFn: "basic",
+        sortingFn: 'basic',
       },
       {
-        accessorKey: "relativeSweetness",
+        accessorKey: 'relativeSweetness',
         header: ({ column }) => (
           <div className="text-center">
             <button
-              className="flex items-center justify-center space-x-1 hover:text-primary transition-colors"
+              className="hover:text-primary flex items-center justify-center space-x-1 transition-colors"
               onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
+                column.toggleSorting(column.getIsSorted() === 'asc')
               }
             >
               <span>Sweetness</span>
@@ -137,13 +137,13 @@ export default function SweetenerList() {
         ),
         cell: ({ row }) => (
           <div className="text-center">
-            {row.getValue<number>("relativeSweetness")}x
+            {row.getValue<number>('relativeSweetness')}x
           </div>
         ),
-        sortingFn: "basic",
+        sortingFn: 'basic',
       },
       {
-        accessorKey: "state",
+        accessorKey: 'state',
         header: ({ column }) => (
           <div className="text-center">
             <div className="flex items-center justify-center space-x-4">
@@ -153,35 +153,35 @@ export default function SweetenerList() {
           </div>
         ),
         cell: ({ row }) => {
-          const state = row.getValue<string>("state");
+          const state = row.getValue<string>('state')
           return (
             <div className="flex items-center justify-center space-x-8">
-              <div className="flex items-center justify-center w-6">
-                {state === "powder" || state === "both" ? (
-                  <Check className="h-5 w-5 text-primary" />
+              <div className="flex w-6 items-center justify-center">
+                {state === 'powder' || state === 'both' ? (
+                  <Check className="text-primary h-5 w-5" />
                 ) : (
-                  <X className="h-5 w-5 text-muted-foreground" />
+                  <X className="text-muted-foreground h-5 w-5" />
                 )}
               </div>
-              <div className="flex items-center justify-center w-6">
-                {state === "liquid" || state === "both" ? (
-                  <Check className="h-5 w-5 text-primary" />
+              <div className="flex w-6 items-center justify-center">
+                {state === 'liquid' || state === 'both' ? (
+                  <Check className="text-primary h-5 w-5" />
                 ) : (
-                  <X className="h-5 w-5 text-muted-foreground" />
+                  <X className="text-muted-foreground h-5 w-5" />
                 )}
               </div>
             </div>
-          );
+          )
         },
       },
       {
-        accessorKey: "caloriesPerGram",
+        accessorKey: 'caloriesPerGram',
         header: ({ column }) => (
           <div className="text-right">
             <button
-              className="flex items-center justify-end space-x-1 hover:text-primary transition-colors"
+              className="hover:text-primary flex items-center justify-end space-x-1 transition-colors"
               onClick={() =>
-                column.toggleSorting(column.getIsSorted() === "asc")
+                column.toggleSorting(column.getIsSorted() === 'asc')
               }
             >
               <span>Calories/g</span>
@@ -190,22 +190,22 @@ export default function SweetenerList() {
           </div>
         ),
         cell: ({ row }) => {
-          const calories = row.getValue<number>("caloriesPerGram");
+          const calories = row.getValue<number>('caloriesPerGram')
           return (
             <span
               className={
-                calories === 0 ? "text-primary font-medium" : "text-foreground"
+                calories === 0 ? 'text-primary font-medium' : 'text-foreground'
               }
             >
               {calories}
             </span>
-          );
+          )
         },
-        sortingFn: "basic",
+        sortingFn: 'basic',
       },
     ],
     [],
-  );
+  )
 
   // Setup the table
   const table = useReactTable({
@@ -223,21 +223,21 @@ export default function SweetenerList() {
     onSortingChange: setSorting,
     onColumnFiltersChange: setColumnFilters,
     onGlobalFilterChange: setGlobalFilter,
-  });
+  })
 
   return (
-    <div className="w-full px-2 py-4 space-y-4">
-      <div className="flex justify-between items-center">
+    <div className="w-full space-y-4 px-2 py-4">
+      <div className="flex items-center justify-between">
         <Input
           placeholder="Search"
-          value={globalFilter ?? ""}
+          value={globalFilter ?? ''}
           onChange={(e: ChangeEvent<HTMLInputElement>) =>
             setGlobalFilter(e.target.value)
           }
         />
       </div>
 
-      <div className="rounded-md border border-border">
+      <div className="border-border rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -260,7 +260,7 @@ export default function SweetenerList() {
               table.getRowModel().rows.map((row) => (
                 <React.Fragment key={row.id}>
                   <TableRow
-                    className="cursor-pointer hover:bg-muted/50 transition-colors"
+                    className="hover:bg-muted/50 cursor-pointer transition-colors"
                     onClick={() => toggleRow(row.id)}
                   >
                     {row.getVisibleCells().map((cell) => (
@@ -276,14 +276,14 @@ export default function SweetenerList() {
                     <TableRow>
                       <TableCell
                         colSpan={columns.length}
-                        className="p-4 bg-muted/20"
+                        className="bg-muted/20 p-4"
                       >
                         <div className="grid gap-4">
                           <div className="space-y-4">
                             {/* Comparison Info */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                              <div className="flex flex-col space-y-1 rounded-md border border-border p-3 bg-card">
-                                <span className="text-xs text-muted-foreground">
+                            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                              <div className="border-border bg-card flex flex-col space-y-1 rounded-md border p-3">
+                                <span className="text-muted-foreground text-xs">
                                   Comparison to Sugar
                                 </span>
                                 <div className="space-y-1">
@@ -291,7 +291,7 @@ export default function SweetenerList() {
                                     <span className="text-sm">GI Impact:</span>
                                     <span className="text-sm font-medium">
                                       {row.original.gi === 0
-                                        ? "Zero impact"
+                                        ? 'Zero impact'
                                         : `${Math.round((row.original.gi / GI_TABLE_SUGAR) * 100)}% of sugar`}
                                     </span>
                                   </div>
@@ -302,7 +302,7 @@ export default function SweetenerList() {
                                     <span className="text-sm font-medium">
                                       {row.original.relativeSweetness > 0
                                         ? `${(1 / row.original.relativeSweetness).toFixed(4)}x`
-                                        : "N/A"}
+                                        : 'N/A'}
                                     </span>
                                   </div>
                                 </div>
@@ -310,8 +310,8 @@ export default function SweetenerList() {
 
                               {/* Carrier Information if applicable */}
                               {row.original.requiresCarrier && (
-                                <div className="flex flex-col space-y-1 rounded-md border border-border p-3 bg-card">
-                                  <span className="text-xs text-muted-foreground">
+                                <div className="border-border bg-card flex flex-col space-y-1 rounded-md border p-3">
+                                  <span className="text-muted-foreground text-xs">
                                     Carrier Information
                                   </span>
                                   <div className="space-y-1">
@@ -320,7 +320,7 @@ export default function SweetenerList() {
                                         Solid Carrier:
                                       </span>
                                       <span className="text-sm font-medium">
-                                        {row.original.solidCarrier || "N/A"}
+                                        {row.original.solidCarrier || 'N/A'}
                                       </span>
                                     </div>
                                     <div className="flex justify-between">
@@ -328,7 +328,7 @@ export default function SweetenerList() {
                                         Liquid Carrier:
                                       </span>
                                       <span className="text-sm font-medium">
-                                        {row.original.liquidCarrier || "N/A"}
+                                        {row.original.liquidCarrier || 'N/A'}
                                       </span>
                                     </div>
                                   </div>
@@ -337,8 +337,8 @@ export default function SweetenerList() {
                             </div>
 
                             {/* Sources Section */}
-                            <div className="rounded-md border border-border p-3 bg-card">
-                              <h4 className="text-sm font-medium mb-2">
+                            <div className="border-border bg-card rounded-md border p-3">
+                              <h4 className="mb-2 text-sm font-medium">
                                 Sources & References
                               </h4>
                               <div className="grid gap-2">
@@ -346,20 +346,20 @@ export default function SweetenerList() {
                                   ([key, source]) => (
                                     <div
                                       key={key}
-                                      className="text-sm grid grid-cols-[120px,1fr] gap-2 items-baseline"
+                                      className="grid grid-cols-[120px,1fr] items-baseline gap-2 text-sm"
                                     >
-                                      <span className="text-xs text-muted-foreground capitalize">
-                                        {key.replace(/([A-Z])/g, " $1").trim()}:
+                                      <span className="text-muted-foreground text-xs capitalize">
+                                        {key.replace(/([A-Z])/g, ' $1').trim()}:
                                       </span>
                                       <a
                                         href={source.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="text-primary hover:underline text-xs inline-flex items-center"
+                                        className="text-primary inline-flex items-center text-xs hover:underline"
                                       >
                                         {source.description}
                                         <svg
-                                          className="h-3 w-3 ml-1"
+                                          className="ml-1 h-3 w-3"
                                           fill="none"
                                           viewBox="0 0 24 24"
                                           stroke="currentColor"
@@ -388,7 +388,7 @@ export default function SweetenerList() {
               <TableRow>
                 <TableCell
                   colSpan={columns.length}
-                  className="h-24 text-center text-muted-foreground"
+                  className="text-muted-foreground h-24 text-center"
                 >
                   No results found.
                 </TableCell>
@@ -398,11 +398,11 @@ export default function SweetenerList() {
         </Table>
       </div>
     </div>
-  );
+  )
 }
 
 // Helper component for sort icons
-function SortIcon({ isSorted }: { isSorted: false | "asc" | "desc" }) {
+function SortIcon({ isSorted }: { isSorted: false | 'asc' | 'desc' }) {
   if (!isSorted) {
     return (
       <svg
@@ -419,10 +419,10 @@ function SortIcon({ isSorted }: { isSorted: false | "asc" | "desc" }) {
           d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
         />
       </svg>
-    );
+    )
   }
 
-  return isSorted === "asc" ? (
+  return isSorted === 'asc' ? (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className="h-4 w-4"
@@ -452,5 +452,5 @@ function SortIcon({ isSorted }: { isSorted: false | "asc" | "desc" }) {
         d="M19 9l-7 7-7-7"
       />
     </svg>
-  );
+  )
 }

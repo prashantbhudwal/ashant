@@ -1,12 +1,12 @@
-import { Link } from "@tanstack/react-router";
-import { type TPost } from "~/common/types/content.types";
-import { formatDate } from "~/client/helpers/format-date";
-import { cn } from "~/client/lib/utils";
+import { Link } from '@tanstack/react-router'
+import { type TPost } from '~/common/types/content.types'
+import { formatDate } from '~/client/helpers/format-date'
+import { cn } from '~/client/lib/utils'
 
 interface PostCardProps {
-  post: TPost;
-  isLatest?: boolean;
-  showTags?: boolean;
+  post: TPost
+  isLatest?: boolean
+  showTags?: boolean
 }
 
 export function PostCard({
@@ -24,10 +24,10 @@ export function PostCard({
         <div className="flex items-center gap-2">
           <h3
             className={cn(
-              "group-hover:text-primary transition-colors",
+              'group-hover:text-primary transition-colors',
               isLatest
-                ? "text-foreground text-base font-semibold sm:text-lg md:text-xl"
-                : "text-foreground text-base font-medium sm:text-lg",
+                ? 'text-foreground text-base font-semibold sm:text-lg md:text-xl'
+                : 'text-foreground text-base font-medium sm:text-lg',
             )}
           >
             {post.title}
@@ -60,5 +60,5 @@ export function PostCard({
         )}
       </div>
     </Link>
-  );
+  )
 }

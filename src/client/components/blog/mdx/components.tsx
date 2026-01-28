@@ -1,16 +1,16 @@
-import { Image, type SimpleImageProps } from "~/client/components/image";
-import { mdxComponents } from "./post-components";
-import { Link } from "@tanstack/react-router";
-import loadable from "@loadable/component";
+import { Image, type SimpleImageProps } from '~/client/components/image'
+import { mdxComponents } from './post-components'
+import { Link } from '@tanstack/react-router'
+import loadable from '@loadable/component'
 
 const CodeBlock = loadable(
   () =>
-    import("../custom/code-block").then((mod) => ({ default: mod.CodeBlock })),
+    import('../custom/code-block').then((mod) => ({ default: mod.CodeBlock })),
   {
     ssr: false,
     fallback: <div>Loading...</div>,
   },
-);
+)
 
 export const components = {
   // Preserve existing styling for elements
@@ -41,14 +41,14 @@ export const components = {
     children,
     ...props
   }: {
-    href: string;
-    children: React.ReactNode;
+    href: string
+    children: React.ReactNode
   }) => (
     <Link
       to={href}
       className="text-foreground decoration-primary font-semibold underline-offset-1 hover:underline"
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel={href.startsWith("http") ? "noreferrer" : undefined}
+      target={href.startsWith('http') ? '_blank' : undefined}
+      rel={href.startsWith('http') ? 'noreferrer' : undefined}
       {...props}
     >
       {children}
@@ -88,4 +88,4 @@ export const components = {
     <Image {...props} className="mx-auto rounded shadow" />
   ),
   ...mdxComponents,
-};
+}

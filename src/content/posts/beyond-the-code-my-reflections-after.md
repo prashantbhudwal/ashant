@@ -1,13 +1,13 @@
 ---
-title: "Beyond the Code: my reflections after 365 days of code"
+title: 'Beyond the Code: my reflections after 365 days of code'
 published: true
-createdAt: "2023-12-23"
-updatedAt: "2023-12-23"
+createdAt: '2023-12-23'
+updatedAt: '2023-12-23'
 id: 675d6aa8-a922-48ae-860a-787f2c15a866
-shortTitle: "Beyond the Code: my reflections after 365 days of code"
-heroImage: ""
+shortTitle: 'Beyond the Code: my reflections after 365 days of code'
+heroImage: ''
 description: 'Reflections on a year of dedicated programming—from the "Minecraft for adults" aspect to why English is a programmer''s most important language.'
-tags: ["software", "learning"]
+tags: ['software', 'learning']
 slug: beyond-the-code-my-reflections-after
 ---
 

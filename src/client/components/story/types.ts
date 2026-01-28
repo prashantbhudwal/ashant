@@ -1,52 +1,52 @@
 type StoryLayerContent = {
-  text: string;
-  images?: string[];
-};
+  text: string
+  images?: string[]
+}
 
 export const LEVEL = {
   concise: {
-    name: "Concise",
+    name: 'Concise',
     value: 1,
-    description: "Quick overview of key events",
+    description: 'Quick overview of key events',
   },
   basic: {
-    name: "Basic",
+    name: 'Basic',
     value: 2,
-    description: "What everyone sees.",
+    description: 'What everyone sees.',
   },
   detailed: {
-    name: "Detailed",
+    name: 'Detailed',
     value: 3,
-    description: "All details, personal, professional, and philosophical.",
+    description: 'All details, personal, professional, and philosophical.',
   },
-} as const;
+} as const
 
 export const DETAIL_LABELS: Record<number, string> = {
-  [LEVEL.concise.value]: "Concise",
-  [LEVEL.basic.value]: "Balanced",
-  [LEVEL.detailed.value]: "Detailed",
-};
+  [LEVEL.concise.value]: 'Concise',
+  [LEVEL.basic.value]: 'Balanced',
+  [LEVEL.detailed.value]: 'Detailed',
+}
 
-export type LevelOptions = (typeof LEVEL)[keyof typeof LEVEL];
+export type LevelOptions = (typeof LEVEL)[keyof typeof LEVEL]
 
 interface StoryBase {
-  id: string;
-  coordinates: [number, number];
-  zoom: number;
-  title: string;
-  description?: string;
+  id: string
+  coordinates: [number, number]
+  zoom: number
+  title: string
+  description?: string
 }
 
 type Layers = {
-  l1: StoryLayerContent;
-  l2?: StoryLayerContent;
-  l3?: StoryLayerContent;
-};
+  l1: StoryLayerContent
+  l2?: StoryLayerContent
+  l3?: StoryLayerContent
+}
 
-export type StorySubplot = Omit<Story, "subplots" | "coordinates" | "zoom">;
+export type StorySubplot = Omit<Story, 'subplots' | 'coordinates' | 'zoom'>
 
 export type Story = StoryBase & {
-  resolution: typeof LEVEL.concise | typeof LEVEL.basic | typeof LEVEL.detailed;
-  layers: Layers;
-  subplots?: Array<StorySubplot>;
-};
+  resolution: typeof LEVEL.concise | typeof LEVEL.basic | typeof LEVEL.detailed
+  layers: Layers
+  subplots?: Array<StorySubplot>
+}

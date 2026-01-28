@@ -1,13 +1,13 @@
 ---
-title: "Ep 1: WSBAT (Will Students Be Able To?)"
+title: 'Ep 1: WSBAT (Will Students Be Able To?)'
 published: true
-createdAt: "2021-07-02"
-updatedAt: "2021-07-02"
+createdAt: '2021-07-02'
+updatedAt: '2021-07-02'
 id: da1170bf-4a9c-4969-bd4a-43b0c5d4d79a
-shortTitle: "Ep 1: WSBAT (Will Students Be Able To?)"
-heroImage: ""
-description: "Part 1 of an ed-tech memoir: The mystery of lesson plans, the aura of pedagogical jargon, and the reality of winging it in a startup."
-tags: ["education", "learning"]
+shortTitle: 'Ep 1: WSBAT (Will Students Be Able To?)'
+heroImage: ''
+description: 'Part 1 of an ed-tech memoir: The mystery of lesson plans, the aura of pedagogical jargon, and the reality of winging it in a startup.'
+tags: ['education', 'learning']
 slug: ep-1-wsbat-will-students-be-able
 ---
 

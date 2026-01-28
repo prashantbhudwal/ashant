@@ -1,11 +1,11 @@
-import { C } from "../../common/constants";
+import { C } from '../../common/constants'
 
 const authorProfile = {
-  x: "https://x.com/" + C.xUsername,
-  linkedIn: "https://www.linkedin.com/in/prashantbhudwal/",
-  github: "https://github.com/prashantbhudwal",
-  buyMeACoffee: "https://buymeacoffee.com/" + C.bmcUsername,
-};
+  x: 'https://x.com/' + C.xUsername,
+  linkedIn: 'https://www.linkedin.com/in/prashantbhudwal/',
+  github: 'https://github.com/prashantbhudwal',
+  buyMeACoffee: 'https://buymeacoffee.com/' + C.bmcUsername,
+}
 
 export const link = {
   path: {
@@ -18,11 +18,11 @@ export const link = {
   },
   url: {
     internal: {
-      post: ({ slug }: { slug: string }) => C.base + "/blog/" + slug,
-      space: ({ slug }: { slug: string }) => C.base + "/spaces/" + slug,
+      post: ({ slug }: { slug: string }) => C.base + '/blog/' + slug,
+      space: ({ slug }: { slug: string }) => C.base + '/spaces/' + slug,
     },
     external: {
       authorProfile,
     },
   },
-};
+}

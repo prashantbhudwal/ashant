@@ -1,13 +1,13 @@
 ---
 title: What is learning?
 published: true
-createdAt: "2020-05-24"
-updatedAt: "2020-05-24"
+createdAt: '2020-05-24'
+updatedAt: '2020-05-24'
 id: c5c37b5f-8879-4d75-a561-1f338b8b58ac
 shortTitle: What is learning?
-heroImage: ""
-description: "An exploration of how the human brain processes information through chunking, categorization, and the transfer from short-term to long-term memory."
-tags: ["learning", "education", "philosophy"]
+heroImage: ''
+description: 'An exploration of how the human brain processes information through chunking, categorization, and the transfer from short-term to long-term memory.'
+tags: ['learning', 'education', 'philosophy']
 slug: what-is-learning
 ---
 

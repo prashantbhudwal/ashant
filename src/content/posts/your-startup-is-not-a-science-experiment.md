@@ -1,13 +1,13 @@
 ---
-title: "Your Startup is NOT a Science Experiment. Or, a Scientific Endeavour."
+title: 'Your Startup is NOT a Science Experiment. Or, a Scientific Endeavour.'
 published: true
-createdAt: "2023-10-21"
-updatedAt: "2023-10-21"
+createdAt: '2023-10-21'
+updatedAt: '2023-10-21'
 id: f9eb797f-9c83-4d26-a0bd-12d932c48bf0
-shortTitle: "Your Startup is NOT a Science Experiment. Or, a Scientific Endeavour."
-heroImage: ""
+shortTitle: 'Your Startup is NOT a Science Experiment. Or, a Scientific Endeavour.'
+heroImage: ''
 description: 'A call for pragmatism over pseudo-scientific rigor in startups, exploring why "useful" is often a better benchmark than "proven" in the face of deadlines.'
-tags: ["startups", "philosophy", "business"]
+tags: ['startups', 'philosophy', 'business']
 slug: your-startup-is-not-a-science-experiment
 ---
 

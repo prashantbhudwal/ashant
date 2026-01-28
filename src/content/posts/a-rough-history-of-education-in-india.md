@@ -1,13 +1,13 @@
 ---
 title: A Rough History of Education in India.
 published: true
-createdAt: "2021-02-20"
-updatedAt: "2021-02-20"
+createdAt: '2021-02-20'
+updatedAt: '2021-02-20'
 id: 5ff8fa20-1681-41b7-9c75-812cf83a714c
 shortTitle: A Rough History of Education in India.
-heroImage: ""
+heroImage: ''
 description: 'A satirical dialogue tracing the repetitive cycles and "new" policies of the Indian education system from British rule to today.'
-tags: ["education"]
+tags: ['education']
 slug: a-rough-history-of-education-in-india
 ---
 

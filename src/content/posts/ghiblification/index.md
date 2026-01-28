@@ -1,15 +1,15 @@
 ---
-title: "I, Ghibli"
+title: 'I, Ghibli'
 desc: How the launch of 4o image generation turned me into an image support agent.
 type: diary
 published: true
 createdAt: 2025-04-05T00:00:00.000Z
 updatedAt: 2025-04-05T00:00:00.000Z
 id: 918e36fe-b6e7-4e92-b133-5eed5db59841
-shortTitle: "I, Ghibli"
-heroImage: ""
+shortTitle: 'I, Ghibli'
+heroImage: ''
 description: "How GPT-4o's native image generation triggered a global 'Ghiblification' craze and why it marks the beginning of 'vibe designing'."
-tags: ["ai", "business"]
+tags: ['ai', 'business']
 slug: ghiblification
 ---
 
@@ -31,7 +31,7 @@ People went mad in one very specific way: the Ghibli way. In the demo, the OpenA
 Here is the style of the studio.
 
 <ImageX
-  src={"ghiblification/totoro"}
+  src={'ghiblification/totoro'}
   alt="Totoro movie poster."
   variant="landscape"
 />
@@ -39,7 +39,7 @@ Here is the style of the studio.
 Here’s what it generated when I gave it a photo of me falling off a chair.
 
 <ImageX
-  src={"ghiblification/fall-ghibli"}
+  src={'ghiblification/fall-ghibli'}
   alt="4o Image Generation Preview"
   variant="landscape"
 />
@@ -47,7 +47,7 @@ Here’s what it generated when I gave it a photo of me falling off a chair.
 Here is another one, this time in a different style, but equally good.
 
 <ImageX
-  src={"ghiblification/sleep"}
+  src={'ghiblification/sleep'}
   alt="4o Image Generation Preview"
   variant="landscape"
 />

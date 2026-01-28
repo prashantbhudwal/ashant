@@ -1,10 +1,10 @@
-import { Button } from "~/client/components/ui/button";
-import { useState } from "react";
-import { Input } from "~/client/components/ui/input";
-import { Textarea } from "~/client/components/ui/textarea";
-import { useForm } from "react-hook-form";
-import { type z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from '~/client/components/ui/button'
+import { useState } from 'react'
+import { Input } from '~/client/components/ui/input'
+import { Textarea } from '~/client/components/ui/textarea'
+import { useForm } from 'react-hook-form'
+import { type z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 import {
   Form,
   FormControl,
@@ -13,15 +13,15 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "~/client/components/ui/form";
-import { useServerFn } from "@tanstack/react-start";
-import { embedAndCompareProd, InputSchema } from "./compare.server";
-import { SpaceLayout } from "../space-layout";
-import { cn } from "~/client/lib/utils";
-import type { TSpace } from "~/common/types/content.types";
+} from '~/client/components/ui/form'
+import { useServerFn } from '@tanstack/react-start'
+import { embedAndCompareProd, InputSchema } from './compare.server'
+import { SpaceLayout } from '../space-layout'
+import { cn } from '~/client/lib/utils'
+import type { TSpace } from '~/common/types/content.types'
 
 interface SimilaritySpaceProps {
-  config?: Pick<TSpace, "layoutWidth" | "supportsMobile">;
+  config?: Pick<TSpace, 'layoutWidth' | 'supportsMobile'>
 }
 
 export function SimilaritySpace({ config }: SimilaritySpaceProps) {
@@ -34,39 +34,39 @@ export function SimilaritySpace({ config }: SimilaritySpaceProps) {
     >
       <SimilarityForm />
     </SpaceLayout>
-  );
+  )
 }
 
 function SimilarityForm() {
-  const [similarity, setSimilarity] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
-  const compare = useServerFn(embedAndCompareProd);
+  const [similarity, setSimilarity] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const compare = useServerFn(embedAndCompareProd)
 
   const form = useForm<z.infer<typeof InputSchema>>({
     resolver: zodResolver(InputSchema),
     defaultValues: {
-      text1: "",
-      text2: "",
-      apiKey: "",
+      text1: '',
+      text2: '',
+      apiKey: '',
     },
-  });
+  })
 
   async function onSubmit(values: z.infer<typeof InputSchema>) {
-    setError(null);
-    setIsLoading(true);
+    setError(null)
+    setIsLoading(true)
     try {
-      const result = await compare({ data: values });
+      const result = await compare({ data: values })
       if (result) {
-        setSimilarity(result);
+        setSimilarity(result)
       }
     } catch (error: unknown) {
       setError(
-        (error as Error).message ?? "An error occurred while comparing texts",
-      );
-      setSimilarity(0);
+        (error as Error).message ?? 'An error occurred while comparing texts',
+      )
+      setSimilarity(0)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
   }
 
@@ -142,13 +142,13 @@ function SimilarityForm() {
             className="w-full sm:w-auto"
             disabled={isLoading}
           >
-            {isLoading ? "Calculating..." : "Compare Texts"}
+            {isLoading ? 'Calculating...' : 'Compare Texts'}
           </Button>
 
           {similarity > 0 && !isLoading && (
             <div className="border-border/30 rounded-lg border p-4">
               <p className="text-foreground text-lg font-semibold">
-                Similarity:{" "}
+                Similarity:{' '}
                 <span className="text-primary">
                   {Math.round(similarity * 100)}%
                 </span>
@@ -156,7 +156,7 @@ function SimilarityForm() {
               <div className="border-border/30 mt-3 h-2 w-full overflow-hidden rounded-full border">
                 <div
                   className={cn(
-                    "bg-primary h-full rounded-full transition-all duration-300",
+                    'bg-primary h-full rounded-full transition-all duration-300',
                   )}
                   style={{
                     width: `${Math.min(100, Math.round(similarity * 100))}%`,
@@ -168,5 +168,5 @@ function SimilarityForm() {
         </div>
       </form>
     </Form>
-  );
+  )
 }

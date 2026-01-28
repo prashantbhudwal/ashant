@@ -1,13 +1,13 @@
 ---
 title: The Philosophy of Jeff Bezos | Part 4
 published: true
-createdAt: "2021-05-22"
-updatedAt: "2021-05-22"
+createdAt: '2021-05-22'
+updatedAt: '2021-05-22'
 id: 26ca0121-bcba-4cdd-91f0-ecef4443e402
 shortTitle: The Philosophy of Jeff Bezos | Part 4
-heroImage: ""
+heroImage: ''
 description: 'Part 4 of the Amazon series: Deconstructing the 2011-2015 letters on self-service platforms, the "one-way door" decision model, and the culture of failure.'
-tags: ["business", "startups", "software"]
+tags: ['business', 'startups', 'software']
 slug: the-philosophy-of-jeff-bezos-part-d83
 ---
 

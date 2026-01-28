@@ -1,13 +1,13 @@
 ---
-title: "Dear co-worker, help me do my best work"
+title: 'Dear co-worker, help me do my best work'
 published: true
 createdAt: 2024-03-24T00:00:00.000Z
 updatedAt: 2024-03-24T00:00:00.000Z
 id: 58140efe-c128-4d7a-aff5-7ea63f68e0e1
-shortTitle: "Dear co-worker, help me do my best work"
-heroImage: ""
+shortTitle: 'Dear co-worker, help me do my best work'
+heroImage: ''
 description: 'An open letter to co-workers on the sacredness of "the zone" and the cognitive cost of even the smallest interruptions during deep work.'
-tags: ["software", "philosophy", "business"]
+tags: ['software', 'philosophy', 'business']
 slug: best-work
 ---
 

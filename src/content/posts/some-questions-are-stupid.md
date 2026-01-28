@@ -1,13 +1,13 @@
 ---
 title: Some questions are stupid.
 published: true
-createdAt: "2022-08-23"
-updatedAt: "2022-08-23"
+createdAt: '2022-08-23'
+updatedAt: '2022-08-23'
 id: 358a2970-1436-4c01-98c7-b561ad9b4b2a
 shortTitle: Some questions are stupid.
-heroImage: ""
+heroImage: ''
 description: 'Redefining stupidity through the "harm-to-gain ratio" and why questions about reading quantity and speed are often the most counterproductive.'
-tags: ["philosophy", "learning", "reading"]
+tags: ['philosophy', 'learning', 'reading']
 slug: some-questions-are-stupid
 ---
 

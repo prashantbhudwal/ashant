@@ -1,13 +1,13 @@
 ---
 title: The Death of a Draft
 published: true
-createdAt: "2023-09-18"
-updatedAt: "2023-09-18"
+createdAt: '2023-09-18'
+updatedAt: '2023-09-18'
 id: 6ce04190-7070-45bb-b576-dc46e3744513
 shortTitle: The Death of a Draft
-heroImage: ""
+heroImage: ''
 description: 'A manifesto against the "Final Draft" mirage, advocating for publishing imperfect, alive work over beautiful, abandoned corpses.'
-tags: ["writing", "personal", "philosophy"]
+tags: ['writing', 'personal', 'philosophy']
 slug: the-death-of-a-draft
 ---
 

@@ -1,4 +1,4 @@
-import { LEVEL } from "./types";
-import { atom } from "jotai";
+import { LEVEL } from './types'
+import { atom } from 'jotai'
 
-export const resolutionAtom = atom<number>(LEVEL.basic.value);
+export const resolutionAtom = atom<number>(LEVEL.basic.value)

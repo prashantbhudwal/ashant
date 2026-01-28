@@ -1,13 +1,13 @@
 ---
 title: Principles of Writing
 published: true
-createdAt: "2020-07-15"
-updatedAt: "2020-07-15"
+createdAt: '2020-07-15'
+updatedAt: '2020-07-15'
 id: fe0c2dd9-e7fb-422e-acdd-cb889d79f224
 shortTitle: Principles of Writing
-heroImage: ""
-description: "A curated collection of writing principles and essential resources for anyone seeking to master the technology of transferring thoughts."
-tags: ["writing", "learning", "philosophy"]
+heroImage: ''
+description: 'A curated collection of writing principles and essential resources for anyone seeking to master the technology of transferring thoughts.'
+tags: ['writing', 'learning', 'philosophy']
 slug: principles-of-writing
 ---
 

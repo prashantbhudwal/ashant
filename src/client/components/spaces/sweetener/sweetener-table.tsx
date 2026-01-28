@@ -1,8 +1,8 @@
-"use client";
+'use client'
 
-import React, { useState, useMemo } from "react";
-import { Badge } from "~/client/components/ui/badge";
-import { Input } from "~/client/components/ui/input";
+import React, { useState, useMemo } from 'react'
+import { Badge } from '~/client/components/ui/badge'
+import { Input } from '~/client/components/ui/input'
 import {
   Table,
   TableBody,
@@ -10,10 +10,10 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "~/client/components/ui/table";
-import { Check, X, ChevronDown, ChevronUp } from "lucide-react";
-import { sweetenerData } from "./sweetener-data";
-import type { SweetenerData } from "./sweetener-data";
+} from '~/client/components/ui/table'
+import { Check, X, ChevronDown, ChevronUp } from 'lucide-react'
+import { sweetenerData } from './sweetener-data'
+import type { SweetenerData } from './sweetener-data'
 import {
   flexRender,
   getCoreRowModel,
@@ -23,21 +23,21 @@ import {
   type ColumnDef,
   type ColumnFiltersState,
   type SortingState,
-} from "@tanstack/react-table";
-import { type ChangeEvent } from "react";
-import { cn } from "~/client/lib/utils";
+} from '@tanstack/react-table'
+import { type ChangeEvent } from 'react'
+import { cn } from '~/client/lib/utils'
 
-const GI_TABLE_SUGAR = 65;
+const GI_TABLE_SUGAR = 65
 
 // Color coding for glycemic index
 const getGIColorClass = (gi: number): string => {
-  if (gi <= 10) return "border-green-500/50 text-green-600 dark:text-green-400";
+  if (gi <= 10) return 'border-green-500/50 text-green-600 dark:text-green-400'
   if (gi <= 30)
-    return "border-yellow-500/50 text-yellow-600 dark:text-yellow-400";
+    return 'border-yellow-500/50 text-yellow-600 dark:text-yellow-400'
   if (gi <= 50)
-    return "border-orange-500/50 text-orange-600 dark:text-orange-400";
-  return "border-red-500/50 text-red-600 dark:text-red-400";
-};
+    return 'border-orange-500/50 text-orange-600 dark:text-orange-400'
+  return 'border-red-500/50 text-red-600 dark:text-red-400'
+}
 
 // Mobile Card Component
 function SweetenerCard({
@@ -45,9 +45,9 @@ function SweetenerCard({
   isExpanded,
   onToggle,
 }: {
-  item: SweetenerData[0];
-  isExpanded: boolean;
-  onToggle: () => void;
+  item: SweetenerData[0]
+  isExpanded: boolean
+  onToggle: () => void
 }) {
   return (
     <div className="border-border/30 rounded-lg border">
@@ -62,7 +62,7 @@ function SweetenerCard({
         <div className="ml-4 flex items-center gap-3">
           <Badge
             variant="outline"
-            className={cn("text-xs", getGIColorClass(item.gi))}
+            className={cn('text-xs', getGIColorClass(item.gi))}
           >
             GI {item.gi}
           </Badge>
@@ -87,10 +87,10 @@ function SweetenerCard({
               <span className="text-muted-foreground">Calories/g</span>
               <p
                 className={cn(
-                  "font-medium",
+                  'font-medium',
                   item.caloriesPerGram === 0
-                    ? "text-primary"
-                    : "text-foreground",
+                    ? 'text-primary'
+                    : 'text-foreground',
                 )}
               >
                 {item.caloriesPerGram}
@@ -99,10 +99,10 @@ function SweetenerCard({
             <div>
               <span className="text-muted-foreground">Form</span>
               <div className="mt-1 flex gap-2">
-                {(item.state === "powder" || item.state === "both") && (
+                {(item.state === 'powder' || item.state === 'both') && (
                   <span className="text-foreground text-xs">Powder</span>
                 )}
-                {(item.state === "liquid" || item.state === "both") && (
+                {(item.state === 'liquid' || item.state === 'both') && (
                   <span className="text-foreground text-xs">Liquid</span>
                 )}
               </div>
@@ -111,7 +111,7 @@ function SweetenerCard({
               <span className="text-muted-foreground">vs Sugar</span>
               <p className="text-foreground font-medium">
                 {item.gi === 0
-                  ? "No impact"
+                  ? 'No impact'
                   : `${Math.round((item.gi / GI_TABLE_SUGAR) * 100)}%`}
               </p>
             </div>
@@ -125,13 +125,13 @@ function SweetenerCard({
               <div className="mt-1 grid grid-cols-2 gap-2 text-sm">
                 {item.solidCarrier && (
                   <div>
-                    <span className="text-muted-foreground">Solid:</span>{" "}
+                    <span className="text-muted-foreground">Solid:</span>{' '}
                     <span className="text-foreground">{item.solidCarrier}</span>
                   </div>
                 )}
                 {item.liquidCarrier && (
                   <div>
-                    <span className="text-muted-foreground">Liquid:</span>{" "}
+                    <span className="text-muted-foreground">Liquid:</span>{' '}
                     <span className="text-foreground">
                       {item.liquidCarrier}
                     </span>
@@ -143,7 +143,7 @@ function SweetenerCard({
         </div>
       )}
     </div>
-  );
+  )
 }
 
 // Desktop Table Component
@@ -151,30 +151,30 @@ function DesktopTable({
   data,
   globalFilter,
 }: {
-  data: SweetenerData;
-  globalFilter: string;
+  data: SweetenerData
+  globalFilter: string
 }) {
-  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set([""]));
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [expandedRows, setExpandedRows] = useState<Set<string>>(new Set(['']))
+  const [sorting, setSorting] = useState<SortingState>([])
 
   const toggleRow = (rowId: string) => {
-    const newExpandedRows = new Set(expandedRows);
+    const newExpandedRows = new Set(expandedRows)
     if (newExpandedRows.has(rowId)) {
-      newExpandedRows.delete(rowId);
+      newExpandedRows.delete(rowId)
     } else {
-      newExpandedRows.add(rowId);
+      newExpandedRows.add(rowId)
     }
-    setExpandedRows(newExpandedRows);
-  };
+    setExpandedRows(newExpandedRows)
+  }
 
   const columns = useMemo<ColumnDef<SweetenerData[0]>[]>(
     () => [
       {
-        accessorKey: "name",
+        accessorKey: 'name',
         header: ({ column }) => (
           <button
             className="hover:text-foreground flex items-center gap-1 transition-colors"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
           >
             <span>Name</span>
             <SortIcon isSorted={column.getIsSorted()} />
@@ -182,60 +182,60 @@ function DesktopTable({
         ),
         cell: ({ row }) => (
           <div className="text-foreground font-medium">
-            {row.getValue("name")}
+            {row.getValue('name')}
           </div>
         ),
-        filterFn: "includesString",
+        filterFn: 'includesString',
       },
       {
-        accessorKey: "gi",
+        accessorKey: 'gi',
         header: ({ column }) => (
           <button
             className="hover:text-foreground flex items-center gap-1 transition-colors"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
           >
             <span>GI</span>
             <SortIcon isSorted={column.getIsSorted()} />
           </button>
         ),
         cell: ({ row }) => {
-          const gi = row.getValue<number>("gi");
+          const gi = row.getValue<number>('gi')
           return (
             <Badge
               variant="outline"
-              className={cn("text-xs", getGIColorClass(gi))}
+              className={cn('text-xs', getGIColorClass(gi))}
             >
               {gi}
             </Badge>
-          );
+          )
         },
-        sortingFn: "basic",
+        sortingFn: 'basic',
       },
       {
-        accessorKey: "relativeSweetness",
+        accessorKey: 'relativeSweetness',
         header: ({ column }) => (
           <button
             className="hover:text-foreground flex items-center gap-1 transition-colors"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
           >
             <span>Sweetness</span>
             <SortIcon isSorted={column.getIsSorted()} />
           </button>
         ),
         cell: ({ row }) => (
-          <span>{row.getValue<number>("relativeSweetness")}x</span>
+          <span>{row.getValue<number>('relativeSweetness')}x</span>
         ),
-        sortingFn: "basic",
+        sortingFn: 'basic',
       },
       {
-        accessorKey: "state",
+        accessorKey: 'state',
         header: () => <span>Form</span>,
         cell: ({ row }) => {
-          const state = row.getValue<string>("state");
+          const state = row.getValue<string>('state')
           return (
             <div className="flex items-center gap-3">
               <div className="flex items-center gap-1">
-                {state === "powder" || state === "both" ? (
+                {state === 'powder' || state === 'both' ? (
                   <Check className="text-primary h-4 w-4" />
                 ) : (
                   <X className="text-muted-foreground h-4 w-4" />
@@ -243,7 +243,7 @@ function DesktopTable({
                 <span className="text-muted-foreground text-xs">P</span>
               </div>
               <div className="flex items-center gap-1">
-                {state === "liquid" || state === "both" ? (
+                {state === 'liquid' || state === 'both' ? (
                   <Check className="text-primary h-4 w-4" />
                 ) : (
                   <X className="text-muted-foreground h-4 w-4" />
@@ -251,33 +251,33 @@ function DesktopTable({
                 <span className="text-muted-foreground text-xs">L</span>
               </div>
             </div>
-          );
+          )
         },
       },
       {
-        accessorKey: "caloriesPerGram",
+        accessorKey: 'caloriesPerGram',
         header: ({ column }) => (
           <button
             className="hover:text-foreground flex items-center gap-1 transition-colors"
-            onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
           >
             <span>Cal/g</span>
             <SortIcon isSorted={column.getIsSorted()} />
           </button>
         ),
         cell: ({ row }) => {
-          const calories = row.getValue<number>("caloriesPerGram");
+          const calories = row.getValue<number>('caloriesPerGram')
           return (
-            <span className={calories === 0 ? "text-primary font-medium" : ""}>
+            <span className={calories === 0 ? 'text-primary font-medium' : ''}>
               {calories}
             </span>
-          );
+          )
         },
-        sortingFn: "basic",
+        sortingFn: 'basic',
       },
     ],
     [],
-  );
+  )
 
   const table = useReactTable({
     data,
@@ -291,7 +291,7 @@ function DesktopTable({
     getSortedRowModel: getSortedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     onSortingChange: setSorting,
-  });
+  })
 
   return (
     <div className="border-border/30 rounded-lg border">
@@ -347,7 +347,7 @@ function DesktopTable({
                               </span>
                               <span className="text-foreground font-medium">
                                 {row.original.gi === 0
-                                  ? "Zero impact"
+                                  ? 'Zero impact'
                                   : `${Math.round((row.original.gi / GI_TABLE_SUGAR) * 100)}% of sugar`}
                               </span>
                             </div>
@@ -358,7 +358,7 @@ function DesktopTable({
                               <span className="text-foreground font-medium">
                                 {row.original.relativeSweetness > 0
                                   ? `${(1 / row.original.relativeSweetness).toFixed(4)}x`
-                                  : "N/A"}
+                                  : 'N/A'}
                               </span>
                             </div>
                           </div>
@@ -375,7 +375,7 @@ function DesktopTable({
                                   Solid:
                                 </span>
                                 <span className="text-foreground font-medium">
-                                  {row.original.solidCarrier ?? "N/A"}
+                                  {row.original.solidCarrier ?? 'N/A'}
                                 </span>
                               </div>
                               <div className="flex justify-between">
@@ -383,7 +383,7 @@ function DesktopTable({
                                   Liquid:
                                 </span>
                                 <span className="text-foreground font-medium">
-                                  {row.original.liquidCarrier ?? "N/A"}
+                                  {row.original.liquidCarrier ?? 'N/A'}
                                 </span>
                               </div>
                             </div>
@@ -408,11 +408,11 @@ function DesktopTable({
         </TableBody>
       </Table>
     </div>
-  );
+  )
 }
 
 // Sort Icon Component
-function SortIcon({ isSorted }: { isSorted: false | "asc" | "desc" }) {
+function SortIcon({ isSorted }: { isSorted: false | 'asc' | 'desc' }) {
   if (!isSorted) {
     return (
       <svg
@@ -429,40 +429,40 @@ function SortIcon({ isSorted }: { isSorted: false | "asc" | "desc" }) {
           d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
         />
       </svg>
-    );
+    )
   }
 
-  return isSorted === "asc" ? (
+  return isSorted === 'asc' ? (
     <ChevronUp className="h-3 w-3" />
   ) : (
     <ChevronDown className="h-3 w-3" />
-  );
+  )
 }
 
 // Main Component
 export function SweetenerTable() {
-  const [globalFilter, setGlobalFilter] = useState("");
-  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
+  const [globalFilter, setGlobalFilter] = useState('')
+  const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set())
 
   const filteredData = useMemo(() => {
-    if (!globalFilter) return sweetenerData;
-    const lower = globalFilter.toLowerCase();
+    if (!globalFilter) return sweetenerData
+    const lower = globalFilter.toLowerCase()
     return sweetenerData.filter(
       (item) =>
         item.name.toLowerCase().includes(lower) ||
         item.tldr.toLowerCase().includes(lower),
-    );
-  }, [globalFilter]);
+    )
+  }, [globalFilter])
 
   const toggleCard = (name: string) => {
-    const newExpanded = new Set(expandedCards);
+    const newExpanded = new Set(expandedCards)
     if (newExpanded.has(name)) {
-      newExpanded.delete(name);
+      newExpanded.delete(name)
     } else {
-      newExpanded.add(name);
+      newExpanded.add(name)
     }
-    setExpandedCards(newExpanded);
-  };
+    setExpandedCards(newExpanded)
+  }
 
   return (
     <div className="space-y-4">
@@ -497,5 +497,5 @@ export function SweetenerTable() {
         <DesktopTable data={sweetenerData} globalFilter={globalFilter} />
       </div>
     </div>
-  );
+  )
 }

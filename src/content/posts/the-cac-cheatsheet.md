@@ -1,13 +1,13 @@
 ---
 title: The CAC Cheatsheet
 published: true
-createdAt: "2023-02-12"
-updatedAt: "2023-02-12"
+createdAt: '2023-02-12'
+updatedAt: '2023-02-12'
 id: 6e5bbb5b-71e0-4433-b876-4009ea3c5d5e
 shortTitle: The CAC Cheatsheet
-heroImage: ""
-description: "A concise guide to Cost of Acquiring a Customer (CAC)—explaining non-loaded, fully-loaded, and blended metrics for startup growth."
-tags: ["startups", "business", "software"]
+heroImage: ''
+description: 'A concise guide to Cost of Acquiring a Customer (CAC)—explaining non-loaded, fully-loaded, and blended metrics for startup growth.'
+tags: ['startups', 'business', 'software']
 slug: the-cac-cheatsheet
 ---
 

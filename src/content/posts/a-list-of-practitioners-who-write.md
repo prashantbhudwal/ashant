@@ -1,13 +1,13 @@
 ---
-title: "A list of practitioners who write well. "
+title: 'A list of practitioners who write well. '
 published: true
-createdAt: "2022-06-26"
-updatedAt: "2022-06-26"
+createdAt: '2022-06-26'
+updatedAt: '2022-06-26'
 id: 9660a94e-7038-48f0-aeb1-e394f05925f8
-shortTitle: "A list of practitioners who write well. "
-heroImage: ""
-description: "A curated directory of individuals who combine deep expertise in their fields with the craft of exceptionally clear writing."
-tags: ["writing", "philosophy", "reading"]
+shortTitle: 'A list of practitioners who write well. '
+heroImage: ''
+description: 'A curated directory of individuals who combine deep expertise in their fields with the craft of exceptionally clear writing.'
+tags: ['writing', 'philosophy', 'reading']
 slug: a-list-of-practitioners-who-write
 ---
 

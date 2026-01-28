@@ -1,7 +1,7 @@
-import loadable from "@loadable/component";
-import { Skeleton } from "~/client/components/ui/skeleton";
+import loadable from '@loadable/component'
+import { Skeleton } from '~/client/components/ui/skeleton'
 
-const SweetenerList = loadable(() => import("./components/list"), {
+const SweetenerList = loadable(() => import('./components/list'), {
   ssr: false,
   fallback: (
     <div className="flex flex-col gap-4">
@@ -10,8 +10,8 @@ const SweetenerList = loadable(() => import("./components/list"), {
       <Skeleton className="h-10 w-full" />
     </div>
   ),
-});
+})
 
 export const sweetenerOptions = {
   SweetenerList,
-};
+}

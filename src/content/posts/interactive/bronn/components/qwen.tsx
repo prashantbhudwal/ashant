@@ -7,8 +7,8 @@ export default function Qwen() {
         title="Example Site"
         width="600"
         height="400"
-        style={{ border: "none" }}
+        style={{ border: 'none' }}
       />
     </div>
-  );
+  )
 }

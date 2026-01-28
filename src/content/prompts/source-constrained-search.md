@@ -1,13 +1,13 @@
 ---
-id: "prompt-4"
-slug: "source-constrained-search"
-title: "Source Constrained Search"
-shortTitle: "Domain Search"
-description: "Forces AI to only search and cite from a specific domain or source"
-createdAt: "2025-01-05"
-updatedAt: "2025-01-05"
-tags: ["ai", "thinking"]
-keyword: ";src"
+id: 'prompt-4'
+slug: 'source-constrained-search'
+title: 'Source Constrained Search'
+shortTitle: 'Domain Search'
+description: 'Forces AI to only search and cite from a specific domain or source'
+createdAt: '2025-01-05'
+updatedAt: '2025-01-05'
+tags: ['ai', 'thinking']
+keyword: ';src'
 arguments:
   source: "The domain or source to constrain search to (e.g., 'apple.com' or 'React documentation')"
 ---

@@ -1,13 +1,13 @@
 ---
-title: "Ep 2: Revolutionising Education"
+title: 'Ep 2: Revolutionising Education'
 published: true
-createdAt: "2021-07-04"
-updatedAt: "2021-07-04"
+createdAt: '2021-07-04'
+updatedAt: '2021-07-04'
 id: b2c1e71c-6a00-4cdf-85f0-cf5011b6e573
-shortTitle: "Ep 2: Revolutionising Education"
-heroImage: ""
+shortTitle: 'Ep 2: Revolutionising Education'
+heroImage: ''
 description: 'Part 2: The chaotic reality of "revolutionizing education" with zero experience, a tiny team, and a looming deadline for Monday morning classes.'
-tags: ["education", "startups", "business"]
+tags: ['education', 'startups', 'business']
 slug: ep-2-revolutionising-education
 ---
 

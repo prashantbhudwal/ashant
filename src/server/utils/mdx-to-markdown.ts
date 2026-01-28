@@ -1,8 +1,8 @@
-import remarkGfm from "remark-gfm";
-import remarkParse from "remark-parse";
-import remarkMdx from "remark-mdx";
-import remarkStringify from "remark-stringify";
-import { unified } from "unified";
+import remarkGfm from 'remark-gfm'
+import remarkParse from 'remark-parse'
+import remarkMdx from 'remark-mdx'
+import remarkStringify from 'remark-stringify'
+import { unified } from 'unified'
 
 export async function mdxToGfmMarkdown(mdxContent: string): Promise<string> {
   const result = await unified()
@@ -14,12 +14,12 @@ export async function mdxToGfmMarkdown(mdxContent: string): Promise<string> {
     })
     .use(remarkMdx)
     .use(remarkStringify, {
-      bullet: "-",
-      fence: "`",
+      bullet: '-',
+      fence: '`',
       fences: true,
       incrementListMarker: false,
     })
-    .process(mdxContent);
+    .process(mdxContent)
 
-  return String(result);
+  return String(result)
 }

@@ -1,13 +1,13 @@
 ---
 title: The Metadata of Learning
 published: true
-createdAt: "2022-10-22"
-updatedAt: "2022-10-22"
+createdAt: '2022-10-22'
+updatedAt: '2022-10-22'
 id: 05ae739e-086a-450f-ac41-5129d5870de0
 shortTitle: The Metadata of Learning
-heroImage: ""
+heroImage: ''
 description: 'How structuring information around "metadata"—the context and connections between ideas—accelerates the learning curve and deepens understanding.'
-tags: ["learning", "economics", "philosophy"]
+tags: ['learning', 'economics', 'philosophy']
 slug: the-metadata-of-learning-797
 ---
 

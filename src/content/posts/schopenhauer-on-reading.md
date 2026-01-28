@@ -1,13 +1,13 @@
 ---
 title: Schopenhauer On Reading
 published: true
-createdAt: "2020-05-06"
-updatedAt: "2020-05-06"
+createdAt: '2020-05-06'
+updatedAt: '2020-05-06'
 id: 1489b7e1-915c-40db-afaf-4c9433950ca9
 shortTitle: Schopenhauer On Reading
-heroImage: ""
+heroImage: ''
 description: 'Exploring Schopenhauer''s warnings against "reading yourself stupid" and a practical framework for active reading and deep assimilation.'
-tags: ["reading", "philosophy", "learning"]
+tags: ['reading', 'philosophy', 'learning']
 slug: schopenhauer-on-reading
 ---
 

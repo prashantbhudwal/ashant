@@ -1,13 +1,13 @@
 ---
 title: The Secret Sauce of Amazon's Efficiency
 published: true
-createdAt: "2021-05-24"
-updatedAt: "2021-05-24"
+createdAt: '2021-05-24'
+updatedAt: '2021-05-24'
 id: 06659d74-0326-444e-9ed1-f38b91c1597c
 shortTitle: The Secret Sauce of Amazon's Efficiency
-heroImage: ""
+heroImage: ''
 description: "A deep dive into Bezos's 2017 essay on high standards—why they are domain-specific, teachable, and require a realistic understanding of scope."
-tags: ["business", "learning", "philosophy"]
+tags: ['business', 'learning', 'philosophy']
 slug: the-secret-sauce-of-amazons-efficiency
 ---
 

@@ -1,13 +1,13 @@
 ---
 title: What are Environment Variables? | GPT3
 published: true
-createdAt: "2023-03-01"
-updatedAt: "2023-03-01"
+createdAt: '2023-03-01'
+updatedAt: '2023-03-01'
 id: f460e9db-487c-4f8e-bb3d-8a75d20476a2
 shortTitle: What are Environment Variables? | GPT3
-heroImage: ""
-description: "A GPT-3 generated poetic technical reminder on why environment variables are the guardians of your code and security."
-tags: ["software", "ai"]
+heroImage: ''
+description: 'A GPT-3 generated poetic technical reminder on why environment variables are the guardians of your code and security.'
+tags: ['software', 'ai']
 slug: what-are-environment-variables-gpt3
 ---
 

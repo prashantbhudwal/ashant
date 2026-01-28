@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
-import { Button } from "../../ui/button";
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
+import { Button } from '../../ui/button'
 import {
   Form,
   FormControl,
@@ -10,20 +10,20 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "../../ui/form";
-import { Input } from "../../ui/input";
-import { Textarea } from "../../ui/textarea";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { Alert } from "../../ui/alert";
-import { MDocument } from "@mastra/rag";
-import { createServerFn } from "@tanstack/react-start";
-import { cn } from "~/client/lib/utils";
-import { ScrollArea } from "../../ui/scroll-area";
-import { SpaceLayout } from "../space-layout";
-import type { TSpace } from "~/common/types/content.types";
+} from '../../ui/form'
+import { Input } from '../../ui/input'
+import { Textarea } from '../../ui/textarea'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { Alert } from '../../ui/alert'
+import { MDocument } from '@mastra/rag'
+import { createServerFn } from '@tanstack/react-start'
+import { cn } from '~/client/lib/utils'
+import { ScrollArea } from '../../ui/scroll-area'
+import { SpaceLayout } from '../space-layout'
+import type { TSpace } from '~/common/types/content.types'
 
 interface ChunkerSpaceProps {
-  config?: Pick<TSpace, "layoutWidth" | "supportsMobile">;
+  config?: Pick<TSpace, 'layoutWidth' | 'supportsMobile'>
 }
 
 export const ChunkerSpace = ({ config }: ChunkerSpaceProps) => {
@@ -36,49 +36,49 @@ export const ChunkerSpace = ({ config }: ChunkerSpaceProps) => {
     >
       <Chunker />
     </SpaceLayout>
-  );
-};
+  )
+}
 
 const formSchema = z.object({
-  text: z.string().min(10, "Text must be at least 10 characters long."),
+  text: z.string().min(10, 'Text must be at least 10 characters long.'),
   chunkSize: z
     .string()
-    .min(1, "Chunk size must be a positive number.")
-    .regex(/^\d+$/, "Chunk size must contain digits only."),
-});
+    .min(1, 'Chunk size must be a positive number.')
+    .regex(/^\d+$/, 'Chunk size must contain digits only.'),
+})
 
-type FormValues = z.infer<typeof formSchema>;
+type FormValues = z.infer<typeof formSchema>
 
 const chunkTextServerFn = createServerFn({
-  method: "POST",
+  method: 'POST',
 })
   .inputValidator(formSchema)
   .handler(async ({ data }) => {
-    const { text, chunkSize } = data;
-    const numericChunkSize = Number(chunkSize);
+    const { text, chunkSize } = data
+    const numericChunkSize = Number(chunkSize)
     if (!text.trim() || numericChunkSize <= 0) {
-      return [];
+      return []
     }
-    const docFromText = MDocument.fromText(text);
+    const docFromText = MDocument.fromText(text)
     const chunks = await docFromText.chunk({
-      strategy: "token",
+      strategy: 'token',
       size: numericChunkSize,
       overlap: 50,
-    });
-    return chunks.map((chunk) => chunk.text);
-  });
+    })
+    return chunks.map((chunk) => chunk.text)
+  })
 
 function Chunker() {
-  const [copiedChunkIndices, setCopiedChunkIndices] = useState<number[]>([]);
-  const queryClient = useQueryClient();
+  const [copiedChunkIndices, setCopiedChunkIndices] = useState<number[]>([])
+  const queryClient = useQueryClient()
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      text: "",
-      chunkSize: "6000",
+      text: '',
+      chunkSize: '6000',
     },
-  });
+  })
 
   const {
     data: chunks = [],
@@ -86,25 +86,25 @@ function Chunker() {
     isFetching,
     error,
   } = useQuery({
-    queryKey: ["chunker"],
+    queryKey: ['chunker'],
     queryFn: () =>
       chunkTextServerFn({ data: formSchema.parse(form.getValues()) }),
     enabled: false,
     retry: 2,
-  });
+  })
 
   const handleChunk = (data: FormValues) => {
     queryClient.removeQueries({
-      queryKey: ["chunker"],
-    });
-    setCopiedChunkIndices([]);
-    refetch();
-  };
+      queryKey: ['chunker'],
+    })
+    setCopiedChunkIndices([])
+    refetch()
+  }
 
   const copyChunk = (chunk: string, index: number) => {
-    navigator.clipboard.writeText(chunk);
-    setCopiedChunkIndices((prev) => [...new Set([...prev, index])]);
-  };
+    navigator.clipboard.writeText(chunk)
+    setCopiedChunkIndices((prev) => [...new Set([...prev, index])])
+  }
 
   return (
     <div className="space-y-8">
@@ -138,11 +138,11 @@ function Chunker() {
                     inputMode="numeric"
                     pattern="[0-9]*"
                     placeholder="e.g., 512"
-                    value={field.value ?? ""}
+                    value={field.value ?? ''}
                     onChange={(event) => {
-                      const nextValue = event.target.value;
+                      const nextValue = event.target.value
                       // Allow empty string or numbers
-                      field.onChange(nextValue);
+                      field.onChange(nextValue)
                     }}
                     onBlur={field.onBlur}
                     name={field.name}
@@ -158,7 +158,7 @@ function Chunker() {
             className="w-full sm:w-auto"
             disabled={isFetching}
           >
-            {isFetching ? "Processing..." : "Chunk Text"}
+            {isFetching ? 'Processing...' : 'Chunk Text'}
           </Button>
         </form>
       </Form>
@@ -167,7 +167,7 @@ function Chunker() {
         <Alert variant="destructive">
           {error instanceof Error
             ? error.message
-            : "An error occurred while chunking the text"}
+            : 'An error occurred while chunking the text'}
         </Alert>
       )}
 
@@ -178,12 +178,12 @@ function Chunker() {
           </h2>
           <div className="space-y-6">
             {chunks.map((chunk, index) => {
-              const isCopied = copiedChunkIndices.includes(index);
+              const isCopied = copiedChunkIndices.includes(index)
               return (
                 <div
                   className={cn(
-                    "border-border/30 flex flex-col rounded-lg border",
-                    isCopied && "border-primary/50",
+                    'border-border/30 flex flex-col rounded-lg border',
+                    isCopied && 'border-primary/50',
                   )}
                   key={index}
                 >
@@ -192,19 +192,19 @@ function Chunker() {
                       Chunk {index + 1}
                     </span>
                     <Button
-                      variant={isCopied ? "default" : "outline"}
+                      variant={isCopied ? 'default' : 'outline'}
                       size="sm"
                       onClick={() => copyChunk(chunk, index)}
                       className="h-8 min-w-[80px] text-xs transition-all duration-200"
                     >
-                      {isCopied ? "Copy Again" : "Copy"}
+                      {isCopied ? 'Copy Again' : 'Copy'}
                     </Button>
                   </div>
                   <div className="bg-card p-4">
                     <div className="border-border/10 bg-muted/10 max-h-[300px] w-full overflow-y-auto rounded-md border p-2">
                       <p
                         className={cn(
-                          "text-muted-foreground font-mono text-sm break-words whitespace-pre-wrap",
+                          'text-muted-foreground font-mono text-sm break-words whitespace-pre-wrap',
                         )}
                       >
                         {chunk}
@@ -212,11 +212,11 @@ function Chunker() {
                     </div>
                   </div>
                 </div>
-              );
+              )
             })}
           </div>
         </div>
       )}
     </div>
-  );
+  )
 }

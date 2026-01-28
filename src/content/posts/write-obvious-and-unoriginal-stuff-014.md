@@ -1,13 +1,13 @@
 ---
 title: Write Obvious and Unoriginal Stuff
 published: true
-createdAt: "2022-12-23"
-updatedAt: "2022-12-23"
+createdAt: '2022-12-23'
+updatedAt: '2022-12-23'
 id: e74af799-cac8-4752-8805-035af28414af
 shortTitle: Write Obvious and Unoriginal Stuff
-heroImage: ""
-description: "How to build a consistent writing habit by lowering the bar and focusing on the obvious, much like programmers practice with basic algorithms."
-tags: ["writing", "learning", "personal"]
+heroImage: ''
+description: 'How to build a consistent writing habit by lowering the bar and focusing on the obvious, much like programmers practice with basic algorithms.'
+tags: ['writing', 'learning', 'personal']
 slug: write-obvious-and-unoriginal-stuff-014
 ---
 

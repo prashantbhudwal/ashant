@@ -1,28 +1,28 @@
-import { JSX } from "react";
-import { cn } from "~/client/lib/utils";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import { JSX } from 'react'
+import { cn } from '~/client/lib/utils'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export function Prose(props: {
-  className?: string;
-  type: "markdown";
-  content: string;
-}): JSX.Element;
+  className?: string
+  type: 'markdown'
+  content: string
+}): JSX.Element
 export function Prose(props: {
-  className?: string;
-  type: "wrapper";
-  children: React.ReactNode;
-}): JSX.Element;
+  className?: string
+  type: 'wrapper'
+  children: React.ReactNode
+}): JSX.Element
 export function Prose({
   className,
-  type = "wrapper",
+  type = 'wrapper',
   children,
   content,
 }: {
-  className?: string;
-  type: "wrapper" | "markdown";
-  children?: React.ReactNode;
-  content?: string;
+  className?: string
+  type: 'wrapper' | 'markdown'
+  children?: React.ReactNode
+  content?: string
 }): JSX.Element {
   return (
     <div
@@ -32,11 +32,11 @@ export function Prose({
         className,
       )}
     >
-      {type === "markdown" ? (
+      {type === 'markdown' ? (
         <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
       ) : (
         children
       )}
     </div>
-  );
+  )
 }

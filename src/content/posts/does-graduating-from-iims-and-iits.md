@@ -1,13 +1,13 @@
 ---
-title: "Does graduating from IIMs and IITs matter? "
+title: 'Does graduating from IIMs and IITs matter? '
 published: true
-createdAt: "2021-03-11"
-updatedAt: "2021-03-11"
+createdAt: '2021-03-11'
+updatedAt: '2021-03-11'
 id: 07b05635-05e2-4308-ad7b-19d356a01f4a
-shortTitle: "Does graduating from IIMs and IITs matter? "
-heroImage: ""
+shortTitle: 'Does graduating from IIMs and IITs matter? '
+heroImage: ''
 description: 'Deconstructing the "logic" of elite credentials—revealing how ambition and performance, not just the institution, dictate long-term salary and success.'
-tags: ["education", "business", "philosophy"]
+tags: ['education', 'business', 'philosophy']
 slug: does-graduating-from-iims-and-iits
 ---
 

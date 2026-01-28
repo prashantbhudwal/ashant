@@ -1,13 +1,13 @@
 ---
-title: "Hooked on UseEffect : A Rap by GPT3"
+title: 'Hooked on UseEffect : A Rap by GPT3'
 published: true
-createdAt: "2023-03-04"
-updatedAt: "2023-03-04"
+createdAt: '2023-03-04'
+updatedAt: '2023-03-04'
 id: dae5b82f-842d-4636-a6b4-43d51f7b70f3
-shortTitle: "Hooked on UseEffect : A Rap by GPT3"
-heroImage: ""
-description: "A GPT-generated historical rap in the style of J. Cole, chronicling the transition from class components to the era of React hooks."
-tags: ["software", "ai", "writing"]
+shortTitle: 'Hooked on UseEffect : A Rap by GPT3'
+heroImage: ''
+description: 'A GPT-generated historical rap in the style of J. Cole, chronicling the transition from class components to the era of React hooks.'
+tags: ['software', 'ai', 'writing']
 slug: hooked-on-useeffect-a-rap-by-gpt3
 ---
 

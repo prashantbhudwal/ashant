@@ -1,55 +1,55 @@
-import { Link } from "@tanstack/react-router";
-import { cn } from "~/client/lib/utils";
+import { Link } from '@tanstack/react-router'
+import { cn } from '~/client/lib/utils'
 
 type MenuItem = {
-  label: string;
-  route: string;
-  isActive: boolean;
-};
+  label: string
+  route: string
+  isActive: boolean
+}
 
 const menuItems: MenuItem[] = [
   {
-    label: "writings",
-    route: "/",
+    label: 'writings',
+    route: '/',
     isActive: true,
   },
   {
-    label: "story",
-    route: "",
+    label: 'story',
+    route: '',
     isActive: false,
   },
   {
-    label: "tools",
-    route: "",
+    label: 'tools',
+    route: '',
     isActive: false,
   },
-];
+]
 
 export function MenuIsland({ className }: { className?: string }) {
   return (
-    <nav className={cn("my-4 md:my-0", className)}>
-      <ul className="flex flex-row space-x-2 md:space-x-8 items-baseline">
+    <nav className={cn('my-4 md:my-0', className)}>
+      <ul className="flex flex-row items-baseline space-x-2 md:space-x-8">
         {menuItems.map(({ isActive, label, route }) => (
           <li key={label}>
             <Link
               to={route}
               className={cn(
-                "font-mono flex items-center h-8 md:h-9 rounded-md transition-all relative",
-                "bg-clip-text",
+                'relative flex h-8 items-center rounded-md font-mono transition-all md:h-9',
+                'bg-clip-text',
                 {
-                  "text-primary font-medium": isActive,
-                  "hover:text-foreground": !isActive,
-                  "text-muted-foreground": !isActive,
+                  'text-primary font-medium': isActive,
+                  'hover:text-foreground': !isActive,
+                  'text-muted-foreground': !isActive,
                 },
               )}
             >
               <span
                 className={cn(
-                  "mx-2 md:mx-3 relative",
+                  'relative mx-2 md:mx-3',
                   !isActive &&
-                    "before:absolute before:inset-0 before:bg-gradient-to-r before:from-foreground before:to-foreground before:bg-clip-text before:-z-10",
+                    'before:from-foreground before:to-foreground before:absolute before:inset-0 before:-z-10 before:bg-gradient-to-r before:bg-clip-text',
                   !isActive &&
-                    "before:translate-x-[-100%] hover:before:translate-x-0 before:transition-transform before:duration-300 before:ease-in-out",
+                    'before:translate-x-[-100%] before:transition-transform before:duration-300 before:ease-in-out hover:before:translate-x-0',
                 )}
               >
                 {label}
@@ -59,5 +59,5 @@ export function MenuIsland({ className }: { className?: string }) {
         ))}
       </ul>
     </nav>
-  );
+  )
 }

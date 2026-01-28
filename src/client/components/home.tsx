@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react'
 
 export function Home() {
   return (
     <>
       <FullPageScroller />
     </>
-  );
+  )
 }
 
 type Section = {
-  id: number;
-  label: string;
-  className: string;
-};
+  id: number
+  label: string
+  className: string
+}
 
 const sections: Section[] = [
-  { id: 0, label: "Section 1", className: "bg-slate-900" },
-  { id: 1, label: "Section 2", className: "bg-slate-700" },
-  { id: 2, label: "Section 3", className: "bg-slate-500" },
-];
+  { id: 0, label: 'Section 1', className: 'bg-slate-900' },
+  { id: 1, label: 'Section 2', className: 'bg-slate-700' },
+  { id: 2, label: 'Section 3', className: 'bg-slate-500' },
+]
 
 const FullPageScroller: React.FC = () => {
   return (
@@ -32,5 +32,5 @@ const FullPageScroller: React.FC = () => {
         </section>
       ))}
     </div>
-  );
-};
+  )
+}

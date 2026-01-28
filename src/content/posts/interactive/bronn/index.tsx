@@ -1,8 +1,8 @@
-import loadable from "@loadable/component";
-import { Skeleton } from "~/client/components/ui/skeleton";
+import loadable from '@loadable/component'
+import { Skeleton } from '~/client/components/ui/skeleton'
 
 export const bronnComponents = {
-  Qwen: loadable(() => import("./components/qwen"), {
+  Qwen: loadable(() => import('./components/qwen'), {
     ssr: false,
     fallback: (
       <div className="flex flex-col gap-4">
@@ -11,4 +11,4 @@ export const bronnComponents = {
       </div>
     ),
   }),
-};
+}

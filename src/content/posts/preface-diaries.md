@@ -1,14 +1,14 @@
 ---
-title: "Preface: AI Diaries"
+title: 'Preface: AI Diaries'
 published: true
 type: diary
 createdAt: 2025-03-01T00:00:00.000Z
 updatedAt: 2025-03-01T00:00:00.000Z
 id: d895dc46-71e2-4f30-a97f-1d9f425c6bdb
-shortTitle: "Preface: AI Diaries"
-heroImage: ""
-description: "A preface to my observation-first documentation of the AI era—mimicking the spirit of historical diaries to record the extraordinary shift in intelligence."
-tags: ["ai", "personal"]
+shortTitle: 'Preface: AI Diaries'
+heroImage: ''
+description: 'A preface to my observation-first documentation of the AI era—mimicking the spirit of historical diaries to record the extraordinary shift in intelligence.'
+tags: ['ai', 'personal']
 slug: preface-diaries
 ---
 

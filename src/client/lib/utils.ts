@@ -1,35 +1,35 @@
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { clsx, type ClassValue } from 'clsx'
+import { twMerge } from 'tailwind-merge'
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
+  return twMerge(clsx(inputs))
 }
-export const isDev = process.env.NODE_ENV === "development";
-export const isMastraPlayground = process.env.MASTRA_DEV;
+export const isDev = process.env.NODE_ENV === 'development'
+export const isMastraPlayground = process.env.MASTRA_DEV
 
 const simulateCall = async (duration = 1000, { failureRate = 0 } = {}) => {
-  if (!isDev) return;
+  if (!isDev) return
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() < failureRate) {
-        reject(new Error("Simulated failure"));
+        reject(new Error('Simulated failure'))
       } else {
-        resolve(undefined);
+        resolve(undefined)
       }
-    }, duration);
-  });
-};
+    }, duration)
+  })
+}
 
 export function sleep(
   ms: number,
   { nonBlocking = true }: { nonBlocking?: boolean },
 ) {
   if (nonBlocking) {
-    return new Promise((r) => setTimeout(r, ms));
+    return new Promise((r) => setTimeout(r, ms))
   } else {
-    const wakeUpTime = Date.now() + ms;
+    const wakeUpTime = Date.now() + ms
     while (Date.now() < wakeUpTime) {
-      console.log("snoozing");
+      console.log('snoozing')
     }
   }
 }
@@ -41,4 +41,4 @@ export function sleep(
 export const devUtils = {
   simulateCall,
   sleep,
-};
+}

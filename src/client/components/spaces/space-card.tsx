@@ -1,11 +1,11 @@
-import { Link } from "@tanstack/react-router";
-import { type TSerializableSpace } from "~/common/types/content.types";
-import { link } from "~/client/lib/link";
-import { Image } from "~/client/components/image";
-import { cn } from "~/client/lib/utils";
+import { Link } from '@tanstack/react-router'
+import { type TSerializableSpace } from '~/common/types/content.types'
+import { link } from '~/client/lib/link'
+import { Image } from '~/client/components/image'
+import { cn } from '~/client/lib/utils'
 
 interface SpaceCardProps {
-  space: TSerializableSpace;
+  space: TSerializableSpace
 }
 
 export function SpaceCard({ space }: SpaceCardProps) {
@@ -17,9 +17,9 @@ export function SpaceCard({ space }: SpaceCardProps) {
     >
       <div
         className={cn(
-          "relative h-36 overflow-hidden rounded-lg sm:h-48 sm:rounded-xl",
-          "border-border/50 hover:border-border border transition-all",
-          "hover:outline-primary hover:outline",
+          'relative h-36 overflow-hidden rounded-lg sm:h-48 sm:rounded-xl',
+          'border-border/50 hover:border-border border transition-all',
+          'hover:outline-primary hover:outline',
         )}
       >
         {space.heroImage && (
@@ -41,5 +41,5 @@ export function SpaceCard({ space }: SpaceCardProps) {
         </div>
       </div>
     </Link>
-  );
+  )
 }

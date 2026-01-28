@@ -1,6 +1,6 @@
-import { Link } from "@tanstack/react-router";
-import { Button } from "~/client/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Link } from '@tanstack/react-router'
+import { Button } from '~/client/components/ui/button'
+import { ArrowRight } from 'lucide-react'
 
 export function StorySection({ className }: { className?: string }) {
   return (
@@ -28,5 +28,5 @@ export function StorySection({ className }: { className?: string }) {
         </Link>
       </div>
     </section>
-  );
+  )
 }

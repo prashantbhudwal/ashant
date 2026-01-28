@@ -1,13 +1,13 @@
 ---
 title: Can you confidently know things without experience?
 published: true
-createdAt: "2022-07-17"
-updatedAt: "2022-07-17"
+createdAt: '2022-07-17'
+updatedAt: '2022-07-17'
 id: 59ce06be-ca64-4c28-b498-a86a9a9605e4
 shortTitle: Can you confidently know things without experience?
-heroImage: ""
+heroImage: ''
 description: 'A defense of "indirect experience" and why the scientific method is humanity''s primary tool for knowing things we haven''t personally witnessed.'
-tags: ["philosophy", "learning"]
+tags: ['philosophy', 'learning']
 slug: can-you-confidently-know-things-without
 ---
 

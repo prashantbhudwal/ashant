@@ -5,22 +5,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "~/client/components/ui/card";
+} from '~/client/components/ui/card'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "~/client/components/ui/carousel";
+} from '~/client/components/ui/carousel'
 
-import dedent from "dedent";
-import { Prose } from "~/client/components/blog/custom/prose.v2";
-import { useIsMobile } from "~/client/hooks/use-mobile";
+import dedent from 'dedent'
+import { Prose } from '~/client/components/blog/custom/prose.v2'
+import { useIsMobile } from '~/client/hooks/use-mobile'
 
 const content = [
   {
-    source: { title: "Khan Academy", description: "Used around the world." },
+    source: { title: 'Khan Academy', description: 'Used around the world.' },
     text: dedent`The scientific method has five basic steps, plus one feedback step:
 1. Make an observation.
 2. Ask a question.
@@ -32,15 +32,15 @@ const content = [
       "In most cases, the scientific method is an iterative process. In other words, it's a cycle rather than a straight line.",
   },
   {
-    source: { title: "NCERT, Grade 6", description: "Major Indian Textbook" },
+    source: { title: 'NCERT, Grade 6', description: 'Major Indian Textbook' },
     text: dedent` Science...is about following a step-by-step process that helps us find answers to our questions...First, we observe something that we find interesting or we do not understand. This makes us wonder and perhaps think of a question about it. Then, we guess a possible answer to that question. We test this guess through experiments or more observations. We then try to analyse the results to see if it actually answers our question`,
-    warning: "None",
+    warning: 'None',
   },
 
   {
     source: {
-      title: "CK-12 Foundation",
-      description: "Aligned to common core curriculum.",
+      title: 'CK-12 Foundation',
+      description: 'Aligned to common core curriculum.',
     },
     text: dedent`It generally follows the steps. A scientific investigation is a plan for asking questions and testing possible answers. It generally follows the steps listed ... below 
     1.	Make observations
@@ -51,18 +51,18 @@ const content = [
 	6.	Draw conclusion
 	7.	Communicate results `,
     warning:
-      "In reality, however, the process doesn’t always go in a straight line.",
+      'In reality, however, the process doesn’t always go in a straight line.',
   },
-];
+]
 
 export default function DefinitionsCarousel({
   hasWarnings = false,
 }: {
-  hasWarnings?: boolean;
+  hasWarnings?: boolean
 }) {
-  const isMobile = useIsMobile();
+  const isMobile = useIsMobile()
   return (
-    <Carousel orientation={isMobile ? "vertical" : "horizontal"}>
+    <Carousel orientation={isMobile ? 'vertical' : 'horizontal'}>
       <CarouselContent>
         {content.map((item) => {
           return (
@@ -80,7 +80,7 @@ export default function DefinitionsCarousel({
                 </CardFooter>
               </Card>
             </CarouselItem>
-          );
+          )
         })}
       </CarouselContent>
       {!isMobile && (
@@ -90,5 +90,5 @@ export default function DefinitionsCarousel({
         </>
       )}
     </Carousel>
-  );
+  )
 }

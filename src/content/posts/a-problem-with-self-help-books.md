@@ -1,13 +1,13 @@
 ---
 title: A Problem with Self-help Books
 published: true
-createdAt: "2021-03-05"
-updatedAt: "2021-03-05"
+createdAt: '2021-03-05'
+updatedAt: '2021-03-05'
 id: dfff66cc-3e2b-45cf-83b9-2ab7235fe878
 shortTitle: A Problem with Self-help Books
-heroImage: ""
-description: "Why most self-help classics are built on cherry-picked examples and how reading Emerson can provide a necessary, if conflicting, antidote."
-tags: ["reading", "philosophy"]
+heroImage: ''
+description: 'Why most self-help classics are built on cherry-picked examples and how reading Emerson can provide a necessary, if conflicting, antidote.'
+tags: ['reading', 'philosophy']
 slug: a-problem-with-self-help-books
 ---
 

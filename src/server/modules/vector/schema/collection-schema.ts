@@ -1,5 +1,5 @@
-import { SimilarityMetric } from "../rag.config";
-import { TIndexConfig } from "./migrate";
+import { SimilarityMetric } from '../rag.config'
+import { TIndexConfig } from './migrate'
 /**
  * # Creating Collections
  * 1. Export new collections as a const in this file
@@ -13,23 +13,23 @@ import { TIndexConfig } from "./migrate";
  */
 
 export const DOCUMENT_COLLECTION = {
-  indexName: "documents",
+  indexName: 'documents',
   dimension: 1536,
   metric: SimilarityMetric.COSINE,
   description:
-    "Stores whole documents like posts, pages, etc. Use for RAG and recommendations.",
-} as const;
+    'Stores whole documents like posts, pages, etc. Use for RAG and recommendations.',
+} as const
 
 export const DOCUMENT_CHUNK_COLLECTION = {
-  indexName: "documentChunks",
+  indexName: 'documentChunks',
   dimension: 1536,
   metric: SimilarityMetric.COSINE,
-  description: "Stores chunks of documents. Used for RAG.",
-} as const;
+  description: 'Stores chunks of documents. Used for RAG.',
+} as const
 
 export const COLLECTIONS = [
   DOCUMENT_COLLECTION,
   DOCUMENT_CHUNK_COLLECTION,
-] as const;
+] as const
 
-export type TCollectionName = (typeof COLLECTIONS)[number]["indexName"];
+export type TCollectionName = (typeof COLLECTIONS)[number]['indexName']

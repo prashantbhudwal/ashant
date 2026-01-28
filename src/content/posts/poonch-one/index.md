@@ -10,7 +10,7 @@ createdAt: 2025-05-07T00:00:00.000Z
 updatedAt: 2025-05-07T00:00:00.000Z
 id: 6dba04a2-a558-44ed-853e-f0183a25069e
 shortTitle: Poonch Shelling - Day One
-tags: ["personal", "philosophy"]
+tags: ['personal', 'philosophy']
 slug: poonch-one
 ---
 

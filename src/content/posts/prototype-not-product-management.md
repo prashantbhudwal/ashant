@@ -1,13 +1,13 @@
 ---
 title: Prototype (NOT Product) Management
 published: true
-createdAt: "2022-12-24"
-updatedAt: "2022-12-24"
+createdAt: '2022-12-24'
+updatedAt: '2022-12-24'
 id: 3c333b6b-3289-475a-a3ca-6e74b3a72b85
 shortTitle: Prototype (NOT Product) Management
-heroImage: ""
-description: "Differentiating the chaotic pre-PMF world of Prototype Management from the structured, quality-driven world of Product Management."
-tags: ["startups", "business", "software"]
+heroImage: ''
+description: 'Differentiating the chaotic pre-PMF world of Prototype Management from the structured, quality-driven world of Product Management.'
+tags: ['startups', 'business', 'software']
 slug: prototype-not-product-management
 ---
 

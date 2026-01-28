@@ -1,5 +1,6 @@
 # All Blog Posts
-*Combined on 2025-06-02*
+
+_Combined on 2025-06-02_
 
 ---
 
@@ -7,8 +8,7 @@
 
 **Date:** 2025-05-09
 
-
-import { ImageX, Youtube, Instagram } from "@/components/embed";
+import { ImageX, Youtube, Instagram } from '@/components/embed'
 
 ---
 
@@ -162,15 +162,13 @@ People taking shelter in the district hospital. Taken by a relative who is a fir
 
 <ImageX src="poonch-two/shelter" variant="portrait" alt="People in shelter" />
 
-
 ---
 
 ## Poonch Shelling - Day One
 
 **Date:** 2025-05-07
 
-
-import { Youtube, Facebook } from "@/components/embed";
+import { Youtube, Facebook } from '@/components/embed'
 
 I am from Poonch; my family still lives there. This is what I know as of 4:00 pm on May 7.
 
@@ -234,15 +232,13 @@ Look for three things in this video. One, the shelling. Two, the mass migration.
 
 <Youtube href="https://www.youtube.com/watch?v=hQ9SdsoQWzI&t=22s" />
 
-
 ---
 
 ## The Scientific Method Doesn’t Exist
 
 **Date:** 2025-04-13
 
-
-import DefinitionsCarousel from "./components/definitions-carousel";
+import DefinitionsCarousel from './components/definitions-carousel'
 
 I started this exploration wanting to answer what I thought was a simple question: "What is the scientific method?" It wasn't a simple question. This whole journey made me question ideas I had accumulated throughout my education. In this post, I document my journey.
 
@@ -348,16 +344,14 @@ People who encounter a simple five-step cartoon either treat it as childishly si
 
 What do we do? I have a simple answer: intellectual humility. Intellectual humility is knowing that your knowledge has limits. It's the willingness to say, "I don't know" or "I may be wrong". Treat the textbook diagram as a mnemonic, not a map, and stay curious enough to know when you’ve left the paved road.
 
-
 ---
 
 ## I, Ghibli
 
 **Date:** 2025-04-05
 
-
-import { GoDeep } from "@/components/content/go-deep";
-import { ImageX } from "@/components/embed";
+import { GoDeep } from '@/components/content/go-deep'
+import { ImageX } from '@/components/embed'
 
 The last week of March was chaos. Exciting chaos. Why? Because OpenAI launched a new way to generate images. First, I generated an image for my partner — she was awestruck, and I earned a ton of brownie points. Then I generated an image of my sister and sent it on the family group. That’s when all hell broke loose. I generated images non-stop until midnight.
 
@@ -377,7 +371,7 @@ People went mad in one very specific way: the Ghibli way. In the demo, the OpenA
 Here is the style of the studio.
 
 <ImageX
-  src={"ghiblification/totoro"}
+  src={'ghiblification/totoro'}
   alt="Totoro movie poster."
   variant="landscape"
 />
@@ -385,7 +379,7 @@ Here is the style of the studio.
 Here’s what it generated when I gave it a photo of me falling off a chair.
 
 <ImageX
-  src={"ghiblification/fall-ghibli"}
+  src={'ghiblification/fall-ghibli'}
   alt="4o Image Generation Preview"
   variant="landscape"
 />
@@ -393,7 +387,7 @@ Here’s what it generated when I gave it a photo of me falling off a chair.
 Here is another one, this time in a different style, but equally good.
 
 <ImageX
-  src={"ghiblification/sleep"}
+  src={'ghiblification/sleep'}
   alt="4o Image Generation Preview"
   variant="landscape"
 />
@@ -410,18 +404,15 @@ In India, people don't pay for subscriptions. But they are paying for this. In f
 
 Ghiblification is just one aspect of 4o, it can also generate flawless text, has spacial awareness and can handle multiple elements in one image. You can control resolution, size, colors, aspect ratio. It can make almost everything that Canva can, and it can do it in 1% of the time and maybe 10% of the effort. You don't have pixel level control but for everything where good-enough suffices, this will replace your Canva use. Think: educational content, flyers, product posts — anything where “good enough” beats “perfect.” What blows my mind is that this is just version one. If this gets better at the same rate as the text models, you might never need to open a design tool again. Just describe how it should feel. Vibe designing.
 
-
 ---
 
 ## Battle of the Sweeteners
 
 **Date:** 2025-03-16
 
-
-import SweetenerList from "./components/list";
+import SweetenerList from './components/list'
 
 <SweetenerList />
-
 
 ---
 
@@ -439,7 +430,6 @@ Qwen has a decent base model and a very good reasoning model, both of which are 
 
 Qwen is good enough to be my go-to model for all general tasks. For specialized tasks—in my case, coding—I still pay for GitHub Copilot and T3 Chat, but I feel no loyalty toward them either. They’re just the best tools for the job at the moment, and I’ll switch if a better option comes along. I think many others are in the same boat as me.
 
-
 ---
 
 ## GPT 4.5bro
@@ -450,18 +440,17 @@ I remember when OpenAI launched GPT-4o. I remember commenting, "It is so good th
 
 They dropped GPT-4.5 two days ago, and everyone was unpleasantly surprised. The model performs below other frontier models on all the benchmarks, it has a knowledge cutoff of mid-2023, and it is absurdly expensive. But they say it has a better vibe than other models. They say that the subjective experience of chatting with it is more human-like. Essentially, they are saying it is GPT-4.5bro.
 
-Karpathy tried to [test the bro-ness hypothesis](https://x.com/karpathy/status/1895337579589079434) by doing a blind-test on twitter, asking people to compare outputs from 4 and 4.5bro. People chose GPT-4, four times out of five. He was surprised, as he personally felt the bro-ness of 4.5, and said "...Either the high-taste testers are noticing the new and unique structure but the low-taste ones are overwhelming the poll. Or we're just hallucinating things..." followed by other alternate conjectures. 
+Karpathy tried to [test the bro-ness hypothesis](https://x.com/karpathy/status/1895337579589079434) by doing a blind-test on twitter, asking people to compare outputs from 4 and 4.5bro. People chose GPT-4, four times out of five. He was surprised, as he personally felt the bro-ness of 4.5, and said "...Either the high-taste testers are noticing the new and unique structure but the low-taste ones are overwhelming the poll. Or we're just hallucinating things..." followed by other alternate conjectures.
 
 I don't feel the bro-ness.
 
 On a technical level, they say it is a bigger model and that they have done something new in pre-training. How big? Or what’s new? They don’t say.
 
-The 4whoa days were the good old days of OpenAI, and these are the "we are focusing on GPUs" days of OpenAI. At least, that’s what Sam says. He says he is focused on the long game. I think he is right, but in the meantime, OpenAI is constantly underwhelming. 
+The 4whoa days were the good old days of OpenAI, and these are the "we are focusing on GPUs" days of OpenAI. At least, that’s what Sam says. He says he is focused on the long game. I think he is right, but in the meantime, OpenAI is constantly underwhelming.
 
-The Christmas launches were underwhelming. Sora, that we got, was underwhelming. And now this. I still believe in Sam, but I can no longer justify paying $20 for ChatGPT. He needs to build something better if he wants to charge that kind of money. 
+The Christmas launches were underwhelming. Sora, that we got, was underwhelming. And now this. I still believe in Sam, but I can no longer justify paying $20 for ChatGPT. He needs to build something better if he wants to charge that kind of money.
 
 I canceled last week. But I am positive I will renew it before the year ends. As I said before, I believe in Sam's ability of doing remarkable things.
-
 
 ---
 
@@ -471,17 +460,15 @@ I canceled last week. But I am positive I will renew it before the year ends. As
 
 "The Great Depression: A Diary" and "Berlin Diary" are two of my favourite books. They are simple diaries written during extraordinary times. The former, as is clear from the name, was written during the Great Depression of 1929–35, and the latter during the Second World War. I like how even the most ordinary of information from extraordinary times becomes extraordinary in retrospect. I intend to replicate these books in spirit.
 
-I believe we are currently living in an extraordinary time. There is no war, there is no depression (yet), but what has happened in AI in the last two years has been a sight to see. Which side am I on? I honestly don't know – I am not a maximalist, and neither am I a doomer. I think I am an observer at the frontlines and I think something magical is happening – whether it is positive or negative; time will tell, and I intend to document the journey. 
+I believe we are currently living in an extraordinary time. There is no war, there is no depression (yet), but what has happened in AI in the last two years has been a sight to see. Which side am I on? I honestly don't know – I am not a maximalist, and neither am I a doomer. I think I am an observer at the frontlines and I think something magical is happening – whether it is positive or negative; time will tell, and I intend to document the journey.
 
 What can you expect? Essentially unedited thoughts, predictions, and expectations about AI. All stylistic errors, bad paragraphs, and ambiguous sentences will stay as they are, forever. Think of it as reading a first draft that will never be revised, except for typos and possibly footnotes for factual errors. I will not change "the core" of anything I write in retrospect. To ensure this, everything will be version controlled using git – anyone will be able to see all the edits.
-
 
 ---
 
 ## ChatGPT - How does it work!
 
 **Date:** 2024-04-20
-
 
 **\[Note to the reader: This post looks long but is a short read. Try it.\]**
 
@@ -613,7 +600,6 @@ You can add these instructions on the free version of ChatGPT too. Just google �
 3.  Add clear custom instructions: If you ask the model to be a doctor, and then ask it a medical question, the response would be better than just asking it that question directly. This happens because while answering, the AI tries to complete the sentence “As an expert doctor, I recommend that you ….”, as compared to “I am not an expert doctor, but I think…”.
 4.  Don’t make typos or grammatical errors: The quality of the responses also depends on the quality of the questions. If the questions are clear, not filled with errors, and grammatically correct, there is a better chance of getting a better response.
 
-
 ---
 
 ## Dear co-worker, help me do my best work
@@ -634,23 +620,17 @@ When you see that I am glued to my screen - typing furiously, or writing furious
 
 Even if I just said one sentence “Can we do this later?” I am gone, my context is lost. Now, I am thinking about later. Now I am thinking about the chore that I may have to do later. Now I am thinking about that other meeting where I said “later” too, and how this “later” will clash with that “later”. I am gone, the problem I was solving is still there, but I have lost all my context. I have lost. The problem has won.
 
-  
-
 ---
 
 Dear person, sometimes I am not furiously typing, I am just staring into the void, for minutes, sometimes hours. I am still in the zone, I am still working. Just because I am not doing any physical activity, does not mean that I am not working, the problem is resolving itself in the back of my mind. I am in the void because I don’t know what to do next, or how to act. But, I am still thinking, I am still wrestling with the problem. As I said, the problem is hard, it will take time. All I ask you is give me that - time that is my own.
 
 Time when you don’t ask me how I am, time when you don’t ask me about the party we planned for the weekend, time when you don’t offer me a snack or tea, or coffee. I know you care. I know you want to be polite. But please, not now. Later.
 
-  
-
 ---
 
 Dear person, sometimes I will speak to you about the problem. I will come to you and ask you if you can help me brainstorm. Please, only say yes, if you can give the problem your complete attention. You can say no, that is okay. Maybe you will see the expression on my face change when you say no, don’t give in when I do that. I am not disappointed because of you, I am disappointed because I needed someone to solve the problem with me.
 
 If you give in, and then have to leave 10 minutes later because you have a call scheduled, or you are not fully present, then, and only then, will I be disappointed in you. So, please, dear person, say no, when you have to. That expression on my face - I will not even remember about it in some time. I am obsessed with the problem, I will go back to it, and this memory will dissipate as if it never existed.
-
-  
 
 ---
 
@@ -659,8 +639,6 @@ Dear person, a no means no. Saying no takes a lot of energy, saying it again, ta
 No in the present. Ten minutes later, or at the end of the day, it might be a yes, but now, right now, when there is a problem I have to solve, a no means no. Please help me solve the problem, by understanding.
 
 How does it help me? Because for every person around me, 70% percent will not listen to the first no. If you do, you help me save a lot of energy that I can then put towards solving the problem I was solving.
-
-  
 
 ---
 
@@ -671,8 +649,6 @@ Dear person, shit will hit the fan at all times, things will go wrong at all tim
 Dear person, you might then ask, “Do I do this for all problems?”, the answer to that is No. You only do that for problems that don’t cause irreversible damage. For example, if someone is withdrawing money from our account, attacking our website, or if the police are at our door, BREAK MY ZONE, WITH PREJUDICE.
 
 However, I have noticed that if all the people around me care about what they are doing, and such a big problem has occurred, the worry will be en-masse. The worry will spread organically. But, still, if it does not because you are the only one who notices something mission-critical going wrong, please break my zone. Let me be a bit crude, in such cases - fuck the zone.
-
-  
 
 ---
 
@@ -686,13 +662,11 @@ In short, when you see me care about mundane things, I am available. My chair on
 
 The reality is, that I care about mundane things, I care about what’s happening in the world, I care about cats and memes, I care about what I should eat, I care about a lot of things. But when I am solving a problem, these things become hindrances, and they pull me away from the problem. One moment, I am thinking about architecture or a plan, and the next moment when the zone breaks, the cat video on my phone seems super appealing. Because of this, what happens is I am never able to give continuous time to the problem, every time I come close to the solution a break happens, and then I have to start again. Dear person, I seek these things from you because I am weak, and I don’t have the luxury of building myself an isolated space at this time. But, this is what is required if you want me to do my best work. Please help me do my best work.
 
-
 ---
 
 ## Beyond the Code: my reflections after 365 days of code
 
 **Date:** 2023-12-23
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff4405180-de4c-4ab4-8581-1865c5626d3c_1024x1024.png)
 
@@ -739,7 +713,6 @@ Now, do you upgrade to the New Grammar, or keep using the old one?
 
 Copying someone else’s code is an accepted practice in code - people call it reuse. Now that I think of it, copying is revered, a programmer is often judged by how good they are at writing reusable code. We are all thieves, copycats.
 
-
 ---
 
 ## Your Startup is NOT a Science Experiment. Or, a Scientific Endeavour.
@@ -768,31 +741,23 @@ Here are a few examples that differentiate between science and pragmatism, which
 **  
 Pragmatist
 
--   **Action**: Launches a minimum viable product (MVP) to test the market quickly.
-    
--   **Reasoning**: Wants immediate feedback and is willing to iterate based on customer responses.
-    
+- **Action**: Launches a minimum viable product (MVP) to test the market quickly.
+- **Reasoning**: Wants immediate feedback and is willing to iterate based on customer responses.
 
 Scientist
 
--   **Action**: Conduct extensive market research and A/B tests of different product features before launching.
-    
--   **Reasoning**: Seeks to minimize risk and uncertainty through empirical data.
-    
+- **Action**: Conduct extensive market research and A/B tests of different product features before launching.
+- **Reasoning**: Seeks to minimize risk and uncertainty through empirical data.
 
 **Example 2: A/B Testing**
 
--   **Pragmatist**: May conduct A/B tests, but also willing to go to market sooner with less data if it solves an immediate problem.
-    
--   **Scientist**: Also conducts A/B tests, but typically waits for more comprehensive data before making a decision.
-    
+- **Pragmatist**: May conduct A/B tests, but also willing to go to market sooner with less data if it solves an immediate problem.
+- **Scientist**: Also conducts A/B tests, but typically waits for more comprehensive data before making a decision.
 
 **Example 3: Pricing Strategy**
 
--   **Pragmatist**: Sets a price that seems reasonable, and adjusts based on early sales data.
-    
--   **Scientist**: Conducts a detailed price elasticity study before setting the price.
-    
+- **Pragmatist**: Sets a price that seems reasonable, and adjusts based on early sales data.
+- **Scientist**: Conducts a detailed price elasticity study before setting the price.
 
 I think is very obvious by this point that terms like lean startup, lean method, data-driven marketing, experiments in startups, etc, are based on pragmatism, not science. It doesn’t matter what people say about them being scientific, they are technically not. And for anyone dwelling in the depths of these domains, this can be confusing.
 
@@ -800,13 +765,11 @@ You might try to define science in a certain way, to call these approaches scien
 
 One more thing, pragmatism entails more risk than science. A pragmatic decision has more chances of being wrong than a scientific decision. But that is the cost of action. You can be 95% or maybe even 99% risk-free by being scientific, but you may never act until you get to those percentages. Pragmatism has more variance, your action may in retrospect turn out to be scientific, but it may also turn out to be an utter disaster. The reward is that you keep moving, for better or for worse. It is very obvious from this, why you wouldn’t want to be pragmatic while building a biotech, health-tech, or nuclear startup.
 
-
 ---
 
 ## The Death of a Draft
 
 **Date:** 2023-09-18
-
 
 This draft has issues. And yet, I am posting it. A typo _hare_, _an_ grammatical error there, an out*,* of place comma, or a sentence fragment that. Irritates you. And, yet I am posting it. Maybe the arrangement of the sentences is off, or maybe the paragraphs are out of order, or maybe - the examples, the analogies, and the metaphors - don’t hit. And yet I am posting this draft.
 
@@ -867,7 +830,6 @@ I also read somewhere, “the only form of writing is rewriting”, I agree, but
 I believe, that if you think that you have something worth sharing, share it, and if you think that writing is the best form of communication suited to it, write it. Maybe, just maybe, someone out there likes your thoughts for what they are. Maybe they find it interesting. Maybe they are brilliant. Maybe they are so brilliant that people just ignore the mistakes that you have made. Without giving your writing, life, they will never know, and you will never know.
 
 People can, and will point out the mistakes - syntactical or logical. Some people will even embarrass you when they point out the obvious errors that you have made. That’s just the part of the game. That’s how you learn.
-
 
 ---
 
@@ -953,7 +915,6 @@ Prompt
 
 `Write a rap about useEffect hook in react. Make it in the style of jcole featuring run the jewels. Write it in such a way that it is historical and shows the transition from the world before hooks to the world after hooks. Also, make sure that you write it in such a way that only programmers can understand it, ie, the audience of the rap are senior programmers. Also, the poem has long sentences and multi syllable rhymes, not necessarily end rhymes. Use metaphors, alliterations, anaphora and other rhetorical devices. The pattern is verse, verse, hook..verse, verse, hook, ending with an outro.`
 
-
 ---
 
 ## What are Environment Variables? | GPT3
@@ -972,7 +933,6 @@ My dear friend, I must leave you now, but remember the power of env variables. T
 
 _\-Yours Truly, GPT_
 
-
 ---
 
 ## The CAC Cheatsheet
@@ -981,20 +941,15 @@ _\-Yours Truly, GPT_
 
 **CAC — Cost of Acquiring a Customer — is the amount of money that you spend on acquring**
 
--   **ONE**
-    
--   **Paying**
-    
--   **Customer**
-    
+- **ONE**
+- **Paying**
+- **Customer**
 
-CAC
----
+## CAC
 
 > Helps you calculate profitability at a unit level - one customer. Foreshadows profitability of the whole business.
 
-CAC in terms of CPA
--------------------
+## CAC in terms of CPA
 
 Cost per acquisition or CPA is the cost to acquire a prospect.
 
@@ -1002,40 +957,33 @@ Here is how CAC and CPA are related.
 
 > Lowering CPA is one of the first things you can do to lower CAC.
 
-Non-loaded CAC
---------------
+## Non-loaded CAC
 
 Non-loaded CAC is the CAC in which the salaries of sales and marketing people are not included while calculating the cost.
 
 > Useful when calculating profitability of businesses where sales and marketing teams don’t scale proportionally to the number of customers. Mostly, pure software businesses.
 
-Fully-loaded CAC
-----------------
+## Fully-loaded CAC
 
 > Useful in businesses where S&M teams have to scale significantly with customer acquisition.
 
-Blended CAC
------------
+## Blended CAC
 
-Paid CAC
---------
+## Paid CAC
 
 > A heuristic to judge the efficency of your paid growth efforts. Gives more actionable and realistic picture of your business machine than Blended CAC.
 
-CAC Payback Period
-------------------
+## CAC Payback Period
 
 Number of months after which
 
 > Time to recover the money you spent on getting one customer. It is the point of breakeven.
 
-CAC Doubling Period
--------------------
+## CAC Doubling Period
 
 Number of months after which
 
 > Time to earn enough money from one customer to accquire an additional customer. A heuristic for for fast you can sustainably grow.
-
 
 ---
 
@@ -1045,155 +993,125 @@ Number of months after which
 
 **Startups:** Where do I even start?
 
--   The Lean Startup
-    
+- The Lean Startup
 
 **Startup Philosophy:** How are startups different from other businesses?
 
--   Zero to One
-    
+- Zero to One
 
 **Founder Advice:** What's a founder's life like?
 
--   Hard Things about Hard Things
-    
+- Hard Things about Hard Things
 
 **Venture Capital:** How do I raise money?
 
--   Venture Deals
-    
+- Venture Deals
 
 **Product Development:** How do I turn my ideas into a product?
 
--   Inspired
-    
+- Inspired
 
 **UX Design:** How do I design the product to be easy to use?
 
--   The Elements of User Experience
-    
+- The Elements of User Experience
 
 **UX Design:** How do I design a product that looks good?
 
--   Refactoring UI
-    
+- Refactoring UI
 
 **Prototyping:** How do I build a prototype of my product?
 
--   Change by Design
-    
+- Change by Design
 
 **Analytics:** How do know if my startup is doing well?
 
--   Lean Analytics
-    
+- Lean Analytics
 
 **Marketing:** How do think about marketing an innovative product?
 
--   Crossing the Chasm
-    
+- Crossing the Chasm
 
 **Customer Development:** How do I test my first prototype?
 
--   Four steps to the epiphany
-    
+- Four steps to the epiphany
 
 **Customer Interviews:** How do I gather feedback from my early customers?
 
--   The Mom Test
-    
+- The Mom Test
 
 **Go to Market:** How do I take my product to market?
 
--   Traction
-    
+- Traction
 
 **Understanding Founder Mindset:** How do founders think?
 
--   Innovators - Isaacson
-    
+- Innovators - Isaacson
 
 **Understanding the Valley culture:** What is so different about silicon valley?
 
--   Chaos Monkeys
-    
+- Chaos Monkeys
 
 **Philosophy of Building:** Should I keep going?
 
--   The War of Art
-    
+- The War of Art
 
 **Packaging Ideas:** How do I explain my startup idea to other people?
 
--   The Art of Explanation
-    
+- The Art of Explanation
 
 **Storytelling:** How do I tell stories about my startup?
 
--   Made to Stick
-    
+- Made to Stick
 
 **Blockchain:** WTF is Bitcoin, NFT, Web3, etc?
 
--   Blockchain Basics
-    
+- Blockchain Basics
 
 **Marketplaces:** What are platforms/marketplace businesses? How to build one?
 
--   Matchmakers
-    
+- Matchmakers
 
 **Hiring:** How do I hire people without bias?
 
--   Work Rules
-    
+- Work Rules
 
 **Strategy:** How to build a long-lasting startup?
 
--   7 Powers
-    
+- 7 Powers
 
 **Goal Setting:** How do I set goals for my startup?
 
--   Measure what matters
-    
+- Measure what matters
 
 **Team management:** How do I manage my early employees?
 
--   5 dysfunctions of a team
-    
+- 5 dysfunctions of a team
 
 **Advertising:** How does advertising work?
 
--   Confessions of an advertising man
-    
+- Confessions of an advertising man
 
 **Branding:** How do I create my brand?
 
--   The Brand Gap
-    
+- The Brand Gap
 
 **Sales:** How do I persuade people?
 
--   Influence
-    
+- Influence
 
 **For Introverts:** How do I be socially less awkward?
 
--   How to win friends & influence people
-    
+- How to win friends & influence people
 
 **Everything:** Can anyone guide me step by step?
 
--   Startup Owners’ Manual
-
+- Startup Owners’ Manual
 
 ---
 
 ## Elevating Your Online Reading Experience
 
 **Date:** 2023-01-04
-
 
 Here are three tips that will help you if you are someone who reads a lot of articles on your laptop.
 
@@ -1280,24 +1198,19 @@ Thank you. Happy reading.
 ## Summary
 
 - Use apps to improve the readability experience
-
   - Major factors:
-
     - Line height
     - Column width
 
 - Use Wikiwand for reading Wikipedia
 - Annotate articles to stay engaged with the content
-
   - Analogy: Annotation is to reading, what music is to running
 
 - Read, don’t scroll
-
   - Don’t use a mouse or the trackpad
   - Annotate articles to slow down
 
 - App recommendations
-
   - Omnivore
   - Wikiwand
   - Pocket
@@ -1305,13 +1218,11 @@ Thank you. Happy reading.
   - Clearly reader
   - Mercury reader
 
-
 ---
 
 ## Prototype (NOT Product) Management
 
 **Date:** 2022-12-24
-
 
 I have been fascinated with Product Management. Today, while on my learning journey, I realized something that has fundamentally changed my worldview about Product Management.
 
@@ -1407,13 +1318,11 @@ Overall, this was a fun little exploration for me, it made me think, and I hope 
 
 Thanks for reading Ideabox! Subscribe for free to receive new posts and support my work.
 
-
 ---
 
 ## Write Obvious and Unoriginal Stuff
 
 **Date:** 2022-12-23
-
 
 I like writing and want to improve my writing skills. I also know that the only way to improve my writing skills is by writing more. Writing consistently. But how to write consistently when I have nothing to write about? Or to reword it a bit, how do I write consistently when I don't know enough about the subject that I am supposed to write about? 
 
@@ -1467,7 +1376,6 @@ With time, you can increase the complexity of the topic, and maybe over time you
 
 But until then, keep writing obvious and unoriginal stuff.
 
-
 ---
 
 ## The Metadata of Learning
@@ -1478,16 +1386,11 @@ I picked up Daniel Kahneman's Thinking Fast and Slow, some 5-6 years ago. Readin
 
 However, once the reading was done and the book went back on the bookshelf, it just sat there for a couple of years. After a couple of years, I stumbled on Thaler's Misbehaving, a book that mentioned Kahneman a lot. The same happened when I read books by Dan Ariely or by Nassim Taleb. I picked up Kahneman again and a framework of sorts started developing in my mind about the organization of Kahneman's thoughts. Here are a few nodes of the framework:
 
--   I figured out he (and, his friend Amos) pioneered the field of Behavioural Economics that had a shot of shifting the current economic paradigm.
-    
--   I figured out that he talks about heuristics and biases a lot. I knew they were two terms and that they were connected, but wasn't quite sure how exactly.
-    
--   I figured out that he used the experimental techniques of behavioral psychology to judge how they made choices and judgments. In other words, instead of assuming that people would act logically, he judged them on their actions and their behavior.
-    
--   I learned a lot of words like Anchoring, Affect, Two Systems, Prospect theory, etc.
-    
--   I also learned that he has a theory of "Two-selves" that he talks about in the final part of the book.
-    
+- I figured out he (and, his friend Amos) pioneered the field of Behavioural Economics that had a shot of shifting the current economic paradigm.
+- I figured out that he talks about heuristics and biases a lot. I knew they were two terms and that they were connected, but wasn't quite sure how exactly.
+- I figured out that he used the experimental techniques of behavioral psychology to judge how they made choices and judgments. In other words, instead of assuming that people would act logically, he judged them on their actions and their behavior.
+- I learned a lot of words like Anchoring, Affect, Two Systems, Prospect theory, etc.
+- I also learned that he has a theory of "Two-selves" that he talks about in the final part of the book.
 
 These nodes of thought existed in my mind but they remained majorly disconnected. They lacked any interlinking or context. That is, I did not know how they connected with each other or, how Khaneman's thoughts fit in the wider cluster of ideas in the world. I lacked the metadata of my learning. Metadata of learning is learning more about the topic, not the topic itself.
 
@@ -1497,21 +1400,15 @@ Without metadata, I could not optimally utilize and grow these ideas. In simple 
 
 But on the whole, if you asked me 3 more questions or even examples about the bias I just spoke about, there was nothing to say. There was no unifying structure in my learning of Kahneman. Questions like these kept popping up:
 
--   Where does Khanemen fit in economics, in psychology, in social sciences?
-    
--   What are the general patterns of his thoughts?
-    
--   How do his theories connect with each other?
-    
--   What theories existed before Kahneman? Where do Kahneman's theories fit?
-    
--   Who are the critics of Kahneman? etc.
-    
+- Where does Khanemen fit in economics, in psychology, in social sciences?
+- What are the general patterns of his thoughts?
+- How do his theories connect with each other?
+- What theories existed before Kahneman? Where do Kahneman's theories fit?
+- Who are the critics of Kahneman? etc.
 
 These questions demanded that I learn the metadata of learning.
 
-Metadata of Kahneman's Thinking Fast and Slow
----------------------------------------------
+## Metadata of Kahneman's Thinking Fast and Slow
 
 In my learning of Kahneman, the process of metadata collection happened organically. Over several years I figured out the answers to most of these questions one by one.
 
@@ -1520,11 +1417,8 @@ In my learning of Kahneman, the process of metadata collection happened organica
 Majorly, there are three types of theories in the world
 
 1.  Normative theories: Explain how things should happen ideally.
-    
 2.  Descriptive Theories: Explain how things actually happen in the real world.
-    
 3.  Prescriptive Theories: Explain how to get from real to ideal. These are prescriptions.
-    
 
 Current Economics is a normative theory called Expected Utility Theory. According to this, humans make choices rationally.
 
@@ -1548,57 +1442,39 @@ In italics is the metadata I have inserted. In bold are the actual contents.
 
 _Book 1: Choice Theories of Kahneman_
 
--   **Part 1: Two Systems:** _Explanation of irrationality._
-    
--   **Part 2: Heuristics and Biases**: work on systematic irrationality.
-    
--   **Part 3: Overconfidence**: the reason why current probabilistic models are not followed.
-    
--   **Part 4: Choices**: Kahneman's theory of choices.
-    
+- **Part 1: Two Systems:** _Explanation of irrationality._
+- **Part 2: Heuristics and Biases**: work on systematic irrationality.
+- **Part 3: Overconfidence**: the reason why current probabilistic models are not followed.
+- **Part 4: Choices**: Kahneman's theory of choices.
 
 _Book 2: Happiness Theories of Kahneman_
 
--   **Part 5: Two Selves**: an exploration of happiness theories.
-    
+- **Part 5: Two Selves**: an exploration of happiness theories.
 
-The Use of Metadata for Learning Better, More
----------------------------------------------
+## The Use of Metadata for Learning Better, More
 
 Once I structured my learning with the essential metadata, I could now extend my thought about Kahneman.
 
 For example, I could ask questions like:
 
--   Is the two-systems approach the only explanation for irrationality?
-    
--   Can biases exist without heuristics?
-    
--   Are there any alternate descriptive theories of economics?
-    
--   What do the critics of Behavioural Economics say about it?
-    
--   Is there more work being done in happiness research?
-    
+- Is the two-systems approach the only explanation for irrationality?
+- Can biases exist without heuristics?
+- Are there any alternate descriptive theories of economics?
+- What do the critics of Behavioural Economics say about it?
+- Is there more work being done in happiness research?
 
 ### Over time, these questions and metadata led me to the learning:
 
--   Utility Theory, Utilitarianism.
-    
--   The concept of Flow (A part of happiness research)
-    
--   Gerd Gigerenzer and Nassim Taleb's critiques of Behavioural economics
-    
--   Richard Thaler's work in Behavioural Economics
-    
--   Taleb's critique of Thaler's work
-    
--   ... and many more ideas.
-    
+- Utility Theory, Utilitarianism.
+- The concept of Flow (A part of happiness research)
+- Gerd Gigerenzer and Nassim Taleb's critiques of Behavioural economics
+- Richard Thaler's work in Behavioural Economics
+- Taleb's critique of Thaler's work
+- ... and many more ideas.
 
 This made my learning process a lot better and I ended up learning a lot more ideas.
 
-The Use of Metadata for Learning Faster
----------------------------------------
+## The Use of Metadata for Learning Faster
 
 The title of the post also includes the word faster. Till now, this whole process seems slow. How does this make learning faster?
 
@@ -1608,13 +1484,11 @@ In Kahneman's case, after I was done collecting the metadata, it cut my learning
 
 A major portion of a book, even Kahneman's book, is just the setup that gets you ready for the Punchline. Collecting the metadata eliminates the process of reading the setup again and again.
 
-From Chance to Design
----------------------
+## From Chance to Design
 
 In the case of Kahneman, the whole process of metadata collection happened organically, by chance. I went where my curiosity led me and discovered more.
 
 However, I think that it is easy to learn this way, by design. It might seem overkill in the short term, but if your aim is to truly understand or learn something, this process will save hundreds of hours of your time.
-
 
 ---
 
@@ -1652,7 +1526,6 @@ END
 
 _Note: This is just me exploring my thoughts and I still haven't completely made up my mind on his topic._
 
-
 ---
 
 ## Some questions are stupid.
@@ -1674,20 +1547,15 @@ I prefer more useful definitions, at least when possible. Definitions I can use 
 If you are harming others without gaining anything for yourself, you are probably stupid. By this definition, you are asking a stupid question if the question harms others without you getting anything out of the answer. Let’s break it down
 
 1.  A stupid question has to be harmful to the one who answers.
-    
 2.  The answer to a stupid question must be of no gain to the one who questions.
-    
 
 How can a question be of harm? Because answering any question takes time and wasting someone’s time is one of the worse kinds of suffering you can inflict on someone. Wasting time is harmful and therefore any questions that waste time is harmful too.
 
 Answering every question takes time, and that is why the second part of the definition - the gain part - is important. The stupidity of a question can be measured by the harm-to-gain ratio of the question.
 
--   Harm > Gain, On the stupid side of the spectrum
-    
--   Gain > Harm, On the good side of the spectrum
-    
--   Gain = 0, Infinitely Stupid
-    
+- Harm > Gain, On the stupid side of the spectrum
+- Gain > Harm, On the good side of the spectrum
+- Gain = 0, Infinitely Stupid
 
 The worse kinds of stupid questions take a long time to answer and are yet of no use to the one who asks.
 
@@ -1701,24 +1569,19 @@ Like this question practically all questions, with respect to reading, that star
 
 #### Summary
 
--   Yes, some questions are stupid.
-    
--   The stupidity of a question can be measured by the harm-to-gain ratio of the question.
-    
--   The harm is usually in the form of time.
-    
+- Yes, some questions are stupid.
+- The stupidity of a question can be measured by the harm-to-gain ratio of the question.
+- The harm is usually in the form of time.
 
 ```
 Version: Draft 1
 ```
-
 
 ---
 
 ## Avoiding Fake Experts
 
 **Date:** 2022-07-20
-
 
 ## Our Models of Expertise
 
@@ -1830,13 +1693,11 @@ This is draft no. 1. You can contribute by pointing out errors - compositional o
 
 Thanks for reading Prashant's Learning Diaries! Subscribe for free to receive new posts and support my work.
 
-
 ---
 
 ## How to follow your passion, rationally?
 
 **Date:** 2022-07-20
-
 
 "I want to do things that I am passionate about" goes almost everyone. 'Following the passion' is the desired life for many. We keep romanticizing about 'following the passion', dreaming about it, thinking about it. **Yet, time passes, and we never go on the path of following our passion.**
 
@@ -1900,13 +1761,11 @@ But as I said, there is a dichotomy, the irrationality of passion is also its we
 
 **Passion is not a magic bullet that will solve all your problems. It is a 'very sharp' double-edged sword that must be wielded with extreme care while respecting its limitations.**
 
-
 ---
 
 ## Can you confidently know things without experience?
 
 **Date:** 2022-07-17
-
 
 **"How do you know? You have never been there, you have never experienced it, how do you know?"**
 
@@ -2003,15 +1862,13 @@ The idea of direct and indirect exprience is inspired by the writings of B. H. L
 Request: Please point out any logical or grammatical errors. It will help me improve this post and my understanding.
 ```
 
-
 ---
 
 ## Engagement, Active Learning & Other Bullshit in Education
 
 **Date:** 2022-07-09
 
-First, some definitions:
-------------------------
+## First, some definitions:
 
 **Engage:** occupy or attract (someone's interest or attention).
 
@@ -2023,8 +1880,7 @@ First, some definitions:
 
 **Bullshitter:** the liar cares about the truth and attempts to hide it; the bullshitter doesn't care if what they say is true or false, but cares only whether the listener is persuaded.
 
-**Engagement**
---------------
+## **Engagement**
 
 'Engagement' is to Education what 'Artificial Intelligence' is to 'Technology'. Everyone has heard of it. Everyone discusses it. Everyone sells it. Almost no one understands it.
 
@@ -2042,8 +1898,7 @@ First, some definitions:
 
 The word 'engagement', like AI in Tech, has become overused to the point where it does not convey any information at all. And, like AI, engagement is a beautiful concept when it is truly understood. Let's explore it a bit more.
 
-Why is Engagement important?
-----------------------------
+## Why is Engagement important?
 
 Neuroscientists have consistently found that learning happens when students form and strengthen connections in their brains. The point to note here is this - 'students form the connections', teachers can't do it on behalf of the students. So, technically speaking, teaching is just helping students learn i.e., form connections in their brains. Unlike a computer, teachers can't connect a USB cable and transfer the content directly into the brain of the students.
 
@@ -2053,8 +1908,7 @@ The use of engagement in the learning process is further jargonized into 'Active
 
 So, engagement is important for learning. But it is just one part of the puzzle. The effectiveness of classrooms can't be predicted on the basis of engagement alone, it depends on the alignment between engagement and learning goals.
 
-What are the Goals of Learning?
--------------------------------
+## What are the Goals of Learning?
 
 How do we know what children already know? And if they are learning more? The best way to know would be to actually see and measure the connections in the brains, physically in some way - may be by sticking electrodes in the brain or by imaging techniques like fMRI. Alas, teachers can't do it in real time and, at the moment, neither can't neuroscientists. So what is the alternative?
 
@@ -2066,49 +1920,36 @@ In principle, learning goals are just a different tool to understand and gauge a
 
 So, teachers first break down a course into some bigger goals to define the destination or learning. Then they break down these big goals into smaller goals so that they can consistently measure the direction in which the learning is happening. The classrooms are then designed in such a way that the goals are achieved and the assessments are designed in such a way that you can measure student actions to validate the achievement of the learning goals.
 
-Now we know three truths:
--------------------------
+## Now we know three truths:
 
--   Learning happens when connections form in the brain and these connections start forming when the students are engaged.
-    
--   Learning goals are our hack to model learning.
-    
--   Assessments are our way to measure if the learning goals were achieved.
-    
+- Learning happens when connections form in the brain and these connections start forming when the students are engaged.
+- Learning goals are our hack to model learning.
+- Assessments are our way to measure if the learning goals were achieved.
 
 But most of us simplify these truths into three heuristics.
 
--   Engagement tells us 'how students learn'
-    
--   Learning goals tell us 'what students need to learn’
-    
--   Assessments tell us 'what students have learned'
-    
+- Engagement tells us 'how students learn'
+- Learning goals tell us 'what students need to learn’
+- Assessments tell us 'what students have learned'
 
 Most teachers I have interviewed know these heuristics. Most lesson planners aka. curriculum designers I know, also know these heuristics.
 
 **And yet they consistently confront the following situation - the learning goals were created, the classroom was engaging and yet students failed in the assessment.**
 
-All Engagement is NOT Equal
----------------------------
+## All Engagement is NOT Equal
 
 A principle should be obvious by this point - if students engage with X, they can learn X. It is simple, so so simple. Yet we ignore this principle all the time. Here are a few examples:
 
 1.  If you are teaching a poem and while doing so jump around the classroom and keep the students engaged, the engagement leads to the following learning - our teacher is funny, she can jump really high, etc.
-    
 2.  Let's say you are teaching children about Isaac Newton and as an activity to keep students engaged, ask students to paint an apple and then later relate it to the fact that 'an apple fell on Newton's head and he discovered gravity'. In this case, students learn to paint an apple, because they are engaged in painting, not Newton and gravity.
-    
 3.  Let's say you ask students to play a game of 'Never have I Ever' at the beginning of the class to keep them engaged, and then start teaching them 'Nouns'. In this case, too, children learn how to play the game, not Nouns.
-    
 4.  The same goes for other fluff like irrelevant videos, making them run around the class, making them play games, and other engagement-inducing mumbo-jumbo that is NOT aligned with the actual learning goals.
-    
 
 All this mumbo-jumbo is useless when it comes to learning. The aim of the activity is NOT to simply keep the students engaged, but to keep them engaged in alignment with the learning goals. I will henceforth call such learning activities that don't directly align with the learning goals as 'Fluffy Activities'. Fluffy Activities might help you keep students busy, and parents happy, or even sell a few courses but one thing they will not do is help children learn.
 
 **I repeat, engagement only helps in learning when engagement is aligned with the learning goals, everything else is just fluff.**
 
-Bullshit in Education
----------------------
+## Bullshit in Education
 
 So, is everyone lying about engagement? No, they are not, some of them are innocently naïve, but most of them are just bullshitting.
 
@@ -2120,8 +1961,7 @@ Parents want activities - add more activities to the classroom. Parents want ass
 
 So, if you are adding fluffy activities to the classroom without doing your research about learning, you are a bullshitter! If you are adding fluffy activities to the classroom to persuade the parents that their children will learn, you are also a bullshitter! And, if you know the principles of learning and are still doing it, you are a liar!
 
-Avoiding Bullshit & Surprises
------------------------------
+## Avoiding Bullshit & Surprises
 
 To the ones who are discovering these ideas for the first time - you shouldn't be surprised when students fail in an assessment after an engaging classroom. Engagement does not guarantee learning. Even, if engagement aligned to learning goals just starts the process of learning, it does not guarantee it. There is a lot more to it, so it is better to learn more about learning, instead of bullshitting about it.
 
@@ -2130,16 +1970,14 @@ To the ones who want to avoid bullshit, just make sure that you enquire more abo
 Best of luck!
 
 ```
-Note: This is draft no. 1 and will evolve over time in both logic and compostition. I edit it every time I spot an error. You can help me by reporting the typos and errors in the comments. 
+Note: This is draft no. 1 and will evolve over time in both logic and compostition. I edit it every time I spot an error. You can help me by reporting the typos and errors in the comments.
 ```
-
 
 ---
 
 ## Hungry, Depressed, Broke People for Sale
 
 **Date:** 2022-07-07
-
 
 ### This is about the years 1929-1939, the era termed "The Great Depression". A lot has been written about it, describing it, its causes, its effects, and the reforms that happened due to it.
 
@@ -2251,51 +2089,47 @@ Note: This is Draft No. 1. To report any corrctions, comment.
 Source: The Great Depression: A Diary - Benjamin Roth
 ```
 
-
 ---
 
 ## Will you be laid off by your startup?
 
 **Date:** 2022-06-30
 
-Startups seek growth. Growth happens when startups are able to profitably sell a product and then invest the profits back into the startup. For that, startups run experiments to find the right product for the right market. These experiments are just informed trial-and-error-based iterations to find the right product, market, pricing, revenue streams, production procedures, cost, etc.  
-  
-**Layoffs before PMF**  
-  
-A very early-stage startup, one that has just raised a seed round, has 12-24 months to find the Product-Market Fit i.e., the right product for the right market for the right price. To solve this puzzle, these startups run one or two experiments at any given time to find the PMF. If they are successful, they get more money to scale up or they die.  
-  
-If you have been working at a startup, at this stage, for around 12 months and there are no signs of the PMF, you will probably be laid off, unless you are in the core team of 5-6 people and are willing to work for a pay cut.  
-  
+Startups seek growth. Growth happens when startups are able to profitably sell a product and then invest the profits back into the startup. For that, startups run experiments to find the right product for the right market. These experiments are just informed trial-and-error-based iterations to find the right product, market, pricing, revenue streams, production procedures, cost, etc.
+
+**Layoffs before PMF**
+
+A very early-stage startup, one that has just raised a seed round, has 12-24 months to find the Product-Market Fit i.e., the right product for the right market for the right price. To solve this puzzle, these startups run one or two experiments at any given time to find the PMF. If they are successful, they get more money to scale up or they die.
+
+If you have been working at a startup, at this stage, for around 12 months and there are no signs of the PMF, you will probably be laid off, unless you are in the core team of 5-6 people and are willing to work for a pay cut.
+
 **What are the signs of PMF?**
 
-  
-Marc Andreessen describes it best - "The customers are buying the product just as fast as you can make it -- or usage is growing just as fast as you can add more servers. Money from customers is piling up in your company checking account. You're hiring sales and customer support staff as fast as you can."  
-  
-**Layoffs after PMF**  
-  
-Once a startup has found a PMF or is very very certain to find the PMF, they raise more money to grow as fast as possible. They raise funding rounds termed - Series A, B, C, and so on.  
-  
-In this stage, startups usually use a bi-modal strategy to grow.  
-  
-Mode 1: Growth as a result of scaling the initial product by investing in sales and production resources.  
-  
-Mode 2: Growth as a result of new products that are invented by running more experiments.  
-  
-Mode 1 Layoffs: If you are working on the Mode 1 side of the startup, you will be laid off when the assumptions that worked at a smaller scale start failing on a larger scale. This may happen due to failure to scale up production, and sales, or incorrect assumptions about the size and the paying capacity of the market.  
-  
-Mode 2 Layoffs: If you are a part of an experimental product team at a startup, your job is to help get to PMF through experiments. When you have been working for 8-12 months and there is no hope of PMF, you will probably be laid off, unless you are at a leadership level, in which case, you may be given a chance to run one or two more experiments and then laid off if failed.  
-  
-**Heuristic: Growth is usually uncomfortable. If you have been comfortable in your job for the past 6-12 months, you will probably be laid off because there is no growth.**  
-  
-Any thoughts or additions are welcome in the comments.
+Marc Andreessen describes it best - "The customers are buying the product just as fast as you can make it -- or usage is growing just as fast as you can add more servers. Money from customers is piling up in your company checking account. You're hiring sales and customer support staff as fast as you can."
 
+**Layoffs after PMF**
+
+Once a startup has found a PMF or is very very certain to find the PMF, they raise more money to grow as fast as possible. They raise funding rounds termed - Series A, B, C, and so on.
+
+In this stage, startups usually use a bi-modal strategy to grow.
+
+Mode 1: Growth as a result of scaling the initial product by investing in sales and production resources.
+
+Mode 2: Growth as a result of new products that are invented by running more experiments.
+
+Mode 1 Layoffs: If you are working on the Mode 1 side of the startup, you will be laid off when the assumptions that worked at a smaller scale start failing on a larger scale. This may happen due to failure to scale up production, and sales, or incorrect assumptions about the size and the paying capacity of the market.
+
+Mode 2 Layoffs: If you are a part of an experimental product team at a startup, your job is to help get to PMF through experiments. When you have been working for 8-12 months and there is no hope of PMF, you will probably be laid off, unless you are at a leadership level, in which case, you may be given a chance to run one or two more experiments and then laid off if failed.
+
+**Heuristic: Growth is usually uncomfortable. If you have been comfortable in your job for the past 6-12 months, you will probably be laid off because there is no growth.**
+
+Any thoughts or additions are welcome in the comments.
 
 ---
 
-## A list of practitioners who write well. 
+## A list of practitioners who write well.
 
 **Date:** 2022-06-26
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F2008ba1e-46d5-43cd-9857-8bc5e3658e3e_800x800.jpeg)
 
@@ -2371,13 +2205,11 @@ Productivity: Cal Newport
 Mathematics: Steven Strogatz  
 [https://lnkd.in/gWBcB97B](https://lnkd.in/gWBcB97B)
 
-
 ---
 
 ## Ep 4: A Fellow's Pilgrimage - Summer, Slums, & Startups
 
 **Date:** 2021-07-19
-
 
 _This is Episode 4 of the series that I am writing to demystify Ed-tech for anyone outside the system._
 
@@ -2471,13 +2303,11 @@ Found any errors? Let me know. Comment or message.
 
 _**Disclaimer:** From this post onwards, all the stories will be an amalgamation of my own experience, first-hand accounts and documentary evidence. That is, what I will write as a journey of a character will be based on the journeys of different individuals._
 
-
 ---
 
 ## Ep 3: The Second Ed-Tech Revolution
 
 **Date:** 2021-07-07
-
 
 _This is Episode 3 of the series that I am writing to demystify Ed-tech for anyone outside the system._
 
@@ -2573,13 +2403,11 @@ _**Further Reading/Viewing**_
 
 **Book:** The Gutenberg revolution by John Man
 
-
 ---
 
 ## Ep 2: Revolutionising Education
 
 **Date:** 2021-07-04
-
 
 _This is Episode 2 of the series that I am writing to demystify Ed-tech for anyone outside the system._
 
@@ -2615,13 +2443,11 @@ Now there was just one more thing to do - Ed. We had to make the content -- Ed-S
 Sidenote: There are also some other, less education-centric businesses that are classified as Ed-tech. They might help administration manage schools, or help teachers get students, or help students/teachers collaborate. In this post, I will not be writing about those businesses.
 ```
 
-
 ---
 
 ## Ep 1: WSBAT (Will Students Be Able To?)
 
 **Date:** 2021-07-02
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Ffabc15fd-7161-4185-aae6-a85189525be4_4288x2848.jpeg)
 
@@ -2651,13 +2477,11 @@ Endnote:
 I don't have any peers to review this post. So, if you find any errors - factual or linguistic, you can send me a message and I will make the corrections
 ```
 
-
 ---
 
 ## Present, don't tell. Or write.
 
 **Date:** 2021-06-03
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F5aeee592-1595-41e8-8a8a-ae116021fdb0_1080x720.jpeg)
 
@@ -2721,13 +2545,11 @@ In those cases, give your audience the time to read what you are presenting. Tim
 
 **If you still have another "BUT" coming my way, remember the principle - [one string at a time](https://en.wikipedia.org/wiki/Human_multitasking) - and act based on your best judgment. But, as a rule of thumb 'make your presentations less wordy.'**
 
-
 ---
 
 ## The Philosophy of Jeff Bezos | Part 5
 
 **Date:** 2021-06-01
-
 
 [Originally Published on June 2, 2021](https://www.linkedin.com/pulse/how-bezos-captained-his-ship-from-2016-2020-jeff-part-bhudwal/)
 
@@ -2846,13 +2668,11 @@ All that is left is creating a concise mega-post about the philosophy of Amazon,
 
 Beyond the series, there are at least two spinoff posts that I plan to write in the near future based on this series. In the first one, I will explain the economics of Amazon. In the second, I will try to synthesise the Amazon philosophy in less than 200 words. So, watch out for those too.
 
-
 ---
 
 ## The Secret Sauce of Amazon's Efficiency
 
 **Date:** 2021-05-24
-
 
 [Originally Published on May 25, 2021](https://www.linkedin.com/pulse/how-jeff-bezos-maintains-high-standards-amazon-prashant-bhudwal/)
 
@@ -2911,13 +2731,11 @@ _In Summary,_
 
 ...the four elements of high standards as we see it: they are teachable, they are domain specific, you must recognize them, and you must explicitly coach realistic scope.
 
-
 ---
 
 ## The Philosophy of Jeff Bezos | Part 4
 
 **Date:** 2021-05-22
-
 
 [Originally Published on May 23, 2021](https://www.linkedin.com/pulse/how-bezos-captained-his-ship-from-2011-2015-jeff-part-bhudwal/)
 
@@ -2991,13 +2809,11 @@ I think the following links will help you get more out of this compilation.
 - [History of Amazon](https://en.wikipedia.org/wiki/History_of_Amazon)
 - [Shareholder Letters](https://www.aboutamazon.com/news/company-news/2020-letter-to-shareholders)
 
-
 ---
 
 ## The Amazon OS
 
 **Date:** 2021-05-21
-
 
 [Originally Published on May 22, 2021](https://www.linkedin.com/pulse/what-jeff-bezos-wants-you-remember-amazon-why-does-prashant-bhudwal/)
 
@@ -3195,13 +3011,11 @@ As always, I attach our [1997 shareholder letter](https://media.corporate-ir.net
 
 To all of you: be kind, be original, create more than you consume, and never, never, never let the universe smooth you into your surroundings. It remains Day 1.
 
-
 ---
 
 ## The Philosophy of Jeff Bezos | Part 3
 
 **Date:** 2021-05-15
-
 
 [Originally Published on May 16, 2021](https://www.linkedin.com/pulse/how-bezos-captained-his-ship-from-2006-2010-jeff-part-bhudwal/)
 
@@ -3294,13 +3108,11 @@ Our primary financial goal remains maximising long-term free cash flow and doing
 - Our annual goal setting process begins in the fall and concludes early in the new year after we’ve completed our peak holiday quarter. Our goal setting sessions are lengthy, spirited, and detail oriented. We have a high bar for the experience our customers deserve and a sense of urgency to improve that experience. We’ve been using this same annual process for many years...2009
 - For 2010, we have 452 detailed goals with owners, deliverables, and targeted completion dates... None of these goals are easy and many will not be achieved without invention. We review the status of each of these goals several times per year among our senior leadership team and add, remove, and modify goals as we proceed...Taken as a whole, the set of goals is indicative of our fundamental approach. Start with customers and work backward. Listen to customers, but don’t just listen to customers—also invent on their behalf. We can’t assure you that we’ll meet all of this year’s goals. We haven’t in past years. However, we can assure you that we’ll continue to obsess over customers....2009
 
-
 ---
 
 ## The Philosophy of Jeff Bezos | Part 1
 
 **Date:** 2021-05-07
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2F94907753-bd22-469a-b85d-de31c2ee0f0e_1079x720.jpeg)
 
@@ -3389,13 +3201,11 @@ _Editor's note: This is probably true for every revolutionary technology._
 - We will continue to focus on hiring and retaining versatile and talented employees and continue to weight their compensation to stock options rather than cash. We know our success will be largely affected by our ability to attract and retain a motivated employee base, each of whom must think like, and therefore must actually be, an owner.
 - We aren’t so bold as to claim that the above is the “right” investment philosophy, but it’s ours, and we would be remiss if we weren’t clear in the approach we have taken and will continue to take.
 
-
 ---
 
 ## The Philosophy of Jeff Bezos | Part 2
 
 **Date:** 2021-05-07
-
 
 [Originally Published on May 8, 2021](https://www.linkedin.com/pulse/how-bezos-captained-his-ship-from-2001-2005-jeff-part-bhudwal/)
 
@@ -3471,13 +3281,11 @@ The foundation of our decision-making philosophy was laid out in our 1997 letter
 
 _Editor's Note: Read the previous note._
 
-
 ---
 
 ## Books v. Zomato. Books or Zomato?
 
 **Date:** 2021-03-15
-
 
 [Originally posted here on March 16, 2021](https://www.linkedin.com/pulse/books-zomato-prashant-bhudwal/)
 
@@ -3519,15 +3327,13 @@ Please report any errors - factual or grammatical - in comments or messages.
 Inspired by: Books v. Cigarettes - George Orwell
 ```
 
-
 ---
 
-## Does graduating from IIMs and IITs matter? 
+## Does graduating from IIMs and IITs matter?
 
 **Date:** 2021-03-11
 
-The Problem
------------
+## The Problem
 
 A child, from a middle-class family, has just cracked a competitive exam - take the CAT for the sake of example. Based on her score, she applies to several colleges and gets accepted into two of them in the MBA program of her choice. Now she has to make a choice, but she faces a dilemma - one college is ranked higher than the other in the all-India rankings for MBA programs while the other is cheaper. Which one should she choose?
 
@@ -3535,33 +3341,25 @@ Here are the options in more detail:
 
 College 1: 
 
--   College Rank: 3rd in the country
-    
--   Fees: 9 lakhs per year
-    
--   The average salary of graduates: 16 lakhs per annum
-    
+- College Rank: 3rd in the country
+- Fees: 9 lakhs per year
+- The average salary of graduates: 16 lakhs per annum
 
 College 2:
 
--   College Rank: 15th in the country
-    
--   Fees: 0.5 lakhs per year
-    
--   The average salary of graduates: is 9 lakhs per annum
-    
+- College Rank: 15th in the country
+- Fees: 0.5 lakhs per year
+- The average salary of graduates: is 9 lakhs per annum
 
 Take a moment and try to think through this problem.
 
-The Solution
-------------
+## The Solution
 
 Albert-László Barabási, a network scientist, has tried to answer this question based on data - not on anecdotes, logic, or probability theory - just on data. What follows are findings from his research. I will keep them lean. My aim here is to cut all the fat, come straight to the point, and support each finding with one example. If you want to go in-depth or require more examples, read the first three chapters of his book - _The Formula_. 
 
 Here is what the research points out. 
 
-The Role of Performance
------------------------
+## The Role of Performance
 
 **In situations where performance can be measured, performance drives success, not the college.** 
 
@@ -3569,8 +3367,7 @@ In this particular case, since CAT scores are the measures of performance, the s
 
 So, if she has a tighter budget, she can save money by choosing a cheaper college. If budget is not a problem and she wants better facilities or location, she can choose the costlier one, if that works for her. I repeat, her chances of success, that is the salary she earns, will not change based on the college.
 
-The Role of Ambition
---------------------
+## The Role of Ambition
 
 Performance, when measurable, is just one factor that determines success. There is another factor - ambition. While Barabási was doing his research, he found a fascinating relationship between ambition and success. Quoting him:
 
@@ -3580,42 +3377,31 @@ To understand this, again consider another situation - a child scores 99.98 in C
 
 College 1: 
 
--   College Rank: 1st in the country
-    
--   Salary of graduates with 99.98 in CAT = 18 lakhs per annum
-    
+- College Rank: 1st in the country
+- Salary of graduates with 99.98 in CAT = 18 lakhs per annum
 
 College 2: 
 
--   College Rank: 3rd in the country
-    
--   Salary of graduates with 99.98 in CAT = 12 lakhs per annum
-    
+- College Rank: 3rd in the country
+- Salary of graduates with 99.98 in CAT = 12 lakhs per annum
 
 College 3: 
 
--   College Rank: 5th in the country
-    
--   Salary of graduates with 99.98 in CAT = 10 lakhs per annum
-    
+- College Rank: 5th in the country
+- Salary of graduates with 99.98 in CAT = 10 lakhs per annum
 
 College 4: 
 
--   College Rank: 10th in the country
-    
--   Salary of graduates with 99.98 in CAT = 8 lakhs per annum
-    
+- College Rank: 10th in the country
+- Salary of graduates with 99.98 in CAT = 8 lakhs per annum
 
 Also, keep in mind that MBA colleges, while accepting children, also consider factors other than CAT scores like essays, experience, schooling, etc. Two children with similar CAT scores may get accepted or rejected based on these factors.  
 
 What the research shows is this -
 
--   If she applies to College 1 and gets rejected, she earns 18 lakhs per annum.
-    
--   If she applies to College 2 & gets rejected, she earns 12 lakhs per annum.
-    
--   If she applies to College 3 & gets rejected, she earns 10 lakhs per annum.
-    
+- If she applies to College 1 and gets rejected, she earns 18 lakhs per annum.
+- If she applies to College 2 & gets rejected, she earns 12 lakhs per annum.
+- If she applies to College 3 & gets rejected, she earns 10 lakhs per annum.
 
 The college which she graduates from does not matter, the college she applies to determines her success. The mere fact she applies shows her ambition and that, along with her performance, drives her success.
 
@@ -3623,8 +3409,7 @@ After a decade of graduation, the salary of a child with a CAT score of 99.98 gr
 
 _"In other words, it’s performance and ambition—where she thinks she belongs—that determine your child's success."_
 
-The Formula for Success
------------------------
+## The Formula for Success
 
 **If performance is measurable, Success = Performance + Ambition.**
 
@@ -3634,13 +3419,11 @@ Reference: The Formula: The Universal Laws of Success by Albert-László Barabá
 Note: Please comment if you find any errors.
 ```
 
-
 ---
 
 ## A Problem with Self-help Books
 
 **Date:** 2021-03-05
-
 
 **[Originally posted here on Mar 6, 2021](https://www.linkedin.com/pulse/problem-self-help-books-prashant-bhudwal/)**
 
@@ -3680,7 +3463,6 @@ Think of it like this - If Emerson read 'How to win friends and influence people
 This is the problem with most self-help books. When authors use examples without giving the complete picture, it misleads the reader into believing things that are not true. Even worse are instances when readers are tricked into believing that they know more about a topic or a person than they actually do.
 
 Should you read Dale? Yes. Should you read Emerson? Yes. Is Dale right? I don't know. Is Emerson right? I don't know. Should you believe them and their ideas completely, before getting the complete picture? No.
-
 
 ---
 
@@ -3742,7 +3524,7 @@ _\-- Many conferences happen for discussing the future of education in the decad
 
 **Bhai 2:** Great Idea. Will do.
 
-_\-- The wait continues, commission after commission sits down to talk about education with the hope of making education great, practical, and Indian again. --_ 
+*\-- The wait continues, commission after commission sits down to talk about education with the hope of making education great, practical, and Indian again. --* 
 
 **Bhai 2:** Bhai we need to do something, it's been almost 20 years since independence. 
 
@@ -3800,13 +3582,11 @@ Main Reference: The History of Education in Modern India, 1757-2012, Suresh Chan
 Post Inspired By: Wait but why, Math with bad drawings
 ```
 
-
 ---
 
 ## Principles of Writing
 
 **Date:** 2020-07-15
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fd23f4096-8e9c-48c6-8c71-184938b0591a_875x558.jpeg)
 
@@ -3871,13 +3651,11 @@ List of all the links
 
 Open to questions, thoughts and discussions. Email: firstname.lastname@gmail.com.
 
-
 ---
 
 ## What is learning?
 
 **Date:** 2020-05-24
-
 
 ![](https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fa062d949-b374-473b-a96e-6503caa8d99d_4563x3022.jpeg)
 
@@ -4093,50 +3871,35 @@ I could have handed you a list of all these terms. But, as we know now, the brai
 Here is how this chunk is possibly stored in your brain as categorized concepts. 
 
 - Learning: gaining new knowledge.
-
   1.  Knowledge: awareness of or familiarity with concepts.
-
       - Concept: a mental grouping of similar objects, events, ideas, or people.
 
 - Memory: Memory is the ability of the brain to store information.
-
   1.  Short term memory
-
       - Limits of short-term memory
-
         - Less than 10 concepts
 
   2.  Long term memory
 
 - Process of Storing Memories
-
   1.  Encoding memories in short-term memory
-
       - Chunking: Chunks are groups of related concepts in which your brain can find some meaning. 
-
         - Stories as chunks
 
   2.  Storage of concepts
-
       - Consolidation: Moving memories from short-term to long-term memory
-
         - Breaking down chunks into concepts
         - Organizing concepts in categories
 
   3.  Retrieval of Concepts
-
       - When a situation arrives, we can retrieve memories. 
 
   4.  Forgetting
-
       - After a certain point, short-term memory is wiped clean.
 
 - People
-
   - Elon Musk
-
     - Neuralink
-
       - USB Cable to store concepts in the brain
 
 ---
@@ -4153,13 +3916,11 @@ References & Inspirations
 6.  Psychology — David G. Myers, C. Nathan DeWall
 7.  Psychology — Henry Gleitman, James Gross, Daniel Reisberg
 
-
 ---
 
 ## Schopenhauer On Reading
 
 **Date:** 2020-05-06
-
 
 > “... just as a man who always rides ultimately forgets how to walk. But such is the case with very many scholars; they have read themselves stupid...”
 >

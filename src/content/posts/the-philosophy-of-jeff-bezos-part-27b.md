@@ -1,13 +1,13 @@
 ---
 title: The Philosophy of Jeff Bezos | Part 5
 published: true
-createdAt: "2021-06-01"
-updatedAt: "2021-06-01"
+createdAt: '2021-06-01'
+updatedAt: '2021-06-01'
 id: 909fe225-657b-484f-be6d-fa902af3845a
 shortTitle: The Philosophy of Jeff Bezos | Part 5
-heroImage: ""
-description: "Part 5 of the Amazon series: Analyzing the 2016-2020 letters on Day 2 stasis, high-velocity decisions, and the continuous work of distinctiveness."
-tags: ["business", "startups", "philosophy"]
+heroImage: ''
+description: 'Part 5 of the Amazon series: Analyzing the 2016-2020 letters on Day 2 stasis, high-velocity decisions, and the continuous work of distinctiveness.'
+tags: ['business', 'startups', 'philosophy']
 slug: the-philosophy-of-jeff-bezos-part-27b
 ---
 

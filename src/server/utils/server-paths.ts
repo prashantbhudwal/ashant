@@ -1,21 +1,21 @@
-import path from "path";
-import { existsSync } from "fs";
-import { isMastraPlayground } from "~/client/lib/utils";
-import { C } from "~/common/constants";
+import path from 'path'
+import { existsSync } from 'fs'
+import { isMastraPlayground } from '~/client/lib/utils'
+import { C } from '~/common/constants'
 
 const findProjectRoot = (startPath: string): string => {
-  let currentPath = startPath;
+  let currentPath = startPath
   while (currentPath !== path.parse(currentPath).root) {
-    if (existsSync(path.join(currentPath, "package.json"))) {
-      return currentPath;
+    if (existsSync(path.join(currentPath, 'package.json'))) {
+      return currentPath
     }
-    currentPath = path.dirname(currentPath);
+    currentPath = path.dirname(currentPath)
   }
-  throw new Error("Could not find project root (no package.json found)");
-};
+  throw new Error('Could not find project root (no package.json found)')
+}
 
-const cwd = process.cwd();
-const basePath = isMastraPlayground ? findProjectRoot(cwd) : cwd;
+const cwd = process.cwd()
+const basePath = isMastraPlayground ? findProjectRoot(cwd) : cwd
 
 export const serverPaths = {
   cwd: basePath,
@@ -23,7 +23,7 @@ export const serverPaths = {
     posts: path.join(basePath, C.DIR.POSTS),
     drafts: path.join(basePath, C.DIR.DRAFTS),
     public: path.join(basePath, C.DIR.PUBLIC),
-    searchGenerated: path.join(basePath, "src/server/modules/search/generated"),
+    searchGenerated: path.join(basePath, 'src/server/modules/search/generated'),
   },
   file: {
     postMdx: (slug: string) =>
@@ -31,4 +31,4 @@ export const serverPaths = {
     draftMdx: (slug: string) =>
       path.join(serverPaths.dir.drafts, `${slug}.mdx`),
   },
-};
+}

@@ -1,13 +1,13 @@
 ---
-title: "Engagement, Active Learning & Other Bullshit in Education"
+title: 'Engagement, Active Learning & Other Bullshit in Education'
 published: true
-createdAt: "2022-07-09"
-updatedAt: "2022-07-09"
+createdAt: '2022-07-09'
+updatedAt: '2022-07-09'
 id: 1660bcd8-4395-45d1-b58b-34450022e96b
-shortTitle: "Engagement, Active Learning & Other Bullshit in Education"
-heroImage: ""
+shortTitle: 'Engagement, Active Learning & Other Bullshit in Education'
+heroImage: ''
 description: "A critique of the overused jargon in ed-tech—explaining why engagement is useless if it's not strictly aligned with actual learning goals."
-tags: ["education", "learning", "philosophy"]
+tags: ['education', 'learning', 'philosophy']
 slug: engagement-active-learning-and-other
 ---
 

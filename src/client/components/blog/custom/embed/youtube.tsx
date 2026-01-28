@@ -1,37 +1,37 @@
-import { cn } from "~/client/lib/utils";
+import { cn } from '~/client/lib/utils'
 
 const YOUTUBE_PATTERNS = [
   /youtu\.be\/([a-zA-Z0-9_-]{11})/,
   /youtube\.com\/watch\?.*v=([a-zA-Z0-9_-]{11})/,
   /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
-] as const;
+] as const
 
 function getYouTubeId(url: string): string | null {
   for (const pattern of YOUTUBE_PATTERNS) {
-    const match = pattern.exec(url);
+    const match = pattern.exec(url)
     if (match) {
-      return match[1];
+      return match[1]
     }
   }
 
-  return null;
+  return null
 }
 
 export function PostEmbed_Youtube({
   href,
   className,
 }: {
-  href: string;
-  className?: string;
+  href: string
+  className?: string
 }) {
-  const videoId = getYouTubeId(href);
+  const videoId = getYouTubeId(href)
 
   if (!videoId) {
-    return <div className="text-red-500">Invalid YouTube URL</div>;
+    return <div className="text-red-500">Invalid YouTube URL</div>
   }
 
   return (
-    <div className={cn("py-2 aspect-video mx-auto", className)}>
+    <div className={cn('mx-auto aspect-video py-2', className)}>
       <iframe
         src={`https://www.youtube-nocookie.com/embed/${videoId}`}
         width="90%"
@@ -44,5 +44,5 @@ export function PostEmbed_Youtube({
         title="YouTube video player"
       />
     </div>
-  );
+  )
 }

@@ -1,20 +1,20 @@
-"use client";
-import { Link } from "@tanstack/react-router";
-import { FaXTwitter, FaGithub, FaAddressBook, FaDiceD6 } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
-import { Button } from "~/client/components/ui/button";
-import { cn } from "~/client/lib/utils";
-import { useAtom, useSetAtom } from "jotai";
-import { SearchModalAtom } from "../search/search-modal-atom";
+'use client'
+import { Link } from '@tanstack/react-router'
+import { FaXTwitter, FaGithub, FaAddressBook, FaDiceD6 } from 'react-icons/fa6'
+import { FaSearch } from 'react-icons/fa'
+import { Button } from '~/client/components/ui/button'
+import { cn } from '~/client/lib/utils'
+import { useAtom, useSetAtom } from 'jotai'
+import { SearchModalAtom } from '../search/search-modal-atom'
 
 type ActionItem = {
-  icon: React.ReactElement;
-  link: string;
-  name: string;
-  target: string;
-};
+  icon: React.ReactElement
+  link: string
+  name: string
+  target: string
+}
 
-const actionItems: ActionItem[] = [];
+const actionItems: ActionItem[] = []
 
 export function ActionIsland({ className }: { className?: string }) {
   // const segment = useSelectedLayoutSegment();
@@ -38,11 +38,11 @@ export function ActionIsland({ className }: { className?: string }) {
       ))}
       <ActionIslandButtons />
     </ul>
-  );
+  )
 }
 
 export function ActionIslandButtons({ className }: { className?: string }) {
-  const setSearchModalOpen = useSetAtom(SearchModalAtom);
+  const setSearchModalOpen = useSetAtom(SearchModalAtom)
 
   return (
     <>
@@ -69,5 +69,5 @@ export function ActionIslandButtons({ className }: { className?: string }) {
         <FaSearch className="text-muted-foreground h-4 w-4" />
       </Button>
     </>
-  );
+  )
 }

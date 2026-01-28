@@ -1,9 +1,9 @@
-import loadable from "@loadable/component";
-import { Skeleton } from "~/client/components/ui/skeleton";
+import loadable from '@loadable/component'
+import { Skeleton } from '~/client/components/ui/skeleton'
 
 export const scientificMethod = {
   DefinitionsCarousel: loadable(
-    () => import("./components/definitions-carousel"),
+    () => import('./components/definitions-carousel'),
     {
       ssr: false,
       fallback: (
@@ -14,4 +14,4 @@ export const scientificMethod = {
       ),
     },
   ),
-};
+}

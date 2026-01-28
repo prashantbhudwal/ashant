@@ -1,13 +1,13 @@
 ---
 title: "Present, don't tell. Or write."
 published: true
-createdAt: "2021-06-03"
-updatedAt: "2021-06-03"
+createdAt: '2021-06-03'
+updatedAt: '2021-06-03'
 id: 12e9e87b-df09-457b-a931-bf3b7cd03753
 shortTitle: "Present, don't tell. Or write."
-heroImage: ""
+heroImage: ''
 description: 'Why wordy slides fail: Understanding the brain''s "one language string" limit and how to transform presentations into visual narratives.'
-tags: ["business", "learning", "software"]
+tags: ['business', 'learning', 'software']
 slug: present-dont-tell-or-write
 ---
 

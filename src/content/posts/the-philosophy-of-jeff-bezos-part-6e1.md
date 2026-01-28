@@ -1,13 +1,13 @@
 ---
 title: The Philosophy of Jeff Bezos | Part 3
 published: true
-createdAt: "2021-05-15"
-updatedAt: "2021-05-15"
+createdAt: '2021-05-15'
+updatedAt: '2021-05-15'
 id: 0f88551a-cc70-43c7-9830-a97d4a6739c4
 shortTitle: The Philosophy of Jeff Bezos | Part 3
-heroImage: ""
+heroImage: ''
 description: 'Part 3 of the Amazon series: Insights from the 2006-2010 letters on Kindle innovation, missionary culture, and the "working backward" strategy.'
-tags: ["business", "startups", "software"]
+tags: ['business', 'startups', 'software']
 slug: the-philosophy-of-jeff-bezos-part-6e1
 ---
 
