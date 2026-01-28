@@ -5,8 +5,8 @@ import { cn } from '~/client/lib/utils'
 
 const items = [
   { name: 'Writings', path: '/writings', hash: 'writings' },
-  { name: 'Tools', path: '/spaces', hash: 'tools' }, // Pointing to /spaces as requested
   { name: 'Prompts', path: '/prompts', hash: 'prompts' },
+  { name: 'Tools', path: '/spaces', hash: 'tools' }, // Pointing to /spaces as requested
 ]
 
 export function NavLinks({ className }: { className?: string }) {
@@ -14,23 +14,24 @@ export function NavLinks({ className }: { className?: string }) {
   const navigate = useNavigate()
   const isHome = location.pathname === '/'
 
-  const handleNavigation = (path: string, hash: string) => {
-    if (isHome) {
-      // Scroll to section
-      const element = document.getElementById(hash)
-      if (element) {
-        const offset = 100 // Adjusted for sticky nav height
-        const top =
-          element.getBoundingClientRect().top + window.scrollY - offset
-        window.scrollTo({ top, behavior: 'smooth' })
-      } else {
-        // Fallback if element not found (e.g. story section might not be mounted?)
-        navigate({ to: path })
-      }
-    } else {
-      // Navigate to page
-      navigate({ to: path })
-    }
+  const handleNavigation = async (path: string, hash: string) => {
+    await navigate({ to: path })
+    // if (isHome) {
+    //   // Scroll to section
+    //   const element = document.getElementById(hash)
+    //   if (element) {
+    //     const offset = 100 // Adjusted for sticky nav height
+    //     const top =
+    //       element.getBoundingClientRect().top + window.scrollY - offset
+    //     window.scrollTo({ top, behavior: 'smooth' })
+    //   } else {
+    //     // Fallback if element not found (e.g. story section might not be mounted?)
+    //     navigate({ to: path })
+    //   }
+    // } else {
+    //   // Navigate to page
+    //   navigate({ to: path })
+    // }
   }
 
   return (

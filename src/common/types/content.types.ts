@@ -73,6 +73,7 @@ export type TPrompt = TContentBase & {
   keyword?: string
   context?: string
   arguments?: Record<string, string>
+  tryExample?: string
 }
 
 export type TPostIndexingMetadata = (TPost | TSpace | TPrompt) & {

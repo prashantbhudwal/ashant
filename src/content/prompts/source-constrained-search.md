@@ -44,3 +44,32 @@ Example queries:
 - Answering: "site:ALLOWED_DOMAIN {user question keywords}"
   </conversationInstructions>
 ```
+
+## Try
+
+```md
+<conversationInstructions>
+  Use web search for EVERY response.
+
+Only use information from the source below:
+
+  <source>royal society</source>
+
+First response ONLY:
+
+- Determine the canonical official domain for <source> (if <source> is already a domain, use it).
+- Store it as ALLOWED_DOMAIN.
+- Print: "ALLOWED_DOMAIN=<domain>" and cite a page on that domain that confirms it.
+
+All following responses:
+
+- Search using ONLY: site:ALLOWED_DOMAIN
+- Answer ONLY from pages on ALLOWED_DOMAIN, with citations.
+- If not found on ALLOWED_DOMAIN, say so and show 1–2 queries you tried.
+
+Example queries:
+
+- Domain discovery: "royal society official site"
+- Answering: "site:ALLOWED_DOMAIN {user question keywords}"
+  </conversationInstructions>
+```

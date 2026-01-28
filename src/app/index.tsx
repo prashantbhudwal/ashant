@@ -76,8 +76,8 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
     <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <div className="mt-8 space-y-16 sm:mt-12 sm:space-y-24">
         <WritingsSection posts={posts} />
-        {spaces.length > 0 && <ToolsSection spaces={spaces} />}
         {prompts.length > 0 && <PromptsSection prompts={prompts} />}
+        {spaces.length > 0 && <ToolsSection spaces={spaces} />}
         <StorySection />
       </div>
     </div>

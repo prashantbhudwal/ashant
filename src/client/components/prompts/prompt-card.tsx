@@ -43,6 +43,22 @@ function generateRaycastUrl(prompt: TPrompt): string {
   return `https://ray.so/snippets/shared?snippet=${encoded}`
 }
 
+/**
+ * Generates a ChatGPT URL with the try example pre-filled
+ */
+function generateChatGPTUrl(tryExample: string): string {
+  const encoded = encodeURIComponent(tryExample)
+  return `https://chatgpt.com/?prompt=${encoded}`
+}
+
+/**
+ * Generates a Claude URL with the try example pre-filled
+ */
+function generateClaudeUrl(tryExample: string): string {
+  const encoded = encodeURIComponent(tryExample)
+  return `https://claude.ai/new?q=${encoded}`
+}
+
 export function PromptCard({ prompt }: PromptCardProps) {
   const [copied, setCopied] = useState(false)
   const [expanded, setExpanded] = useState(false)
@@ -84,6 +100,42 @@ export function PromptCard({ prompt }: PromptCardProps) {
           className="flex shrink-0 gap-2"
           onClick={(e) => e.stopPropagation()}
         >
+          {prompt.tryExample && (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <button
+                  className={cn(
+                    'flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all',
+                    'bg-muted text-muted-foreground hover:bg-accent hover:text-foreground',
+                  )}
+                >
+                  Try
+                  <ChevronDown className="h-3 w-3" />
+                </button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem
+                  onClick={() =>
+                    window.open(
+                      generateChatGPTUrl(prompt.tryExample!),
+                      '_blank',
+                    )
+                  }
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  ChatGPT
+                </DropdownMenuItem>
+                <DropdownMenuItem
+                  onClick={() =>
+                    window.open(generateClaudeUrl(prompt.tryExample!), '_blank')
+                  }
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Claude
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          )}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
