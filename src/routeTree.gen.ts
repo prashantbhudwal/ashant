@@ -9,10 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './app/__root'
-import { Route as WritingsRouteImport } from './app/writings'
 import { Route as StoryRouteImport } from './app/story'
 import { Route as SpacesRouteImport } from './app/spaces'
 import { Route as PromptsRouteImport } from './app/prompts'
+import { Route as PostsRouteImport } from './app/posts'
 import { Route as IndexRouteImport } from './app/index'
 import { Route as SpacesIndexRouteImport } from './app/spaces.index'
 import { Route as SpacesSlugRouteImport } from './app/spaces.$slug'
@@ -21,11 +21,6 @@ import { Route as ApiSitemapDotxmlRouteImport } from './app/api.sitemap[.]xml'
 import { Route as ApiFeedDotxmlRouteImport } from './app/api.feed[.]xml'
 import { Route as ApiTrpcSplatRouteImport } from './app/api.trpc.$'
 
-const WritingsRoute = WritingsRouteImport.update({
-  id: '/writings',
-  path: '/writings',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const StoryRoute = StoryRouteImport.update({
   id: '/story',
   path: '/story',
@@ -39,6 +34,11 @@ const SpacesRoute = SpacesRouteImport.update({
 const PromptsRoute = PromptsRouteImport.update({
   id: '/prompts',
   path: '/prompts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PostsRoute = PostsRouteImport.update({
+  id: '/posts',
+  path: '/posts',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -79,10 +79,10 @@ const ApiTrpcSplatRoute = ApiTrpcSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/posts': typeof PostsRoute
   '/prompts': typeof PromptsRoute
   '/spaces': typeof SpacesRouteWithChildren
   '/story': typeof StoryRoute
-  '/writings': typeof WritingsRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -92,9 +92,9 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/posts': typeof PostsRoute
   '/prompts': typeof PromptsRoute
   '/story': typeof StoryRoute
-  '/writings': typeof WritingsRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -105,10 +105,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/posts': typeof PostsRoute
   '/prompts': typeof PromptsRoute
   '/spaces': typeof SpacesRouteWithChildren
   '/story': typeof StoryRoute
-  '/writings': typeof WritingsRoute
   '/api/feed.xml': typeof ApiFeedDotxmlRoute
   '/api/sitemap.xml': typeof ApiSitemapDotxmlRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -120,10 +120,10 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/posts'
     | '/prompts'
     | '/spaces'
     | '/story'
-    | '/writings'
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
@@ -133,9 +133,9 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/posts'
     | '/prompts'
     | '/story'
-    | '/writings'
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
@@ -145,10 +145,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/posts'
     | '/prompts'
     | '/spaces'
     | '/story'
-    | '/writings'
     | '/api/feed.xml'
     | '/api/sitemap.xml'
     | '/blog/$slug'
@@ -159,10 +159,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PostsRoute: typeof PostsRoute
   PromptsRoute: typeof PromptsRoute
   SpacesRoute: typeof SpacesRouteWithChildren
   StoryRoute: typeof StoryRoute
-  WritingsRoute: typeof WritingsRoute
   ApiFeedDotxmlRoute: typeof ApiFeedDotxmlRoute
   ApiSitemapDotxmlRoute: typeof ApiSitemapDotxmlRoute
   BlogSlugRoute: typeof BlogSlugRoute
@@ -171,13 +171,6 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/writings': {
-      id: '/writings'
-      path: '/writings'
-      fullPath: '/writings'
-      preLoaderRoute: typeof WritingsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/story': {
       id: '/story'
       path: '/story'
@@ -197,6 +190,13 @@ declare module '@tanstack/react-router' {
       path: '/prompts'
       fullPath: '/prompts'
       preLoaderRoute: typeof PromptsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/posts': {
+      id: '/posts'
+      path: '/posts'
+      fullPath: '/posts'
+      preLoaderRoute: typeof PostsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -266,10 +266,10 @@ const SpacesRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PostsRoute: PostsRoute,
   PromptsRoute: PromptsRoute,
   SpacesRoute: SpacesRouteWithChildren,
   StoryRoute: StoryRoute,
-  WritingsRoute: WritingsRoute,
   ApiFeedDotxmlRoute: ApiFeedDotxmlRoute,
   ApiSitemapDotxmlRoute: ApiSitemapDotxmlRoute,
   BlogSlugRoute: BlogSlugRoute,

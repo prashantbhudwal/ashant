@@ -11,16 +11,16 @@ import { C } from '~/common/constants'
 import { PostCard } from '~/client/components/blog/post-card'
 
 const navContentQueryOptions = queryOptions({
-  queryKey: ['all-content-writings'],
+  queryKey: ['all-content-posts'],
   queryFn: () => getAllContentServerFn(),
 })
 
-export const Route = createFileRoute('/writings')({
+export const Route = createFileRoute('/posts')({
   head: () => {
-    const canonicalUrl = `${C.url}/writings`
+    const canonicalUrl = `${C.url}/posts`
     return {
       meta: seo({
-        title: 'Writings | prashant',
+        title: 'Posts | prashant',
         description: 'Notes on software, design, and life.',
         image: `${C.url}/og-ashant.png`,
         keywords: 'blog, notes, software, design, philosophy, startups',
@@ -34,7 +34,7 @@ export const Route = createFileRoute('/writings')({
       navContentQueryOptions,
     )
   },
-  component: WritingsPage,
+  component: PostsPage,
 })
 
 const allTags = [
@@ -51,7 +51,7 @@ const allTags = [
   'personal',
 ] as const
 
-function WritingsPage() {
+function PostsPage() {
   const content = useSuspenseQuery(navContentQueryOptions).data
   const posts = content.filter(
     (item): item is TPost => item.type === ContentType.POST,
@@ -75,7 +75,7 @@ function WritingsPage() {
   return (
     <div className="mx-auto max-w-2xl px-4 py-12">
       <div className="mb-12">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight">Writings</h1>
+        <h1 className="mb-4 text-3xl font-bold tracking-tight">Posts</h1>
         <p className="text-muted-foreground text-lg">
           Notes on the world, software and life.
         </p>

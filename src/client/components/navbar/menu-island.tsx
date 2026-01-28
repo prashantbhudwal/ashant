@@ -9,7 +9,7 @@ type MenuItem = {
 
 const menuItems: MenuItem[] = [
   {
-    label: 'writings',
+    label: 'posts',
     route: '/',
     isActive: true,
   },

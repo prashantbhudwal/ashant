@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from '@tanstack/react-router'
 import { cn } from '~/client/lib/utils'
 
 const items = [
-  { name: 'Writings', path: '/writings', hash: 'writings' },
+  { name: 'Posts', path: '/posts', hash: 'posts' },
   { name: 'Prompts', path: '/prompts', hash: 'prompts' },
   { name: 'Tools', path: '/spaces', hash: 'tools' }, // Pointing to /spaces as requested
 ]

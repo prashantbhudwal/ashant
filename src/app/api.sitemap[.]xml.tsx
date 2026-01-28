@@ -12,7 +12,7 @@ export const Route = createFileRoute('/api/sitemap.xml')({
         // Static pages
         const staticPages = [
           { loc: baseUrl, priority: '1.0', changefreq: 'daily' },
-          { loc: `${baseUrl}/writings`, priority: '0.9', changefreq: 'weekly' },
+          { loc: `${baseUrl}/posts`, priority: '0.9', changefreq: 'weekly' },
           { loc: `${baseUrl}/prompts`, priority: '0.8', changefreq: 'weekly' },
           { loc: `${baseUrl}/spaces`, priority: '0.8', changefreq: 'monthly' },
         ]

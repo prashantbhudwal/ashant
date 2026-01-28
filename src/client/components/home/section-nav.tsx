@@ -4,13 +4,13 @@ import { useEffect, useState } from 'react'
 import { cn } from '~/client/lib/utils'
 
 const sections = [
-  { id: 'writings', label: 'Writings' },
+  { id: 'posts', label: 'Posts' },
   { id: 'tools', label: 'Tools' },
   { id: 'prompts', label: 'Prompts' },
 ]
 
 export function SectionNav({ className }: { className?: string }) {
-  const [activeSection, setActiveSection] = useState('writings')
+  const [activeSection, setActiveSection] = useState('posts')
 
   useEffect(() => {
     const handleScroll = () => {

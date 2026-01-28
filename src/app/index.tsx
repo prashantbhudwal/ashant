@@ -10,7 +10,7 @@ import {
   ContentType,
 } from '~/common/types/content.types'
 import { getAllContentServerFn } from '../server/content.server'
-import { WritingsSection } from '~/client/components/home/writings-section'
+import { PostsSection } from '~/client/components/home/posts-section'
 import { ToolsSection } from '~/client/components/home/tools-section'
 import { PromptsSection } from '~/client/components/home/prompts-section'
 import { StorySection } from '~/client/components/home/story-section'
@@ -75,7 +75,7 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
   return (
     <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <div className="mt-8 space-y-16 sm:mt-12 sm:space-y-24">
-        <WritingsSection posts={posts} />
+        <PostsSection posts={posts} />
         {prompts.length > 0 && <PromptsSection prompts={prompts} />}
         {spaces.length > 0 && <ToolsSection spaces={spaces} />}
         <StorySection />

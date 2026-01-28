@@ -10,12 +10,12 @@ import { Skeleton } from '~/client/components/ui/skeleton'
 
 const PREVIEW_LIMIT = 5
 
-type WritingsSectionProps = {
+type PostsSectionProps = {
   posts: TPost[]
   className?: string
 }
 
-export function WritingsSection({ posts, className }: WritingsSectionProps) {
+export function PostsSection({ posts, className }: PostsSectionProps) {
   const displayPosts = posts.slice(0, PREVIEW_LIMIT)
   const remainingPosts = posts.slice(PREVIEW_LIMIT)
   const remainingCount = remainingPosts.length
@@ -32,9 +32,9 @@ export function WritingsSection({ posts, className }: WritingsSectionProps) {
   }
 
   return (
-    <section id="writings" className={className}>
+    <section id="posts" className={className}>
       <h2 className="text-muted-foreground mb-6 text-sm font-medium tracking-widest uppercase sm:mb-8">
-        Writings
+        Posts
       </h2>
 
       <div className="mb-6 space-y-8 sm:mb-8">
@@ -49,7 +49,7 @@ export function WritingsSection({ posts, className }: WritingsSectionProps) {
 
       {remainingCount > 0 && (
         <Link
-          to="/writings"
+          to="/posts"
           className="text-muted-foreground hover:text-foreground inline-flex items-center gap-1 text-sm font-medium transition-colors"
         >
           {remainingCount} more{formatTagPreview()}...{' '}
