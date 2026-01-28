@@ -76,3 +76,5 @@ AI_SDK_5_MIGRATION.md
 tests.md
 .vscode
 agent-rules
+# Local Netlify folder
+.netlify

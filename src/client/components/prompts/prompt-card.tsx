@@ -1,17 +1,33 @@
-import { useState } from "react";
-import { type TPrompt } from "~/common/types/content.types";
-import { cn } from "~/client/lib/utils";
+import { useState, lazy, Suspense } from 'react'
+import { type TPrompt } from '~/common/types/content.types'
+import { cn } from '~/client/lib/utils'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "~/client/components/ui/dropdown-menu";
-import { ChevronDown, Copy, ExternalLink } from "lucide-react";
-import { Markdown } from "~/client/components/blog/mdx/md.client";
+} from '~/client/components/ui/dropdown-menu'
+import { ChevronDown, Copy, ExternalLink } from 'lucide-react'
+
+// Lazy load Markdown to code-split react-markdown out of the main bundle
+const Markdown = lazy(() =>
+  import('~/client/components/blog/mdx/md.client').then((m) => ({
+    default: m.Markdown,
+  })),
+)
+
+function MarkdownSkeleton() {
+  return (
+    <div className="animate-pulse space-y-2">
+      <div className="bg-muted/50 h-4 w-3/4 rounded" />
+      <div className="bg-muted/50 h-4 w-full rounded" />
+      <div className="bg-muted/50 h-4 w-5/6 rounded" />
+    </div>
+  )
+}
 
 interface PromptCardProps {
-  prompt: TPrompt;
+  prompt: TPrompt
 }
 
 /**
@@ -19,34 +35,34 @@ interface PromptCardProps {
  */
 function generateRaycastUrl(prompt: TPrompt): string {
   const snippet = {
-    keyword: prompt.keyword || "",
+    keyword: prompt.keyword || '',
     text: prompt.prompt,
     name: prompt.shortTitle ?? prompt.title,
-  };
-  const encoded = encodeURIComponent(JSON.stringify(snippet));
-  return `https://ray.so/snippets/shared?snippet=${encoded}`;
+  }
+  const encoded = encodeURIComponent(JSON.stringify(snippet))
+  return `https://ray.so/snippets/shared?snippet=${encoded}`
 }
 
 export function PromptCard({ prompt }: PromptCardProps) {
-  const [copied, setCopied] = useState(false);
-  const [expanded, setExpanded] = useState(false);
+  const [copied, setCopied] = useState(false)
+  const [expanded, setExpanded] = useState(false)
 
-  const promptText = prompt.prompt;
-  const isLong = promptText.length > 300;
+  const promptText = prompt.prompt
+  const isLong = promptText.length > 300
 
   const handleCopyText = async () => {
-    await navigator.clipboard.writeText(promptText);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
+    await navigator.clipboard.writeText(promptText)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
   const handleImportToRaycast = () => {
-    const url = generateRaycastUrl(prompt);
-    window.open(url, "_blank");
-  };
+    const url = generateRaycastUrl(prompt)
+    window.open(url, '_blank')
+  }
 
   // Wrap prompt in code block for rendering
-  const promptMarkdown = "```xml\n" + promptText + "\n```";
+  const promptMarkdown = '```xml\n' + promptText + '\n```'
 
   return (
     <div className="border-border/30 rounded-lg border">
@@ -57,7 +73,7 @@ export function PromptCard({ prompt }: PromptCardProps) {
       >
         <div className="min-w-0 flex-1">
           <div className="mb-1 flex items-center gap-2">
-            <span className="text-primary/60 font-mono text-sm">{">"}</span>
+            <span className="text-primary/60 font-mono text-sm">{'>'}</span>
             <span className="text-foreground text-base font-medium md:text-lg">
               {prompt.shortTitle ?? prompt.title}
             </span>
@@ -72,13 +88,13 @@ export function PromptCard({ prompt }: PromptCardProps) {
             <DropdownMenuTrigger asChild>
               <button
                 className={cn(
-                  "flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all",
+                  'flex items-center gap-1 rounded-md px-3 py-1.5 text-xs font-medium transition-all',
                   copied
-                    ? "bg-green-500/20 text-green-600 dark:text-green-400"
-                    : "bg-muted text-muted-foreground hover:bg-accent hover:text-foreground",
+                    ? 'bg-green-500/20 text-green-600 dark:text-green-400'
+                    : 'bg-muted text-muted-foreground hover:bg-accent hover:text-foreground',
                 )}
               >
-                {copied ? "Copied!" : "Copy"}
+                {copied ? 'Copied!' : 'Copy'}
                 <ChevronDown className="h-3 w-3" />
               </button>
             </DropdownMenuTrigger>
@@ -104,10 +120,12 @@ export function PromptCard({ prompt }: PromptCardProps) {
               <span className="text-muted-foreground/50 mb-3 block text-[10px] font-bold tracking-widest uppercase">
                 Context
               </span>
-              <Markdown
-                content={prompt.context}
-                className="prose-sm text-muted-foreground [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
-              />
+              <Suspense fallback={<MarkdownSkeleton />}>
+                <Markdown
+                  content={prompt.context}
+                  className="prose-sm text-muted-foreground [&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                />
+              </Suspense>
             </div>
           )}
           <div className="bg-muted/40 hover:bg-muted/50 px-6 py-6 transition-colors">
@@ -115,10 +133,12 @@ export function PromptCard({ prompt }: PromptCardProps) {
               Prompt
             </span>
             <div className="scrollbar-thin scrollbar-track-transparent scrollbar-thumb-muted-foreground/20 hover:scrollbar-thumb-muted-foreground/40 border-border/50 bg-background max-h-96 overflow-y-auto rounded-md border">
-              <Markdown
-                content={promptMarkdown}
-                className="prose-pre:!bg-transparent prose-pre:!p-6 prose-pre:rounded-none prose-pre:whitespace-pre-wrap prose-pre:break-words prose-code:break-words prose-code:font-mono prose-pre:font-mono min-w-full"
-              />
+              <Suspense fallback={<MarkdownSkeleton />}>
+                <Markdown
+                  content={promptMarkdown}
+                  className="prose-pre:!bg-transparent prose-pre:!p-6 prose-pre:rounded-none prose-pre:whitespace-pre-wrap prose-pre:break-words prose-code:break-words prose-code:font-mono prose-pre:font-mono min-w-full"
+                />
+              </Suspense>
             </div>
           </div>
 
@@ -153,5 +173,5 @@ export function PromptCard({ prompt }: PromptCardProps) {
         </div>
       )}
     </div>
-  );
+  )
 }

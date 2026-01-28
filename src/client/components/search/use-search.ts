@@ -1,19 +1,19 @@
-import { use, useCallback, useMemo } from "react";
-import type { TPost } from "~/common/types/content.types";
-import { useQuery } from "@tanstack/react-query";
-import { searchConfigOptions } from "~/server/modules/search/config";
-import { useTRPC } from "~/client/trpc/react";
-import { SearchModalAtom } from "./search-modal-atom";
-import { useAtom } from "jotai";
+import { use, useCallback, useMemo } from 'react'
+import type { TPost } from '~/common/types/content.types'
+import { useQuery } from '@tanstack/react-query'
+import { searchConfigOptions } from '~/server/modules/search/config'
+import { useTRPC } from '~/client/trpc/react'
+import { SearchModalAtom } from './search-modal-atom'
+import { useAtom } from 'jotai'
 
-const MIN_QUERY_LENGTH = 2;
-const MIN_SCORE = 0.2;
-const MAX_RESULTS = 10;
+const MIN_QUERY_LENGTH = 2
+const MIN_SCORE = 0.2
+const MAX_RESULTS = 10
 
 export function useSearch() {
-  const [searchModalOpen, setSearchModalOpen] = useAtom(SearchModalAtom);
+  const [searchModalOpen, setSearchModalOpen] = useAtom(SearchModalAtom)
 
-  const trpc = useTRPC();
+  const trpc = useTRPC()
 
   const {
     data: MiniSearch,
@@ -21,10 +21,11 @@ export function useSearch() {
     isFetched: isMiniSearchFetched,
     isError: isMiniSearchError,
   } = useQuery({
-    queryKey: ["minisearch-lib"],
-    queryFn: () => import("minisearch").then((m) => m.default),
+    queryKey: ['minisearch-lib'],
+    queryFn: () => import('minisearch').then((m) => m.default),
     staleTime: Infinity,
-  });
+    enabled: searchModalOpen, // Only load library when search is opened
+  })
 
   const {
     data: indexData,
@@ -33,22 +34,22 @@ export function useSearch() {
     isFetched,
   } = useQuery({
     ...trpc.search.getMiniSearchIndex.queryOptions(),
-    // enabled: searchModalOpen,
-    // staleTime: 1000 * 60 * 60 * 24, // 24 hours
-  });
+    enabled: searchModalOpen, // Only load index when search is opened
+    staleTime: 1000 * 60 * 60 * 24, // 24 hours - cache for a day
+  })
 
   const miniSearch = useMemo(() => {
-    if (!indexData || !MiniSearch) return null;
-    return MiniSearch.loadJS<TPost>(indexData, searchConfigOptions);
-  }, [indexData, MiniSearch]);
+    if (!indexData || !MiniSearch) return null
+    return MiniSearch.loadJS<TPost>(indexData, searchConfigOptions)
+  }, [indexData, MiniSearch])
 
   const search = useCallback(
     (query: string) => {
       if (!miniSearch || !query || query.length < MIN_QUERY_LENGTH) {
-        return [];
+        return []
       }
 
-      const results = miniSearch.search(query);
+      const results = miniSearch.search(query)
 
       return results
         .filter((result) => result.score >= MIN_SCORE)
@@ -56,25 +57,25 @@ export function useSearch() {
         .map((result) => {
           return {
             id: result.id,
-            title: result.title ?? "",
+            title: result.title ?? '',
             score: result.score,
             slug: result.slug,
-            shortTitle: result.shortTitle ?? "",
-            description: result.description ?? "",
+            shortTitle: result.shortTitle ?? '',
+            description: result.description ?? '',
             tags: result.tags,
-            heroImage: result.heroImage ?? "",
+            heroImage: result.heroImage ?? '',
             createdAt: result.createdAt,
             content: result.content,
-          };
-        });
+          }
+        })
     },
     [miniSearch],
-  );
+  )
 
   return {
     search,
     isLoading: isLoading || isMiniSearchLoading,
     error: error || isMiniSearchError,
     isReady: isFetched && isMiniSearchFetched,
-  };
+  }
 }

@@ -1,7 +1,6 @@
 @import 'tailwindcss';
 @import 'tailwind-scrollbar-hide/v4';
-@import '@fontsource-variable/geist';
-@import '@fontsource-variable/geist-mono';
+
 @plugin "@tailwindcss/typography";
 @plugin "tailwind-scrollbar";
 @plugin "tailwind-capitalize-first-letter";
