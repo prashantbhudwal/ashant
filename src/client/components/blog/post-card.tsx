@@ -32,6 +32,11 @@ export function PostCard({
           >
             {post.title}
           </h3>
+          {post.isDraft && (
+            <span className="shrink-0 rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 uppercase dark:text-amber-400">
+              Draft
+            </span>
+          )}
           {isLatest && (
             <span className="bg-primary/10 text-primary shrink-0 rounded px-1.5 py-0.5 text-[10px] font-medium uppercase">
               New

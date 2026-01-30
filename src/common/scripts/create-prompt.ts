@@ -17,6 +17,7 @@ const rl = readline.createInterface({
 
 // Define paths
 const PROMPTS_DIR = path.join(process.cwd(), 'src', 'content', 'prompts')
+const DRAFTS_DIR = path.join(PROMPTS_DIR, 'drafts')
 
 /**
  * Prompts the user with a question and returns their answer
@@ -61,7 +62,7 @@ const createPrompt = async (): Promise<PromptCreationResult> => {
       }
     }
 
-    const promptFilePath = path.join(PROMPTS_DIR, `${slug}.md`)
+    const promptFilePath = path.join(DRAFTS_DIR, `${slug}.md`)
 
     // Check if prompt file already exists
     if (fs.existsSync(promptFilePath)) {
@@ -71,8 +72,8 @@ const createPrompt = async (): Promise<PromptCreationResult> => {
       }
     }
 
-    // Create prompts directory if it doesn't exist
-    createDirIfNotExists(PROMPTS_DIR)
+    // Create drafts directory if it doesn't exist
+    createDirIfNotExists(DRAFTS_DIR)
 
     // Create prompt file
     const now = new Date().toISOString().split('T')[0] // YYYY-MM-DD format

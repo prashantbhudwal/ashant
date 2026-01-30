@@ -55,6 +55,7 @@ export const ZPostFrontmatter = ZContentBase.pick({
 export type TPost = TContentBase & {
   type: ContentType.POST
   content: string
+  isDraft?: boolean
 }
 export type TSpace = TContentBase & {
   type: ContentType.SPACE
@@ -74,6 +75,7 @@ export type TPrompt = TContentBase & {
   context?: string
   arguments?: Record<string, string>
   tryExample?: string
+  isDraft?: boolean
 }
 
 export type TPostIndexingMetadata = (TPost | TSpace | TPrompt) & {

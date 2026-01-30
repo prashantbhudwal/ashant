@@ -17,14 +17,21 @@ export function PromptCard({ prompt, showTags = false }: PromptCardProps) {
       className="group block py-3 sm:py-4"
     >
       <div className="flex flex-col gap-1">
-        <h3
-          className={cn(
-            'group-hover:text-primary transition-colors',
-            'text-foreground text-base font-medium sm:text-lg',
+        <div className="flex items-center gap-2">
+          <h3
+            className={cn(
+              'group-hover:text-primary transition-colors',
+              'text-foreground text-base font-medium sm:text-lg',
+            )}
+          >
+            {title}
+          </h3>
+          {prompt.isDraft && (
+            <span className="shrink-0 rounded bg-amber-500/10 px-1.5 py-0.5 text-[10px] font-medium text-amber-600 uppercase dark:text-amber-400">
+              Draft
+            </span>
           )}
-        >
-          {title}
-        </h3>
+        </div>
         <time className="text-muted-foreground/70 text-xs tabular-nums">
           {formatDate(prompt.createdAt)}
         </time>

@@ -22,6 +22,7 @@ const rl = readline.createInterface({
 // Define paths
 const CONTENT_DIR = path.join(process.cwd(), 'src', 'content')
 const POSTS_DIR = path.join(CONTENT_DIR, 'posts')
+const DRAFTS_DIR = path.join(POSTS_DIR, 'drafts')
 const INTERACTIVE_DIR = path.join(POSTS_DIR, 'interactive')
 const COMPONENTS_FILE = path.join(
   process.cwd(),
@@ -99,7 +100,7 @@ const createRegularPost = async (
   const content = generateFrontmatter(slug, now, postId)
 
   if (withImages) {
-    const postDir = path.join(POSTS_DIR, slug)
+    const postDir = path.join(DRAFTS_DIR, slug)
 
     if (fs.existsSync(postDir)) {
       return {
@@ -119,7 +120,7 @@ const createRegularPost = async (
       postPath: filePath,
     }
   } else {
-    const filePath = path.join(POSTS_DIR, `${slug}.md`)
+    const filePath = path.join(DRAFTS_DIR, `${slug}.md`)
 
     if (fs.existsSync(filePath)) {
       return {

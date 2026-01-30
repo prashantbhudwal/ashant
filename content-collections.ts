@@ -4,10 +4,12 @@ import remarkGfm from 'remark-gfm'
 import { z } from 'zod'
 import { ContentType } from '~/common/types/content.types'
 
+const isDev = process.env.NODE_ENV === 'development'
+
 const posts = defineCollection({
   name: 'posts',
   directory: 'src/content/posts',
-  include: '**/*.{md,mdx}',
+  include: isDev ? '**/*.{md,mdx}' : ['**/*.{md,mdx}', '!drafts/**'],
   schema: z.object({
     id: z.string(),
     slug: z.string(),
@@ -40,9 +42,11 @@ const posts = defineCollection({
     const mdx = await compileMDX(context, document, {
       remarkPlugins: [remarkGfm],
     })
+    const isDraft = document._meta.filePath.includes('drafts/')
     return {
       ...document,
       mdx,
+      isDraft,
       type: ContentType.POST,
     }
   },
@@ -83,7 +87,7 @@ function parsePromptContent(content: string): {
 const prompts = defineCollection({
   name: 'prompts',
   directory: 'src/content/prompts',
-  include: '**/*.md',
+  include: isDev ? '**/*.md' : ['**/*.md', '!drafts/**'],
   schema: z.object({
     id: z.string(),
     slug: z.string(),
@@ -116,11 +120,13 @@ const prompts = defineCollection({
   }),
   transform: async (document) => {
     const { context, prompt, tryExample } = parsePromptContent(document.content)
+    const isDraft = document._meta.filePath.includes('drafts/')
     return {
       ...document,
       context,
       prompt,
       tryExample,
+      isDraft,
       type: ContentType.PROMPT,
     }
   },
