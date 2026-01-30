@@ -1,3 +1,7 @@
+import { Link } from '@tanstack/react-router'
+import { useAtomValue } from 'jotai'
+import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+
 import { Button } from '~/client/components/ui/button'
 import {
   Card,
@@ -6,74 +10,64 @@ import {
   CardHeader,
   CardTitle,
 } from '~/client/components/ui/card'
-import dedent from 'dedent'
-import { Link } from '@tanstack/react-router'
-import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
 import { link } from '~/client/lib/link'
-import { useAtomValue } from 'jotai'
+
 import { resolutionAtom } from './resolution-atom'
-import { Markdown } from '../blog/mdx/md.client'
+
 export function SummaryCard() {
   const resolution = useAtomValue<number>(resolutionAtom)
+
   return (
-    <Card className="">
-      <CardHeader>
-        <CardTitle className="text-primary text-2xl">
-          Prashant Bhudwal
-        </CardTitle>
-        <CardDescription>Engineering, Product & Education</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <Markdown
-          content={dedent`I am a product guy that codes. I have founded tree Ed-tech startups, getting customers all three times and reaching recurring revenue twice. Zero of the three made it.`}
-        />
-        {resolution > 2 && (
-          <>
-            <br />
-            <Markdown
-              content={dedent`I am good at building full-stack web applications with language models. I code in Typescript. I love working with React, Tailwind, NextJs, Express, tRPC, Prisma, and AuthJs.`}
-            />
-          </>
-        )}
-        <br />
-        <Markdown
-          content={dedent`You have **two** ways to learn more about me.
-            ### Conventional Route
-            `}
-        />
-        <div className="flex flex-row space-x-2 py-6">
-          <Link to={link.url.external.authorProfile.linkedIn} target="_blank">
-            <Button variant={'secondary'}>
-              <span>
+    <Card className="border-border/60 relative overflow-hidden">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]"
+      />
+      <CardHeader className="space-y-5">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="space-y-1">
+            <CardTitle className="text-2xl tracking-tight text-balance sm:text-3xl">
+              Prashant Bhudwal
+            </CardTitle>
+            <CardDescription className="text-primary/80 max-w-md text-sm font-medium">
+              Engineering · Product · Education
+            </CardDescription>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link to={link.url.external.authorProfile.linkedIn} target="_blank">
+              <Button variant="outline" size="sm" className="gap-2">
                 <FaLinkedin />
-              </span>
-              <span className="hidden md:block">LinkedIn</span>
-            </Button>
-          </Link>
-          <Link to={link.url.external.authorProfile.x} target="_blank">
-            <Button variant={'secondary'}>
-              <span>
+                <span className="hidden sm:inline">LinkedIn</span>
+              </Button>
+            </Link>
+            <Link to={link.url.external.authorProfile.x} target="_blank">
+              <Button variant="outline" size="sm" className="gap-2">
                 <FaXTwitter />
-              </span>
-              <span className="hidden md:block">Twitter</span>
-            </Button>
-          </Link>
-          <Link to={link.url.external.authorProfile.github} target="_blank">
-            <Button variant={'secondary'}>
-              <span>
+                <span className="hidden sm:inline">X</span>
+              </Button>
+            </Link>
+            <Link to={link.url.external.authorProfile.github} target="_blank">
+              <Button variant="outline" size="sm" className="gap-2">
                 <FaGithub />
-              </span>
-              <span className="hidden md:block">Github</span>
-            </Button>
-          </Link>
+                <span className="hidden sm:inline">GitHub</span>
+              </Button>
+            </Link>
+          </div>
         </div>
-        <Markdown
-          content={dedent`### Narrative Route
-            If you prefer nuance, go through my journey below. 
-            
-            Use the **slider** on your screen to change the level of detail. Each level is a complete narrative.
-            `}
-        />
+      </CardHeader>
+
+      <CardContent className="space-y-3">
+        <p className="text-muted-foreground leading-relaxed">
+          I’m a product guy that codes. I’ve founded three Ed‑tech startups -
+          got customers each time, reached recurring revenue twice, and learned
+          a lot from all three. These days I build full‑stack web apps with
+          language models, mostly in TypeScript (React, Tailwind, tRPC, Prisma,
+          Tanstack, Postgres, AISDK).
+        </p>
+        <p className="text-muted-foreground leading-relaxed">
+          This is NOT a resume. It is a narrative of my life. If you prefer the
+          conventional route - click the LinkedIn button.
+        </p>
       </CardContent>
     </Card>
   )

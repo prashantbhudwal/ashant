@@ -15,10 +15,10 @@ export const layersPoints: Story[] = [
       },
 
       l2: {
-        text: 'Poonch is a small border town, 10 hours from the nearest airport and train station. Most of my childhood was sprinkled with violence—first Indo-Pak disputes, then terrorism, and finally a civil agitation.',
+        text: 'Poonch is a small border town, 10 hours from the nearest airport and train station. Most of my childhood was sprinkled with violence: Indo-Pak disputes, then terrorism, and finally a civil agitation.',
       },
       l3: {
-        text: "But we learned to live with it. We went to school, we played, we did silly stuff—just like other children. I think after you've gone through the level of uncertainty that we did, you become very used to it. After you've been scared of death—literally—so many times, nothing else really scares you. It unsettles you, it agonizes you, but nothing truly scares you.",
+        text: "But we learned to live with it. We went to school, we played, we did silly stuff, just like other children. I think after you've gone through the level of uncertainty that we did, you become very used to it. After you've been scared of death, literally, so many times, nothing else really scares you. It unsettles you, it agonizes you, but nothing truly scares you.",
       },
     },
     subplots: [
@@ -50,7 +50,7 @@ export const layersPoints: Story[] = [
         description: '2008-09',
         layers: {
           l1: {
-            text: 'When there was no terrorism or shelling, there was Hindu‑Muslim violence. A civil agitation over a land issue started in 2008; it soon got out of hand and culminated in full‑fledged religious violence, which stopped after the army was deployed. Schools remained shut for half the year, and there was a complete curfew for two of those months.',
+            text: 'When there was no terrorism or shelling, there was Hindu-Muslim violence. A civil agitation over a land issue started in 2008. It soon got out of hand and culminated in full-fledged religious violence, which stopped after the army was deployed. Schools remained shut for half the year, and there was a complete curfew for two of those months.',
           },
         },
         resolution: LEVEL.detailed,
@@ -68,8 +68,11 @@ export const layersPoints: Story[] = [
       l1: {
         text: 'I moved to Jammu in 2009 for my higher secondary education.',
       },
+      l2: {
+        text: 'After enrolling in a higher-secondary school in Poonch for two months, I realized how poor the quality of education was and decided to move. There I had access to better schools and better after-school education.',
+      },
       l3: {
-        text: 'Moving to Jammu was a last‑minute decision. After studying in Poonch for two months, I realized how poor the quality of higher secondary education was and decided to move. The education in Jammu was better.',
+        text: 'At the end of 11th grade, I learned about the existence of entrance exams - AIEEE and JEE. I spent the next two years preparing. Did well enough to get admission into a college in Mumbai.',
       },
     },
   },
@@ -82,7 +85,7 @@ export const layersPoints: Story[] = [
     resolution: LEVEL.concise,
     layers: {
       l1: {
-        text: 'This is the city where I became myself—where I earned my degree, got my first job, had my first drink, rented my first apartment, and started my first startup. Mumbai is as much a home to me as my hometown.',
+        text: 'This is where I became myself. I earned my degree, got my first job, rented my first apartment, and started my first startup here. Mumbai is as much a home to me as my hometown.',
       },
     },
 
@@ -97,7 +100,7 @@ export const layersPoints: Story[] = [
           },
 
           l2: {
-            text: "I scored well, never failed, and was placed with the highest package in my department. But, knowing what I know now, I don't know what I learned in college or why.",
+            text: 'College was a wild ride - different city, culture, and food. I was an above average student. But I learned more in my first job than in four years of coursework.',
           },
         },
 
@@ -109,7 +112,7 @@ export const layersPoints: Story[] = [
         description: '2016-18',
         layers: {
           l1: {
-            text: dedent`I received a job offer through campus placement but chose not to join after orientation. Instead, I took an unpaid internship at a startup. I realized a conventional corporate setup wasn’t the best fit for me. The internship converted into a full-time position in three months and later into a founding‑team role.
+            text: dedent`I received a job offer through campus placement but chose not to join after orientation. Instead, I took an unpaid internship at a startup. I realized a conventional corporate setup wasn't the best fit for me. The internship converted into a full-time position in three months and later into a founding team role.
             `,
           },
           l2: {
@@ -145,7 +148,10 @@ export const layersPoints: Story[] = [
         description: '2019-21',
         layers: {
           l1: {
-            text: 'Ignoring health for years, a routine check in 2019 uncovered three chronic, potentially fatal conditions, forcing me to pause life from late 2019 to early 2021 to reset my priorities. I shed 50 kg, cut alcohol and processed foods, and rebuilt my health amid the chaos of COVID-19.',
+            text: 'Ignoring health for years, a routine check in 2019 uncovered three chronic conditions. I paused from late 2019 to early 2021 to reset. I shed 50 kg, cut alcohol and processed foods, and rebuilt my health.',
+          },
+          l2: {
+            text: 'I learned that intensity without sustainability is a losing strategy.',
           },
         },
         resolution: LEVEL.detailed,
@@ -156,7 +162,7 @@ export const layersPoints: Story[] = [
         description: '2021-2022',
         layers: {
           l1: {
-            text: dedent`Medal was a teacher training and hiring platform for Ed-tech companies. We trained 25 teachers through our MVP course, achieving a 100% success rate in getting them hired.`,
+            text: dedent`Medal was a teacher training and hiring platform for ed-tech companies. We trained 25 teachers through our MVP course, achieving a 100% success rate in getting them hired.`,
           },
           l2: {
             text: 'The platform was powered by a teacher evaluation and rating system that helps employers hire the best teachers.',
@@ -175,7 +181,7 @@ export const layersPoints: Story[] = [
     description: '2022-present',
     layers: {
       l1: {
-        text: 'First software startup. I hired people, worked with a co‑founder, and wrote code—tons of code.',
+        text: 'First software startup. I hired people, worked with a co-founder, and wrote code. Tons of code.',
       },
     },
     resolution: LEVEL.concise,
@@ -202,7 +208,7 @@ export const layersPoints: Story[] = [
         description: '2023-24',
         layers: {
           l1: {
-            text: 'FalconAI was an AI platform for schools. Teachers could create bots and assign students to them. The first 25 teachers paid for the platform, then we ran a six-month paid pilot with two schools.',
+            text: 'FalconAI was an AI platform for schools. Teachers could create bots and assign students to them. The first 25 teachers paid for the platform, then we ran a six-month paid pilot with two schools - 6 teachers, 50 students used the product.',
           },
           l2: {
             text: 'We had customers but did not break even. We were unable to raise funds and we ran out of money after making it work for 18 months.',
@@ -220,20 +226,23 @@ export const layersPoints: Story[] = [
         description: 'July 2024-Dec 2024',
         layers: {
           l1: {
-            text: 'I spent some time back home in Poonch to support family matters and briefly oversee the family business. It was a much-needed break and reset.',
+            text: 'My father passed away in mid-2024. I helped run the family business for 6 months. It was a reset, and it reminded me why I build software.',
           },
         },
         resolution: LEVEL.concise,
       },
       {
         id: 'next',
-        title: 'What now',
+        title: 'What now? Hire me!',
         description: 'Jan 2025-present',
         layers: {
           l1: {
-            text: 'I wake up, read machine learning papers, code AI agents, and sometimes write. I am optimistic about AI and I am open to work at early stage AI startups.',
+            text: 'I wake up, read machine learning papers, code AI agents, and sometimes write my thoughts on this blog. I am optimistic about AI and I am looking to work at early-stage AI startups.',
           },
           l2: {
+            text: 'I am quite familiar with engineering context for LLMs, building RAG pipelines, long-running agents and chat interfaces.',
+          },
+          l3: {
             text: 'If you made it here and would like to chat, reach out to me on X or drop a mail at: *firstname.lastnameATgmailDOTcom*',
           },
         },
