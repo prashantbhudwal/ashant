@@ -23,7 +23,7 @@ export function SummaryCard() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(80%_60%_at_50%_0%,hsl(var(--primary)/0.15),transparent_60%)]"
       />
-      <CardHeader className="space-y-5">
+      <CardHeader className="space-y-5 p-4 sm:p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
           <div className="space-y-1">
             <CardTitle className="text-2xl tracking-tight text-balance sm:text-3xl">
@@ -56,7 +56,7 @@ export function SummaryCard() {
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-3 px-4 pb-4 pt-0 sm:px-6 sm:pb-6">
         <p className="text-muted-foreground leading-relaxed">
           I’m a product guy that codes. I’ve founded three Ed‑tech startups -
           got customers each time, reached recurring revenue twice, and learned

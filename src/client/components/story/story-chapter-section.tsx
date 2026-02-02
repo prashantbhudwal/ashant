@@ -46,8 +46,8 @@ export function ChapterSection({
             isLast ? 'pb-0' : 'pb-10 sm:pb-12',
           )}
         >
-          <div className="grid grid-cols-[1rem_1fr] gap-x-6 sm:gap-x-8">
-            <div className="relative flex flex-col items-center">
+          <div className="grid grid-cols-1 sm:grid-cols-[1rem_1fr] sm:gap-x-8">
+            <div className="relative hidden flex-col items-center sm:flex">
               <span
                 aria-hidden="true"
                 className={cn(
@@ -71,7 +71,7 @@ export function ChapterSection({
                 isActive && 'ring-primary/20 ring-1',
               )}
             >
-              <CardHeader className="space-y-3">
+              <CardHeader className="space-y-3 p-4 sm:p-6">
                 <div className="space-y-1">
                   <CardTitle className="text-balance text-xl tracking-tight sm:text-2xl">
                     {chapter.title}
@@ -84,13 +84,13 @@ export function ChapterSection({
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-6">
+              <CardContent className="space-y-5 px-4 pb-4 pt-0 sm:space-y-6 sm:px-6 sm:pb-6">
                 <div className="space-y-4">
                   {getStoryParagraphs(chapter, resolution).map((paragraph, i) => (
                     <div
                       key={`${chapter.id}-${i}`}
                       className={cn(
-                        'bg-muted/15 border-border/60 rounded-lg border p-4',
+                        'bg-muted/15 border-border/60 rounded-lg border p-3 sm:p-4',
                         i > 0 &&
                           'animate-in fade-in-0 slide-in-from-bottom-2 duration-300',
                       )}
@@ -102,7 +102,7 @@ export function ChapterSection({
                   {visibleSubplots.map((subplot) => (
                     <div
                       key={`${chapter.id}-${subplot.id}`}
-                      className="bg-muted/10 border-border/60 space-y-3 rounded-lg border px-4 py-3"
+                      className="bg-muted/10 border-border/60 space-y-3 rounded-lg border px-3 py-2.5 sm:px-4 sm:py-3"
                     >
                       <div className="space-y-0.5">
                         <div className="text-sm font-medium">
