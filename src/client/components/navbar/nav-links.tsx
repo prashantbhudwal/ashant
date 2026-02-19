@@ -5,8 +5,8 @@ import { cn } from '~/client/lib/utils'
 
 const items = [
   { name: 'posts', path: '/posts', hash: 'posts' },
+  { name: 'projects', path: '/projects', hash: 'projects' },
   { name: 'prompts', path: '/prompts', hash: 'prompts' },
-  { name: 'programs', path: '/programs', hash: 'programs' },
 ]
 
 export function NavLinks({ className }: { className?: string }) {

@@ -11,6 +11,7 @@ export const link = {
   path: {
     post: ({ slug }: { slug: string }) => `/blog/${slug}`,
     program: ({ slug }: { slug: string }) => `/programs/${slug}`,
+    projects: '/projects',
     images: {
       programs: ({ imgName }: { imgName: string }) => `/programs/${imgName}`,
       blog: ({ imgName }: { imgName: string }) => `/blog/${imgName}.webp`,
@@ -20,6 +21,7 @@ export const link = {
     internal: {
       post: ({ slug }: { slug: string }) => C.base + '/blog/' + slug,
       program: ({ slug }: { slug: string }) => C.base + '/programs/' + slug,
+      projects: C.base + '/projects',
     },
     external: {
       authorProfile,

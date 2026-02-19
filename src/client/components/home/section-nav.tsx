@@ -5,7 +5,7 @@ import { cn } from '~/client/lib/utils'
 
 const sections = [
   { id: 'posts', label: 'Posts' },
-  { id: 'programs', label: 'Programs' },
+  { id: 'projects', label: 'Projects' },
   { id: 'prompts', label: 'Prompts' },
 ]
 

@@ -1,5 +1,6 @@
 import { cn } from '~/client/lib/utils'
 import type { TSpace } from '~/common/types/content.types'
+import { ArchivedProgramsNotice } from './archived-notice'
 
 type LayoutWidth = NonNullable<TSpace['layoutWidth']>
 
@@ -48,6 +49,7 @@ export function ProgramLayout({
         widthClasses[layoutWidth],
       )}
     >
+      <ArchivedProgramsNotice />
       <div className="mb-12">
         <h1 className="mb-4 text-3xl font-bold tracking-tight">{title}</h1>
         <p className="text-muted-foreground text-lg">{description}</p>

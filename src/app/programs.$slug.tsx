@@ -4,6 +4,14 @@ import { useMemo } from 'react'
 import { NotFound } from '~/client/components/NotFound'
 
 export const Route = createFileRoute('/programs/$slug')({
+  head: () => ({
+    meta: [
+      {
+        name: 'robots',
+        content: 'noindex, nofollow',
+      },
+    ],
+  }),
   component: RouteComponent,
   loader: async ({ params }) => {
     return params.slug

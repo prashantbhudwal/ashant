@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { allPosts, allPrompts } from 'content-collections'
-import { programs } from '~/client/components/programs/programs'
 import { C } from '~/common/constants'
 
 export const Route = createFileRoute('/api/sitemap.xml')({
@@ -14,11 +13,7 @@ export const Route = createFileRoute('/api/sitemap.xml')({
           { loc: baseUrl, priority: '1.0', changefreq: 'daily' },
           { loc: `${baseUrl}/posts`, priority: '0.9', changefreq: 'weekly' },
           { loc: `${baseUrl}/prompts`, priority: '0.8', changefreq: 'weekly' },
-          {
-            loc: `${baseUrl}/programs`,
-            priority: '0.8',
-            changefreq: 'monthly',
-          },
+          { loc: `${baseUrl}/projects`, priority: '0.8', changefreq: 'weekly' },
         ]
 
         // Blog posts
@@ -26,13 +21,6 @@ export const Route = createFileRoute('/api/sitemap.xml')({
           loc: `${baseUrl}/blog/${post.slug}`,
           lastmod: post.updatedAt ?? post.createdAt,
           priority: '0.7',
-          changefreq: 'monthly',
-        }))
-
-        // Programs
-        const programPages = programs.map((program) => ({
-          loc: `${baseUrl}/programs/${program.slug}`,
-          priority: '0.6',
           changefreq: 'monthly',
         }))
 
@@ -54,7 +42,6 @@ export const Route = createFileRoute('/api/sitemap.xml')({
         const allPages: SitemapPage[] = [
           ...staticPages,
           ...blogPages,
-          ...programPages,
           ...promptPages,
         ]
 

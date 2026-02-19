@@ -5,15 +5,15 @@ import { C } from '~/common/constants'
 import {
   type TSerializableContent,
   type TPost,
-  type TSerializableSpace,
   type TPrompt,
   ContentType,
 } from '~/common/types/content.types'
 import { getAllContentServerFn } from '../server/content.server'
 import { PostsSection } from '~/client/components/home/posts-section'
-import { ProgramsSection } from '~/client/components/home/programs-section'
 import { PromptsSection } from '~/client/components/home/prompts-section'
 import { StorySection } from '~/client/components/home/story-section'
+import { ProjectsSection } from '~/client/components/home/projects-section'
+import { projects } from '~/common/content/projects'
 
 export { getAllContentServerFn }
 
@@ -65,9 +65,6 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
   const posts = content.filter(
     (item): item is TPost => item.type === ContentType.POST,
   )
-  const programs = content.filter(
-    (item): item is TSerializableSpace => item.type === ContentType.SPACE,
-  )
   const prompts = content.filter(
     (item): item is TPrompt => item.type === ContentType.PROMPT,
   )
@@ -76,8 +73,8 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
     <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
       <div className="mt-8 space-y-16 sm:mt-12 sm:space-y-24">
         <PostsSection posts={posts} />
+        <ProjectsSection projects={projects} />
         {prompts.length > 0 && <PromptsSection prompts={prompts} />}
-        {programs.length > 0 && <ProgramsSection programs={programs} />}
         <StorySection />
       </div>
     </div>
