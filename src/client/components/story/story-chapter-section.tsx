@@ -41,10 +41,7 @@ export function ChapterSection({
         <section
           ref={ref}
           id={`chapter-${chapter.id}`}
-          className={cn(
-            'scroll-mt-24',
-            isLast ? 'pb-0' : 'pb-10 sm:pb-12',
-          )}
+          className={cn('scroll-mt-24', isLast ? 'pb-0' : 'pb-10 sm:pb-12')}
         >
           <div className="grid grid-cols-1 sm:grid-cols-[1rem_1fr] sm:gap-x-8">
             <div className="relative hidden flex-col items-center sm:flex">
@@ -60,7 +57,7 @@ export function ChapterSection({
               {!isLast && (
                 <span
                   aria-hidden="true"
-                  className="mt-4 w-px flex-1 bg-border"
+                  className="bg-border mt-4 w-px flex-1"
                 />
               )}
             </div>
@@ -73,7 +70,7 @@ export function ChapterSection({
             >
               <CardHeader className="space-y-3 p-4 sm:p-6">
                 <div className="space-y-1">
-                  <CardTitle className="text-balance text-xl tracking-tight sm:text-2xl">
+                  <CardTitle className="text-xl tracking-tight text-balance sm:text-2xl">
                     {chapter.title}
                   </CardTitle>
                   {chapter.description && (
@@ -84,20 +81,22 @@ export function ChapterSection({
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-5 px-4 pb-4 pt-0 sm:space-y-6 sm:px-6 sm:pb-6">
+              <CardContent className="space-y-5 px-4 pt-0 pb-4 sm:space-y-6 sm:px-6 sm:pb-6">
                 <div className="space-y-4">
-                  {getStoryParagraphs(chapter, resolution).map((paragraph, i) => (
-                    <div
-                      key={`${chapter.id}-${i}`}
-                      className={cn(
-                        'bg-muted/15 border-border/60 rounded-lg border p-3 sm:p-4',
-                        i > 0 &&
-                          'animate-in fade-in-0 slide-in-from-bottom-2 duration-300',
-                      )}
-                    >
-                      <StoryMarkdown content={paragraph} />
-                    </div>
-                  ))}
+                  {getStoryParagraphs(chapter, resolution).map(
+                    (paragraph, i) => (
+                      <div
+                        key={`${chapter.id}-${i}`}
+                        className={cn(
+                          'bg-muted/15 border-border/60 rounded-lg border p-3 sm:p-4',
+                          i > 0 &&
+                            'animate-in fade-in-0 slide-in-from-bottom-2 duration-300',
+                        )}
+                      >
+                        <StoryMarkdown content={paragraph} />
+                      </div>
+                    ),
+                  )}
 
                   {visibleSubplots.map((subplot) => (
                     <div

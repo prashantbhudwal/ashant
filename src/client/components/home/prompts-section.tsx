@@ -21,7 +21,7 @@ export function PromptsSection({ prompts, className }: PromptsSectionProps) {
       <h2 className="text-muted-foreground mb-6 text-sm font-medium tracking-widest uppercase sm:mb-8">
         Prompts
       </h2>
-      <ul className="mb-6 divide-y divide-border/40 sm:mb-8">
+      <ul className="divide-border/40 mb-6 divide-y sm:mb-8">
         {displayPrompts.map((prompt) => (
           <li key={prompt.id}>
             <PromptCard prompt={prompt} />

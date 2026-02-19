@@ -56,7 +56,7 @@ export function SummaryCard() {
         </div>
       </CardHeader>
 
-      <CardContent className="space-y-3 px-4 pb-4 pt-0 sm:px-6 sm:pb-6">
+      <CardContent className="space-y-3 px-4 pt-0 pb-4 sm:px-6 sm:pb-6">
         <p className="text-muted-foreground leading-relaxed">
           I’m a product guy that codes. I’ve founded three Ed‑tech startups -
           got customers each time, reached recurring revenue twice, and learned

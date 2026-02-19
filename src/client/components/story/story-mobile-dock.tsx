@@ -37,7 +37,7 @@ export function MobileDock({
   return (
     <div
       className={cn(
-        'lg:hidden bg-background/80 border-border/60 fixed bottom-4 left-1/2 z-50 w-[min(32rem,calc(100vw-1.5rem))] -translate-x-1/2 rounded-xl border p-2 shadow-xl backdrop-blur-md',
+        'bg-background/80 border-border/60 fixed bottom-4 left-1/2 z-50 w-[min(32rem,calc(100vw-1.5rem))] -translate-x-1/2 rounded-xl border p-2 shadow-xl backdrop-blur-md lg:hidden',
       )}
     >
       <div className="flex items-center gap-2">
