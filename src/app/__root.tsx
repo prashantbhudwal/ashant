@@ -111,7 +111,7 @@ function RootLayout({ children }: { children: React.ReactNode }) {
           data-llm="content"
         >
           <Navbar className="py-2 md:py-4 lg:py-6 2xl:py-8" />
-          <div className="mx-auto max-w-full flex-1">{children}</div>
+          <div className="w-full flex-1">{children}</div>
           <Footer />
           <BlogSearch />
         </main>

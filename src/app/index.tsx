@@ -70,7 +70,7 @@ function HomePage({ content }: { content: TSerializableContent[] }) {
   )
 
   return (
-    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
+    <div className="mx-auto max-w-xl pt-4 sm:pt-6">
       <div className="mt-8 space-y-16 sm:mt-12 sm:space-y-24">
         <PostsSection posts={posts} />
         <ProjectsSection projects={projects} />
