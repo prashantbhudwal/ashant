@@ -42,22 +42,38 @@ export function NavLinks({ className }: { className?: string }) {
       )}
     >
       <div className="flex items-center gap-4 md:gap-6">
-        {items.map((item) => (
-          <button
-            key={item.name}
-            onClick={() => handleNavigation(item.path, item.hash)}
-            className="text-muted-foreground hover:text-foreground transition-colors"
-          >
-            {item.name}
-          </button>
-        ))}
+        {items.map((item) => {
+          const isActive =
+            location.pathname === item.path ||
+            location.pathname.startsWith(`${item.path}/`)
+          return (
+            <button
+              key={item.name}
+              onClick={() => handleNavigation(item.path, item.hash)}
+              className={cn(
+                'transition-colors',
+                isActive
+                  ? 'text-emerald-600 dark:text-emerald-400'
+                  : 'text-muted-foreground hover:text-foreground',
+              )}
+            >
+              {item.name}
+            </button>
+          )
+        })}
       </div>
 
       <div className="bg-border/50 h-4 w-px" />
 
       <button
         onClick={() => handleNavigation('/story', 'story')}
-        className="text-muted-foreground hover:text-foreground transition-colors"
+        className={cn(
+          'transition-colors',
+          location.pathname === '/story' ||
+            location.pathname.startsWith('/story/')
+            ? 'text-emerald-600 dark:text-emerald-400'
+            : 'text-muted-foreground hover:text-foreground',
+        )}
       >
         story
       </button>
