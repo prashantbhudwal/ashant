@@ -3,12 +3,13 @@ import { queryOptions, useSuspenseQuery } from '@tanstack/react-query'
 import { getAllContentServerFn } from './index'
 import { ContentType, type TPost } from '~/common/types/content.types'
 import { useState } from 'react'
-import { Link } from '@tanstack/react-router'
-import { formatDate } from '~/client/helpers/format-date'
-import { cn } from '~/client/lib/utils'
 import { seo } from '~/client/lib/utils/seo'
 import { C } from '~/common/constants'
 import { PostCard } from '~/client/components/blog/post-card'
+import {
+  ContentListLayout,
+  ContentListItem,
+} from '~/client/components/content-list/content-list-layout'
 
 const navContentQueryOptions = queryOptions({
   queryKey: ['all-content-posts'],
@@ -73,20 +74,19 @@ function PostsPage() {
   }
 
   return (
-    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
-      <ul className="divide-border/40 mb-6 divide-y sm:mb-8">
-        {filteredPosts.map((post) => (
-          <li key={post.id}>
-            <PostCard post={post} showTags />
-          </li>
-        ))}
-      </ul>
-
-      {filteredPosts.length === 0 && (
+    <ContentListLayout
+      className="mb-6 sm:mb-8"
+      emptyState={
         <p className="text-muted-foreground py-12 text-center">
           No posts match the selected tags.
         </p>
-      )}
-    </div>
+      }
+    >
+      {filteredPosts.map((post) => (
+        <ContentListItem key={post.id}>
+          <PostCard post={post} showTags />
+        </ContentListItem>
+      ))}
+    </ContentListLayout>
   )
 }

@@ -5,6 +5,10 @@ import { ContentType, type TPrompt } from '~/common/types/content.types'
 import { C } from '~/common/constants'
 import { seo } from '~/client/lib/utils/seo'
 import { PromptCard } from '~/client/components/prompts/prompt-card'
+import {
+  ContentListLayout,
+  ContentListItem,
+} from '~/client/components/content-list/content-list-layout'
 
 const navContentQueryOptions = queryOptions({
   queryKey: ['all-content-prompts'],
@@ -40,14 +44,12 @@ function PromptsPage() {
   )
 
   return (
-    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
-      <ul className="divide-border/40 divide-y">
-        {prompts.map((prompt) => (
-          <li key={prompt.id}>
-            <PromptCard prompt={prompt} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ContentListLayout>
+      {prompts.map((prompt) => (
+        <ContentListItem key={prompt.id}>
+          <PromptCard prompt={prompt} />
+        </ContentListItem>
+      ))}
+    </ContentListLayout>
   )
 }

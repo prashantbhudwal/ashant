@@ -1,5 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { ProjectCard } from '~/client/components/projects/project-card'
+import {
+  ContentListLayout,
+  ContentListItem,
+} from '~/client/components/content-list/content-list-layout'
 import { seo } from '~/client/lib/utils/seo'
 import { projects } from '~/common/content/projects'
 import { C } from '~/common/constants'
@@ -46,14 +50,12 @@ export const Route = createFileRoute('/projects/')({
 
 function RouteComponent() {
   return (
-    <div className="mx-auto max-w-2xl pt-4 sm:pt-6">
-      <ul className="divide-border/40 divide-y">
-        {projects.map((project) => (
-          <li key={project.id}>
-            <ProjectCard project={project} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <ContentListLayout>
+      {projects.map((project) => (
+        <ContentListItem key={project.id}>
+          <ProjectCard project={project} />
+        </ContentListItem>
+      ))}
+    </ContentListLayout>
   )
 }

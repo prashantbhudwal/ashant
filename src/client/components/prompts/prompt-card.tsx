@@ -14,9 +14,9 @@ export function PromptCard({ prompt, showTags = false }: PromptCardProps) {
     <Link
       to="/prompts/$slug"
       params={{ slug: prompt.slug }}
-      className="group block py-3 sm:py-4"
+      className="group block w-full py-3 sm:py-4"
     >
-      <div className="flex flex-col gap-1">
+      <div className="flex w-full flex-col gap-1">
         <div className="flex items-center gap-2">
           <h3
             className={cn(
